@@ -1,0 +1,9 @@
+.ui.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
+
+.tab-panes {
+  margin-top: 40px;
+}
