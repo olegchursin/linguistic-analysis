@@ -36,6 +36,6 @@ A tool that will help anyone who needs to perform lexical or text analysis to do
 
 ### Repos
 #### Frontend
-[GitHub - olegchursin/dictionary: Dictionary aggregator.](https://github.com/olegchursin/dictionary)
+[GitHub - olegchursin/linguistic-analysis](https://github.com/olegchursin/linguistic-analysis)
 
 #### Backend
