@@ -13,9 +13,14 @@ const panes = [
       Tab 2 Content
     </Tab.Pane> },
 
-  { menuItem: 'WordsAPI', render: () =>
+  { menuItem: 'Yandex', render: () =>
     <Tab.Pane>
       Tab 3 Content
+    </Tab.Pane> },
+
+  { menuItem: 'WordsAPI', render: () =>
+    <Tab.Pane>
+      Tab 4 Content
     </Tab.Pane> },
 ]
 

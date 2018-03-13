@@ -8,6 +8,8 @@ A tool that will help anyone who needs to perform lexical or text analysis to do
 - As a user, I want to be able to compare several defintions.
 - As a user, I want to be able to to have access to the definitions from various dictionaries on one page.
 - As a user, I want to be able to save lexemes to my collection.
+- As a user, I want to be able to translate a lexeme EN-ES, EN-FR, EN-RU, EN-DE.
+
 
 ### Text analysis
 - As a user, I want to be able to enter a text into a textarea for further analysis.
