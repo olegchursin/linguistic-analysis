@@ -1,13 +1,10 @@
 const initialState = {
   projects: [],
   lexemes: [],
-  texts: [],
-  auth: {
-      loggedIn: false,
-    }
+  texts: []
 }
 
-const root = (state = initialState, action) => {
+const projectReducer = (state = initialState, action) => {
   switch(action.type){
     case 'ADD_PROJECT':
       return {
@@ -26,4 +23,4 @@ const root = (state = initialState, action) => {
   }
 }
 
-export { root }
+export { projectReducer }

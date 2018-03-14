@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './css/App.css';
-import DictionaryContainer from './components/DictionaryContainer'
+import DictionaryContainer from './components/dictionary/DictionaryContainer'
 import NavBar from './components/NavBar'
 import Footer from './components/Footer'
 

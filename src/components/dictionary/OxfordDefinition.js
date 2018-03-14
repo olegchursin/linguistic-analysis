@@ -12,4 +12,10 @@ const OxfordDefinition = (props) => {
   )
 }
 
-export default OxfordDefinition
+const mapStateToProps = (state) => {
+  return {
+    definitionOxford: state.dictionary.definitionOxford // from ./reducers/dictionaryReducer.js
+  }
+}
+
+export default OxfordDefinition;
