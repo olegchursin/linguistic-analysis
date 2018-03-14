@@ -1,3 +1,6 @@
+// Lexeme search
+// rendered in DictioaneryContainer.js
+
 import React from 'react';
 import { Input } from 'semantic-ui-react'
 

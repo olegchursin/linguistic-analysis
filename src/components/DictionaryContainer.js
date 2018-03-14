@@ -1,8 +1,14 @@
 import React from 'react';
 
+// Redux
+import { connect } from 'react-redux'
+import { addProject } from '../actions/actions'
+
+// Components
 import DictionaryDefinition from './DictionaryDefinition';
 import SearchBar from './SearchBar';
 
+// MashapeAPI tool for API requests
 const unirest = require('unirest');
 
 
@@ -19,26 +25,19 @@ class DictionaryContainer extends React.Component {
   handleFetch = () => {
     console.log("fetching")
 
-    unirest.get("https://twinword-twinword-bundle-v1.p.mashape.com/sentiment_analyze/?text=not+to+my+liking")
-    .header("X-Mashape-Key", "ru9cyyTR8dmshYGRTnxRfRi9JPy3p1JnutrjsnjWTE2KVBx86r")
-    .header("Accept", "application/json")
-    .end(function (result) {
-      console.log(result.body);
-    });
-    //
-    // fetch(`https://cors-anywhere.herokuapp.com/https://od-api.oxforddictionaries.com/api/v1/entries/en/${this.state.searchTerm}`, {
-    //   headers: {
-    //     "Accept": "application/json",
-    //     "app_id": 'a30a1a5e',
-    //     "app_key": 'b42a1bcf088e52727e8626ce2716e073'
-    //   }
-    // })
-    // .then(res => res.json())
-    // .then(res => {
-    //   this.setState({
-    //     definitionOxford: res.results[0].lexicalEntries
-    //   }, () => console.log(this.state.definitionOxford))
-    // })
+    fetch(`https://cors-anywhere.herokuapp.com/https://od-api.oxforddictionaries.com/api/v1/entries/en/${this.state.searchTerm}`, {
+      headers: {
+        "Accept": "application/json",
+        "app_id": 'a30a1a5e',
+        "app_key": 'b42a1bcf088e52727e8626ce2716e073'
+      }
+    })
+    .then(res => res.json())
+    .then(res => {
+      this.setState({
+        definitionOxford: res.results[0].lexicalEntries
+      }, () => console.log(this.state.definitionOxford))
+    })
   }
 
   handleChange = (e) => {
@@ -71,4 +70,10 @@ class DictionaryContainer extends React.Component {
   }
 }
 
-export default DictionaryContainer;
+const mapStateToProps = (state) => {
+  return {
+    projects: state.projects
+  }
+}
+
+export default connect(mapStateToProps, { addProject })(DictionaryContainer);

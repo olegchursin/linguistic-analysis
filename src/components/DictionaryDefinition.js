@@ -10,17 +10,22 @@ const panes = [
 
   { menuItem: 'Cambridge', render: () =>
     <Tab.Pane>
-      Tab 2 Content
+      Cambridge Definition
     </Tab.Pane> },
 
   { menuItem: 'Yandex', render: () =>
     <Tab.Pane>
-      Tab 3 Content
+      Yandex definition
     </Tab.Pane> },
 
   { menuItem: 'WordsAPI', render: () =>
     <Tab.Pane>
-      Tab 4 Content
+      WordsAPI defintion
+    </Tab.Pane> },
+
+  { menuItem: 'Twinword', render: () =>
+    <Tab.Pane>
+      Twinword defintion
     </Tab.Pane> },
 ]
 
