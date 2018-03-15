@@ -1,3 +1,5 @@
+import { ADD_PROJECT, ADD_LEXEME, ADD_TEXT } from "../actions/projectActions";
+
 const initialState = {
   projects: [],
   lexemes: [],
@@ -12,11 +14,11 @@ const projectReducer = (state = initialState, action) => {
       }
     case 'ADD_LEXEME':
       return {
-        lexemes: [...state.projects, action.payload]
+        lexemes: [...state.lexemes, action.payload]
       }
     case 'ADD_TEXT':
       return {
-        texts: [...state.projects, action.payload]
+        texts: [...state.texts, action.payload]
       }
     default:
       return state

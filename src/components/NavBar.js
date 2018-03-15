@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Menu } from 'semantic-ui-react'
+import { Dropdown, Menu } from 'semantic-ui-react'
 
 export default class NavBar extends Component {
   state = {}
@@ -13,34 +13,88 @@ export default class NavBar extends Component {
     const { activeItem } = this.state
 
     return (
-      <Menu stackable>
+      <Menu attached='top'>
         <Menu.Item>
           <img src='../img/logo.png' alt="logo" />
         </Menu.Item>
 
-        <Menu.Item
-          name='dictionary'
-          active={activeItem === 'dictionary'}
-          onClick={this.handleItemClick}
-        >
-          Dictionary
-        </Menu.Item>
+        <Dropdown text='Lexical Analysis' className='link item' simple>
+          <Dropdown.Menu>
+
+            <Dropdown.Header>Dictionary</Dropdown.Header>
+            <Dropdown.Item
+              name='definition'
+              active={activeItem === 'definition'}
+              onClick={this.handleItemClick}
+            >
+              Definition
+            </Dropdown.Item>
+
+            <Dropdown.Item
+              name='thesaurus'
+              active={activeItem === 'thesaurus'}
+              onClick={this.handleItemClick}
+            >
+              Thesaurus
+            </Dropdown.Item>
+
+            <Dropdown.Item
+              name='translation'
+              active={activeItem === 'translation'}
+              onClick={this.handleItemClick}
+            >
+              Translation
+            </Dropdown.Item>
+
+            <Dropdown.Divider />
+
+            <Dropdown.Header>Semantics</Dropdown.Header>
+            <Dropdown.Item
+              name='semantic-field'
+              active={activeItem === 'semantic-field'}
+              onClick={this.handleItemClick}
+            >
+              Semantic field
+            </Dropdown.Item>
+
+            <Dropdown.Divider />
+
+            <Dropdown.Header>Phonetics</Dropdown.Header>
+            <Dropdown.Item
+              name='pronunciation'
+              active={activeItem === 'pronunciation'}
+              onClick={this.handleItemClick}
+            >
+              Pronunciation
+            </Dropdown.Item>
+
+            <Dropdown.Item
+              name='rhymes'
+              active={activeItem === 'rhymes'}
+              onClick={this.handleItemClick}
+            >
+              Rhymes with
+            </Dropdown.Item>
+          </Dropdown.Menu>
+        </Dropdown>
 
         <Menu.Item
-          name='thesaurus'
-          active={activeItem === 'thesaurus'}
+          name='text'
+          active={activeItem === 'text'}
           onClick={this.handleItemClick}
         >
-          Thesaurus
+          Text Analysis
         </Menu.Item>
+        <Menu.Menu position='right'>
+          <Menu.Item
+            name='sign-in'
+            active={activeItem === 'sign-in'}
+            onClick={this.handleItemClick}
+          >
+            Sign-in
+          </Menu.Item>
+        </Menu.Menu>
 
-        <Menu.Item
-          name='sign-in'
-          active={activeItem === 'sign-in'}
-          onClick={this.handleItemClick}
-        >
-          Sign-in
-        </Menu.Item>
       </Menu>
     )
   }

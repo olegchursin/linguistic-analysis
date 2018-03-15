@@ -1,7 +1,7 @@
 import React from 'react'
 
 const UrbanDefinition = (props) => {
-
+  console.log("Urban", props.defintion)
   return (
     <div>
       <p>
@@ -14,7 +14,8 @@ const UrbanDefinition = (props) => {
 
 const mapStateToProps = (state) => {
   return {
-    definitionUrban: state.dictionary.definitionUrban // from ./reducers/dictionaryReducer.js
+    isLoading: state.isLoading,
+    definition: state.dictionary.definitionUrban // from ./reducers/dictionaryReducer.js
   }
 }
 

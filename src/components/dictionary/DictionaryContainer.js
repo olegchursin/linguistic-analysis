@@ -2,7 +2,7 @@ import React from 'react';
 
 // Redux
 import { connect } from 'react-redux'
-import { defineLexeme  } from '../../actions/dictionaryActions'
+import { defineOxford, defineYandex, defineTwinword, defineWordsApi, defineUrban } from '../../actions/dictionaryActions'
 import { addProject } from '../../actions/projectActions'
 
 // Components
@@ -32,7 +32,11 @@ class DictionaryContainer extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    this.props.definitionOxford(this.state.searchTerm); // calling definitionOxford at ../../actions/dictionaryActions.js
+    this.props.defineOxford(this.state.searchTerm);
+    this.props.defineYandex(this.state.searchTerm);
+    this.props.defineTwinword(this.state.searchTerm);
+    this.props.defineWordsApi(this.state.searchTerm);
+    this.props.defineUrban(this.state.searchTerm);
   }
 
   render(){
@@ -46,7 +50,10 @@ class DictionaryContainer extends React.Component {
         />
         <h3>Definition</h3>
         <DictionaryDefinition />
+        <h3>Thesaurus</h3>
+        {/* <Thesaurus /> */}
         <h3>Translation</h3>
+        {/* <Translation /> */}
       </div>
     )
   }
@@ -58,4 +65,4 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps, { addProject, defineLexeme })(DictionaryContainer);
+export default connect(mapStateToProps, { addProject, defineOxford, defineYandex, defineTwinword, defineWordsApi, defineUrban })(DictionaryContainer);

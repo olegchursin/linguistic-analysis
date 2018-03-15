@@ -14,7 +14,8 @@ const TwinwordDefinition = (props) => {
 
 const mapStateToProps = (state) => {
   return {
-    definitionTwinword: state.dictionary.definitionTwinword // from ./reducers/dictionaryReducer.js
+    isLoading: state.isLoading,
+    definition: state.dictionary.definitionTwinword // from ./reducers/dictionaryReducer.js
   }
 }
 

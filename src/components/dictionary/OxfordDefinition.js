@@ -1,7 +1,7 @@
 import React from 'react'
 
 const OxfordDefinition = (props) => {
-
+  console.log("Oxford", props.definition)
   return (
     <div>
       <p>
@@ -14,7 +14,8 @@ const OxfordDefinition = (props) => {
 
 const mapStateToProps = (state) => {
   return {
-    definitionOxford: state.dictionary.definitionOxford // from ./reducers/dictionaryReducer.js
+    isLoading: state.isLoading,
+    definition: state.dictionary.definitionOxford // from ./reducers/dictionaryReducer.js
   }
 }
 

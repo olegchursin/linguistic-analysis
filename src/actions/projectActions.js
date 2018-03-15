@@ -1,4 +1,8 @@
 // Project Reducer Actions
+export const ADD_PROJECT = "ADD_PROJECT";
+export const ADD_LEXEME = "ADD_LEXEME";
+export const ADD_TEXT = "ADD_TEXT";
+
 export const addProject = (project) => {
   return {
     type: 'ADD_PROJECT',
