@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
-const TwinwordDefinition = (props) => {
+const DefinitionTwinword = (props) => {
   console.log("Twinword", props.definition)
   return (
     <div>
@@ -20,4 +20,4 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps)(TwinwordDefinition);
+export default connect(mapStateToProps)(DefinitionTwinword);

@@ -3,31 +3,36 @@
 import React from 'react';
 import { Tab } from 'semantic-ui-react'
 
+import TranslationEs from './translation/TranslationEs'
+import TranslationFr from './translation/TranslationFr'
+import TranslationIt from './translation/TranslationIt'
+import TranslationRu from './translation/TranslationRu'
+import TranslationDe from './translation/TranslationDe'
 
 const panes = [
-  { menuItem: 'Oxford', render: () =>
+  { menuItem: 'Spanish', render: () =>
     <Tab.Pane>
-      <OxfordDefinition />
+      <TranslationEs />
     </Tab.Pane> },
 
-  { menuItem: 'Yandex', render: () =>
+  { menuItem: 'French', render: () =>
     <Tab.Pane>
-      <YandexDefinition />
+      <TranslationFr />
     </Tab.Pane> },
 
-    { menuItem: 'Twinword', render: () =>
+    { menuItem: 'Italian', render: () =>
     <Tab.Pane>
-
+      <TranslationIt />
     </Tab.Pane> },
 
-  { menuItem: 'WordsAPI', render: () =>
+  { menuItem: 'Russian', render: () =>
     <Tab.Pane>
-      <WordsApiDefinition />
+      <TranslationRu />
     </Tab.Pane> },
 
-    { menuItem: 'Urban', render: () =>
+    { menuItem: 'German', render: () =>
       <Tab.Pane>
-        <UrbanDefinition />
+        <TranslationDe />
       </Tab.Pane> },
 
 ]

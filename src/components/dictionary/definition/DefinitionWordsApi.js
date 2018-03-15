@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
-const WordsApiDefinition = (props) => {
+const DefinitionWordsApi = (props) => {
   console.log("WordsApi", props.definition)
   return (
     <div>
@@ -20,4 +20,4 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps)(WordsApiDefinition);
+export default connect(mapStateToProps)(DefinitionWordsApi);

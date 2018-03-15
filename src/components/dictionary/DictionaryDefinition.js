@@ -4,36 +4,36 @@ import React from 'react';
 import { Tab } from 'semantic-ui-react'
 
 // Components
-import OxfordDefinition from './OxfordDefinition'
-import YandexDefinition from './YandexDefinition'
-import TwinwordDefinition from './TwinwordDefinition'
-import WordsApiDefinition from './WordsApiDefinition'
-import UrbanDefinition from './UrbanDefinition'
+import DefinitionOxford from './definition/DefinitionOxford'
+import DefinitionYandex from './definition/DefinitionYandex'
+import DefinitionTwinword from './definition/DefinitionTwinword'
+import DefinitionWordsApi from './definition/DefinitionWordsApi'
+import DefinitionUrban from './definition/DefinitionUrban'
 
 const panes = [
   { menuItem: 'Oxford', render: () =>
     <Tab.Pane>
-      <OxfordDefinition />
+      <DefinitionOxford />
     </Tab.Pane> },
 
   { menuItem: 'Yandex', render: () =>
     <Tab.Pane>
-      <YandexDefinition />
+      <DefinitionYandex />
     </Tab.Pane> },
 
     { menuItem: 'Twinword', render: () =>
     <Tab.Pane>
-      <TwinwordDefinition />
+      <DefinitionTwinword />
     </Tab.Pane> },
 
   { menuItem: 'WordsAPI', render: () =>
     <Tab.Pane>
-      <WordsApiDefinition />
+      <DefinitionWordsApi />
     </Tab.Pane> },
 
     { menuItem: 'Urban', render: () =>
       <Tab.Pane>
-        <UrbanDefinition />
+        <DefinitionUrban />
       </Tab.Pane> },
 
 ]
