@@ -51,7 +51,7 @@ class DictionaryContainer extends React.Component {
           <Popup
             className="popup-icon"
             trigger={<Icon name='info circle' />}
-            content='Hello. This is a mini popup'
+            content='Find and compare lexical meanings.'
             size='mini'
           />
         </h3>
@@ -60,7 +60,7 @@ class DictionaryContainer extends React.Component {
           <Popup
             className="popup-icon"
             trigger={<Icon name='info circle' />}
-            content='Hello. This is a mini popup'
+            content='Explore synonyms and antonyms.'
             size='mini'
           />
         </h3>
@@ -69,7 +69,7 @@ class DictionaryContainer extends React.Component {
           <Popup
             className="popup-icon"
             trigger={<Icon name='info circle' />}
-            content='Hello. This is a mini popup'
+            content='Translate a lexeme into a number of languages.'
             size='mini'
           />
         </h3>
