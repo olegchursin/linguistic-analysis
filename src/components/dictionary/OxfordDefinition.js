@@ -1,4 +1,5 @@
 import React from 'react'
+import { connect } from 'react-redux'
 
 const OxfordDefinition = (props) => {
   console.log("Oxford", props.definition)
@@ -19,4 +20,4 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default OxfordDefinition;
+export default connect(mapStateToProps)(OxfordDefinition);

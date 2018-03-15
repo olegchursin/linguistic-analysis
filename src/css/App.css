@@ -7,3 +7,8 @@
 .tab-panes {
   margin-top: 40px;
 }
+
+i.icon.info.circle:before {
+  margin-left: 10px;
+  color: #B0BEC5;
+}

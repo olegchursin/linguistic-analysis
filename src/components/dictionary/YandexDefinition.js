@@ -1,7 +1,8 @@
 import React from 'react'
+import { connect } from 'react-redux'
 
 const YandexDefinition = (props) => {
-
+  console.log("Yandex", props.definition)
   return (
     <div>
       <p>
@@ -19,4 +20,4 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default YandexDefinition;
+export default connect(mapStateToProps)(YandexDefinition);

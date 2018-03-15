@@ -24,7 +24,7 @@ export function defineYandex(searchTerm) {
     dispatch({ type: "DEFINING_LEXEME" });
     DictionaryApi.defineYandex(searchTerm)
     .then(res => {
-      dispatch({ type: "DEFINED_OXFORD", payload: res.def });
+      dispatch({ type: "DEFINED_YANDEX", payload: res.def });
     });
   };
 }

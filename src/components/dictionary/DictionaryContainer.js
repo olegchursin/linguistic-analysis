@@ -2,6 +2,7 @@ import React from 'react';
 
 // Redux
 import { connect } from 'react-redux'
+import { Icon, Popup } from 'semantic-ui-react'
 import { defineOxford, defineYandex, defineTwinword, defineWordsApi, defineUrban } from '../../actions/dictionaryActions'
 import { addProject } from '../../actions/projectActions'
 
@@ -9,8 +10,6 @@ import { addProject } from '../../actions/projectActions'
 import DictionaryDefinition from './DictionaryDefinition';
 import SearchBar from '../SearchBar';
 
-// MashapeAPI tool for API requests
-const unirest = require('unirest');
 
 class DictionaryContainer extends React.Component {
   state = {
@@ -48,11 +47,32 @@ class DictionaryContainer extends React.Component {
           handleChange={this.handleChange}
           handleSubmit={this.handleSubmit}
         />
-        <h3>Definition</h3>
+        <h3>Definition
+          <Popup
+            className="popup-icon"
+            trigger={<Icon name='info circle' />}
+            content='Hello. This is a mini popup'
+            size='mini'
+          />
+        </h3>
         <DictionaryDefinition />
-        <h3>Thesaurus</h3>
+        <h3>Thesaurus
+          <Popup
+            className="popup-icon"
+            trigger={<Icon name='info circle' />}
+            content='Hello. This is a mini popup'
+            size='mini'
+          />
+        </h3>
         {/* <Thesaurus /> */}
-        <h3>Translation</h3>
+        <h3>Translation
+          <Popup
+            className="popup-icon"
+            trigger={<Icon name='info circle' />}
+            content='Hello. This is a mini popup'
+            size='mini'
+          />
+        </h3>
         {/* <Translation /> */}
       </div>
     )

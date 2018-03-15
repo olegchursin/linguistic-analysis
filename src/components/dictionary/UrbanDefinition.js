@@ -1,7 +1,9 @@
 import React from 'react'
+import { connect } from 'react-redux'
+
 
 const UrbanDefinition = (props) => {
-  console.log("Urban", props.defintion)
+  console.log("Urban", props.definition)
   return (
     <div>
       <p>
@@ -19,4 +21,4 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default UrbanDefinition;
+export default connect(mapStateToProps)(UrbanDefinition);

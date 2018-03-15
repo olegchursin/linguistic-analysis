@@ -1,7 +1,8 @@
 import React from 'react'
+import { connect } from 'react-redux'
 
 const WordsApiDefinition = (props) => {
-
+  console.log("WordsApi", props.definition)
   return (
     <div>
       <p>
@@ -19,4 +20,4 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default WordsApiDefinition;
+export default connect(mapStateToProps)(WordsApiDefinition);
