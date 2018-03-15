@@ -4,7 +4,6 @@ import React from 'react';
 import { Tab } from 'semantic-ui-react'
 
 
-
 const panes = [
   { menuItem: 'Oxford', render: () =>
     <Tab.Pane>
@@ -33,10 +32,10 @@ const panes = [
 
 ]
 
-const DictionaryDefinition = () => (
+const DictionaryTranslation = () => (
   <div className="tab-panes">
     <Tab panes={panes} />
   </div>
 )
 
-export default DictionaryDefinition;
+export default DictionaryTranslation;
