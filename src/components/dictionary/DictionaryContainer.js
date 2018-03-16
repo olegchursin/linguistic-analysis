@@ -2,7 +2,12 @@ import React from 'react';
 
 // Redux
 import { connect } from 'react-redux'
+
+//Semantic UI
 import { Icon, Popup } from 'semantic-ui-react'
+import { Divider } from 'semantic-ui-react'
+
+// actions
 import { defineOxford, defineYandex, defineTwinword, defineWordsApi, defineUrban, thesaurusSyn, thesaurusAssoc, thesaurusTheme, translateEs, translateFr, translateIt, translateRu, translateDe } from '../../actions/dictionaryActions'
 import { addProject } from '../../actions/projectActions'
 
@@ -55,13 +60,15 @@ class DictionaryContainer extends React.Component {
 
   render(){
     return (
-      <div className="ui main text container">
+      <div className="ui main text container main-content">
+        <Divider section />
         <h1>Enter a lexeme</h1>
         <SearchBar
           searchTerm={this.state.searchTerm}
           handleChange={this.handleChange}
           handleSubmit={this.handleSubmit}
         />
+        <Divider section />
         <h3>Definition
           <Popup
             className="popup-icon"
@@ -71,6 +78,7 @@ class DictionaryContainer extends React.Component {
           />
         </h3>
         <DictionaryDefinition />
+        <Divider section />
         <h3>Thesaurus
           <Popup
             className="popup-icon"
@@ -80,6 +88,7 @@ class DictionaryContainer extends React.Component {
           />
         </h3>
         {<DictionaryThesaurus />}
+        <Divider section hidden />
         <h3>Translation
           <Popup
             className="popup-icon"

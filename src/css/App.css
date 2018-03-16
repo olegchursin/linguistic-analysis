@@ -1,8 +1,16 @@
-.ui.footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-  }
+html {
+  height: 100%;
+}
+.site {
+  min-height: 100%;
+  display: grid;
+  grid-template-rows: 1fr auto;
+}
+
+.sticky-footer {
+  grid-row-start: 2;
+  grid-row-end: 3;
+}
 
 .tab-panes {
   margin-top: 40px;

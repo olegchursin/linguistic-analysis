@@ -12,11 +12,15 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <div>
+        <div className="site">
           <NavBar />
-          <Main />
-          <DictionaryContainer />
-          <Footer />
+          <div className="site-content">
+            <div className="pusher">
+              <Route path="/" exact component={Main} />
+              <Route path="/dictionary" exact component={DictionaryContainer} />
+            </div>
+          </div>
+          <Footer className="sticky-footer"/>
         </div>
       </Router>
     );
