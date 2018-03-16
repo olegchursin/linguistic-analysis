@@ -1,4 +1,4 @@
-// Dictionary definitions tabs component
+// Dictionary translations tabs component
 
 import React from 'react';
 import { Tab } from 'semantic-ui-react'

@@ -53,6 +53,33 @@ class DictionaryApi {
     .header("Accept", "text/plain")
   }
 
+  // ////////////////////// //
+  // ////// THESARUS ////// //
+  // ////////////////////// //
+
+  // Synonyms
+  static thesaurusSyn(searchTerm) {
+    return unirest.get(`https://wordsapiv1.p.mashape.com/words/${searchTerm}/synonyms`)
+    .header("X-Mashape-Key", "z69n365FagmshpXYBNcvLgxQ3yd8p16seHGjsnzlL4kvlq9xqf")
+    .header("Accept", "application/json")
+  }
+
+  // Associations
+  static thesaurusAssoc(searchTerm) {
+    return unirest.post("https://twinword-twinword-bundle-v1.p.mashape.com/word_associations/")
+    .header("X-Mashape-Key", "ru9cyyTR8dmshYGRTnxRfRi9JPy3p1JnutrjsnjWTE2KVBx86r")
+    .header("Content-Type", "application/x-www-form-urlencoded")
+    .header("Accept", "application/json")
+    .send(`entry=${searchTerm}`)
+  }
+  
+  // Theme
+  static thesaurusTheme(searchTerm) {
+    return unirest.get(`https://twinword-word-graph-dictionary.p.mashape.com/theme/?entry=${searchTerm}`)
+    .header("X-Mashape-Key", "ru9cyyTR8dmshYGRTnxRfRi9JPy3p1JnutrjsnjWTE2KVBx86r")
+    .header("Accept", "application/json")
+  }
+
   // ////////////////////////// //
   // ////// TRANSLATIONS ////// //
   // ////////////////////////// //

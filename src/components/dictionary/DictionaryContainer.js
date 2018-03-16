@@ -3,12 +3,13 @@ import React from 'react';
 // Redux
 import { connect } from 'react-redux'
 import { Icon, Popup } from 'semantic-ui-react'
-import { defineOxford, defineYandex, defineTwinword, defineWordsApi, defineUrban, translateEs, translateFr, translateIt, translateRu, translateDe } from '../../actions/dictionaryActions'
+import { defineOxford, defineYandex, defineTwinword, defineWordsApi, defineUrban, thesaurusSyn, thesaurusAssoc, thesaurusTheme, translateEs, translateFr, translateIt, translateRu, translateDe } from '../../actions/dictionaryActions'
 import { addProject } from '../../actions/projectActions'
 
 // Components
 import DictionaryDefinition from './DictionaryDefinition';
 import DictionaryTranslation from './DictionaryTranslation';
+import DictionaryThesaurus from './DictionaryThesaurus';
 import SearchBar from '../SearchBar';
 
 
@@ -39,13 +40,16 @@ class DictionaryContainer extends React.Component {
     this.props.defineTwinword(this.state.searchTerm);
     this.props.defineWordsApi(this.state.searchTerm);
     this.props.defineUrban(this.state.searchTerm);
+    // Thesaurus Actions
+    this.props.thesaurusSyn(this.state.searchTerm);
+    this.props.thesaurusAssoc(this.state.searchTerm);
+    this.props.thesaurusTheme(this.state.searchTerm);
     // Trnaslation actions
     this.props.translateEs(this.state.searchTerm);
     this.props.translateFr(this.state.searchTerm);
     this.props.translateIt(this.state.searchTerm);
     this.props.translateRu(this.state.searchTerm);
     this.props.translateDe(this.state.searchTerm);
-    // Thesaurus Actions
 
   }
 
@@ -75,7 +79,7 @@ class DictionaryContainer extends React.Component {
             size='mini'
           />
         </h3>
-        {/* <Thesaurus /> */}
+        {<DictionaryThesaurus />}
         <h3>Translation
           <Popup
             className="popup-icon"
@@ -96,4 +100,4 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps, { addProject, defineOxford, defineYandex, defineTwinword, defineWordsApi, defineUrban, translateEs, translateFr, translateIt, translateRu, translateDe })(DictionaryContainer);
+export default connect(mapStateToProps, { addProject, defineOxford, defineYandex, defineTwinword, defineWordsApi, defineUrban, thesaurusSyn, thesaurusAssoc, thesaurusTheme, translateEs, translateFr, translateIt, translateRu, translateDe })(DictionaryContainer);

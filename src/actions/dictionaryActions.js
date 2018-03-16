@@ -11,14 +11,17 @@ export const DEFINED_TWINWORD = "DEFINED_TWINWORD";
 export const DEFINED_WORDSAPI = "DEFINED_WORDSAPI";
 export const DEFINED_URBAN = "DEFINED_URBAN";
 
+// define Thesaurus Actions
+export const THESAURUS_SYN = "THESAURUS_SYN";
+export const THESAURUS_ASSOC = "THESAURUS_ASSOC";
+export const THESAURUS_THEME = "THESAURUS_THEME";
+
 // define translation Actions
 export const TRANSLATED_ES = "TRANSLATED_ES";
 export const TRANSLATED_FR = "TRANSLATED_FR";
 export const TRANSLATED_IT = "TRANSLATED_IT";
 export const TRANSLATED_RU = "TRANSLATED_RU";
 export const TRANSLATED_DE = "TRANSLATED_DE";
-
-// define thesaurus actions
 
 
 // //////////////////////////////// //
@@ -74,6 +77,44 @@ export function defineUrban(searchTerm) {
     });
   };
 }
+
+// /////////////////////////////// //
+// ////// THESAURUS ACTIONS ////// //
+// /////////////////////////////// //
+
+// Synonyms
+export function thesaurusSyn(searchTerm) {
+  return function(dispatch) {
+    dispatch({ type: ANALYZING_LEXEME });
+    DictionaryApi.thesaurusSyn(searchTerm)
+    .end(res => {
+      dispatch({ type: THESAURUS_SYN, payload: res.body.synonyms });
+    });
+  };
+}
+
+// Associations
+export function thesaurusAssoc(searchTerm) {
+  return function(dispatch) {
+    dispatch({ type: ANALYZING_LEXEME });
+    DictionaryApi.thesaurusAssoc(searchTerm)
+    .end(res => {
+      dispatch({ type: THESAURUS_ASSOC, payload: res.body.associations_array });
+    });
+  };
+}
+
+// Theme
+export function thesaurusTheme(searchTerm) {
+  return function(dispatch) {
+    dispatch({ type: ANALYZING_LEXEME });
+    DictionaryApi.thesaurusTheme(searchTerm)
+    .end(res => {
+      dispatch({ type: THESAURUS_THEME, payload: res.body.theme });
+    });
+  };
+}
+
 
 // ///////////////////////////////// //
 // ////// TRANSLATION ACTIONS ////// //
