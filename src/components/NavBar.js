@@ -16,7 +16,7 @@ export default class NavBar extends Component {
     const { activeItem } = this.state
 
     return (
-      <Menu attached='top'>
+      <Menu fixed='top'>
         <Menu.Item>
           <NavLink to="/" exact><img src='../img/logo.png' alt="logo" className="nav-logo" /></NavLink>
         </Menu.Item>
