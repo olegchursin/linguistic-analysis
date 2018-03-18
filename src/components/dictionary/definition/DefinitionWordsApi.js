@@ -15,7 +15,7 @@ const DefinitionWordsApi = (props) => {
 
 const mapStateToProps = (state) => {
   return {
-    isLoading: state.isLoading,
+    isLoading: state.dictionary.isLoading,
     definition: state.dictionary.definitionWordsApi // from ./reducers/dictionaryReducer.js
   }
 }

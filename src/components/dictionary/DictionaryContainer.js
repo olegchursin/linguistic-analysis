@@ -4,7 +4,7 @@ import ScrollableAnchor from 'react-scrollable-anchor'
 // Redux
 import { connect } from 'react-redux'
 
-//Semantic UI
+// Semantic UI
 import { Icon, Popup } from 'semantic-ui-react'
 import { Divider } from 'semantic-ui-react'
 

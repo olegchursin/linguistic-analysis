@@ -15,7 +15,7 @@ const DefinitionYandex = (props) => {
 
 const mapStateToProps = (state) => {
   return {
-    isLoading: state.isLoading,
+    isLoading: state.dictionary.isLoading,
     definition: state.dictionary.definitionYandex // from ./reducers/dictionaryReducer.js
   }
 }

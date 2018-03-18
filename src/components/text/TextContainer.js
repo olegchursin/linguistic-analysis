@@ -1,8 +1,18 @@
 import React from 'react'
-import { Form, Divider, Button } from 'semantic-ui-react'
+
+// Redux
+import { connect } from 'react-redux'
+
+// Semantic UI
+import { Form, Divider, Button, Popup, Icon } from 'semantic-ui-react'
+
+// actions
+import { keywordsTextAnalysis } from '../../actions/textActions'
 
 // Components
 import TextHeader from './TextHeader'
+import TextKeywordsTabs from './TextKeywordsTabs'
+import TextSentimentTabs from './TextSentimentTabs'
 
 class TextContainer extends React.Component {
 
@@ -17,33 +27,62 @@ class TextContainer extends React.Component {
     })
   }
 
+  handleSubmit = (e) => {
+    e.preventDefault();
+    // making a call to textActions.js
+    // Keyword Actions
+    this.props.keywordsTextAnalysis(this.state.textInput);
+  }
+
   render () {
-    console.log(this.state.textInput)
+    // console.log(this.state.textInput) // works
     return (
       <div>
         <TextHeader />
         <div className="ui main text container main-content">
           <Divider section hidden />
           <h2>Powerful tools at your fingertips</h2>
-          <Form>
+          <Form onSubmit={this.handleSubmit}>
             <Form.TextArea
               label='Paste or type in your text below'
               placeholder='Enter text to be analyzed...'
               onChange={this.handleChange}
             />
+            <Button basic color='pink' content='Analyze' onClick={this.handleSubmit}/>
           </Form>
-          <Divider hidden />
-          <Button.Group widths='3'>
-            <Button basic color='teal' content='Key Word Extractor' />
-            <Button basic color='violet' content='Sentiment Analysis' />
-            <Button basic color='pink' content='Word Count' />
-          </Button.Group>
+          <Divider section hidden />
+          <h3>Sentiment Analysis
+            <Popup
+              className="popup-icon"
+              trigger={<Icon name='info circle' />}
+              content='Analyze emotions and tones.'
+              size='mini'
+            />
+          </h3>
+          <Divider />
+          <TextSentimentTabs />
+          <Divider section hidden />
+          <h3>Keywords Extraction
+            <Popup
+              className="popup-icon"
+              trigger={<Icon name='info circle' />}
+              content='Generate the list of suggested keywords/keyword phrases.'
+              size='mini'
+            />
+          </h3>
+          <Divider />
+          <TextKeywordsTabs />
+          <Divider section hidden />
         </div>
       </div>
-
-
     )
   }
 }
 
-export default TextContainer;
+const mapStateToProps = (state) => {
+  return {
+    projects: state.project.projects // from ./reducers/projectReducer.js
+  }
+}
+
+export default connect(mapStateToProps, { keywordsTextAnalysis })(TextContainer);

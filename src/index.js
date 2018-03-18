@@ -7,11 +7,14 @@ import App from './App';
 // Redux
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
-import { projectReducer } from './reducers/projectReducer' // creating/saving projects and adding lexemes, text to projects
 import thunk from "redux-thunk";
-import { dictionaryReducer } from './reducers/dictionaryReducer' // external API requests to dictionaries
 
-const rootReducer = combineReducers({ project: projectReducer, dictionary: dictionaryReducer })
+// // Redux - Reducers
+import { projectReducer } from './reducers/projectReducer' // creating/saving projects and adding lexemes, text to projects
+import { dictionaryReducer } from './reducers/dictionaryReducer' // external API requests to dictionaries
+import { textReducer } from './reducers/textReducer' // external API requests to text analytics tools
+
+const rootReducer = combineReducers({ project: projectReducer, dictionary: dictionaryReducer, text: textReducer })
 const store = createStore(rootReducer, applyMiddleware(thunk));
 
 ReactDOM.render(

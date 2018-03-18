@@ -16,7 +16,7 @@ const DefinitionUrban = (props) => {
 
 const mapStateToProps = (state) => {
   return {
-    isLoading: state.isLoading,
+    isLoading: state.dictionary.isLoading,
     definition: state.dictionary.definitionUrban // from ./reducers/dictionaryReducer.js
   }
 }
