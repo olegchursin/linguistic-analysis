@@ -13,6 +13,7 @@ import { defineOxford, defineYandex, defineTwinword, defineWordsApi, defineUrban
 import { addProject } from '../../actions/projectActions'
 
 // Components
+import DictionaryHeader from './DictionaryHeader'
 import DictionaryDefinition from './DictionaryDefinition';
 import DictionaryTranslation from './DictionaryTranslation';
 import DictionaryThesaurus from './DictionaryThesaurus';
@@ -56,57 +57,61 @@ class DictionaryContainer extends React.Component {
     this.props.translateIt(this.state.searchTerm);
     this.props.translateRu(this.state.searchTerm);
     this.props.translateDe(this.state.searchTerm);
-
   }
 
   render(){
+    // console.log(this.state.searchTerm) // works
+
     return (
-      <div className="ui main text container main-content">
-        <Divider section hidden />
-        <h1>Enter a lexeme</h1>
-        <SearchBar
-          searchTerm={this.state.searchTerm}
-          handleChange={this.handleChange}
-          handleSubmit={this.handleSubmit}
-        />
-        <Divider section hidden/>
-        <h3>Definition
-          <Popup
-            className="popup-icon"
-            trigger={<Icon name='info circle' />}
-            content='Find and compare lexical meanings.'
-            size='mini'
+      <div>
+        <DictionaryHeader />
+        <div className="ui main text container main-content">
+          <Divider section hidden />
+          <h2>Enter a lexeme</h2>
+          <SearchBar
+            searchTerm={this.state.searchTerm}
+            handleChange={this.handleChange}
+            handleSubmit={this.handleSubmit}
           />
+          <Divider section hidden/>
+          <h3>Definition
+            <Popup
+              className="popup-icon"
+              trigger={<Icon name='info circle' />}
+              content='Find and compare lexical meanings.'
+              size='mini'
+            />
+            <Divider />
+          </h3>
+          <DictionaryDefinition />
+          <Divider section hidden />
+          <ScrollableAnchor id={'thesaurus'}>
+            <h3>Thesaurus
+              <Popup
+                className="popup-icon"
+                trigger={<Icon name='info circle' />}
+                content='Explore synonyms and antonyms.'
+                size='mini'
+              />
+            </h3>
+          </ScrollableAnchor>
           <Divider />
-        </h3>
-        <DictionaryDefinition />
-        <Divider section hidden />
-        <ScrollableAnchor id={'thesaurus'}>
-          <h3>Thesaurus
-          <Popup
-            className="popup-icon"
-            trigger={<Icon name='info circle' />}
-            content='Explore synonyms and antonyms.'
-            size='mini'
-            />
-          </h3>
-        </ScrollableAnchor>
-        <Divider />
-        {<DictionaryThesaurus />}
-        <Divider section hidden />
-        <ScrollableAnchor id={'translation'}>
-          <h3>Translation
-          <Popup
-            className="popup-icon"
-            trigger={<Icon name='info circle' />}
-            content='Translate a lexeme into a number of languages.'
-            size='mini'
-            />
-          </h3>
-        </ScrollableAnchor>
-        <Divider />
-        {<DictionaryTranslation />}
-        <Divider section hidden />
+          {<DictionaryThesaurus />}
+          <Divider section hidden />
+          <ScrollableAnchor id={'translation'}>
+            <h3>Translation
+              <Popup
+                className="popup-icon"
+                trigger={<Icon name='info circle' />}
+                content='Translate a lexeme into a number of languages.'
+                size='mini'
+              />
+            </h3>
+          </ScrollableAnchor>
+          <Divider />
+          {<DictionaryTranslation />}
+          <Divider section hidden />
+        </div>
       </div>
     )
   }

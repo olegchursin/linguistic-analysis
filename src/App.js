@@ -17,8 +17,8 @@ class App extends Component {
     return (
       <Router>
         <div className="site">
+          <NavBar />
           <div className="site-content">
-            <NavBar />
             <Route path="/" exact component={MainContainer} />
             <Route path="/dictionary" exact component={DictionaryContainer} />
             <Route path="/semantics" exact component={SemanticsContainer} />

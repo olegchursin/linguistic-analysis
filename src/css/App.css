@@ -1,3 +1,6 @@
+/* ************************* */
+/* *** Sticky Footer Fix *** */
+/* ************************* */
 html {
   height: 100%;
 }
@@ -6,20 +9,57 @@ html {
   display: grid;
   grid-template-rows: 1fr auto;
 }
-
 .sticky-footer {
   grid-row-start: 2;
   grid-row-end: 3;
 }
 
+/* ****************** */
+/* *** Navigation *** */
+/* ****************** */
 .nav-logo {
   width: 40px;
 }
 
+/* **************** */
+/* *** Textarea *** */
+/* **************** */
+textarea {
+  height: 200px;
+}
+
+/* ************** */
+/* *** Header *** */
+/* ************** */
+.main-header {
+  height: 320px;
+}
+
+.main-header.blue {
+  background-color: #42A5F5;
+}
+.main-header.indigo {
+  background-color: #7986CB;
+}
+
+.main-header-title {
+  color: #fff;
+  padding-top: 110px;
+}
+.main-header-title p {
+  max-width: 500px;
+}
+
+/* ************ */
+/* *** Tabs *** */
+/* ************ */
 .tab-panes {
   margin-top: 40px;
 }
 
+/* ******************** */
+/* *** Tooltip Icon *** */
+/* ******************** */
 i.icon.info.circle:before {
   margin-left: 10px;
   color: #B0BEC5;
