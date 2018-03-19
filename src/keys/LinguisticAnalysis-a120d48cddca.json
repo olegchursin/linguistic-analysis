@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "linguistic-analysis",
+  "private_key_id": "a120d48cddca939c7ae355dbebc0d5705a32ac7b",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQC8ip7ErG0/zyLw\nnhMm7MrnGSEoimcC5i7OxzzQwaQiF2aIcPdF/QlGVNY6VcrvyuoX3lPtgu5ACjW5\nRqC0UVNa4jfCwGcDm4lLLv8Vd0CGw1XzUNQq6pxR6cCu77uvUKuDkHJ3nBWYdTRM\nCwv/aC0c8fMYc1BaFu46wELyjZmkXu8V5g2cR3SDH9CWlQGkATCrYkqNcel3bjZi\n3vziBGBkWsq3sv6dcsNAFg2Xa22/LxV5SD8uLwrB/bJckCY+0h3ZIz6DXpIQ9CKh\nxMN/s/4hLXmuHYQy4qUlGfT5IHM/m5iCv1zBJUXESQPNlKWWjSWn9LnoJcl+Z0tM\nk1KUenrpAgMBAAECggEAWTwajOc3Bd5ZoRyP3/puxhYEtZVbz+l1+fQeeodL0b7V\njno47m0meJ0qj42PcRLO3OEjQ+SWMsUiTEB7Sxy6oOc0kP5TQ0fYITdrD5PTfHTz\nNyfoYy+LMNG7mpBoej9qDejN5IKBThka2WrZENcTkwGIlufs/daghjn89aPDNiHQ\nJJpRpIpKXxNxN4OorpFZjWEqe4kctYq+w4NURKqxrC+t2byc820wsE+b+jFZWc7t\nTPSLX1D/3n1qnx0tL0+Lwo3Ybvnc5r+0JOh0bQwtMETP9rnyjKiK7iw1p46hP4iE\n9xHUr9lZ/m/evo8PcDgb30y3rspYAYlHRn4G2GzsyQKBgQDoqEkVCfDuSZk75iuJ\nk6MgfKR1MXFJIGo9InFu8XAEjH1YpvOKdusGffmyphs/RiDJfS9ncbRB+sykn3+x\nf91nBNBQLws+e7noHp0BcHtQVxjdsJb1hp22zP7RaqYAnK8c7GMenv8wAJ//gDwt\nwaqYB/pzJjR1uFziBj6J++6EPwKBgQDPdTxB0hH/hSCRZXtHJzZUum40/hVjuPQP\nDf/rd0PWSBC7KUXT69C2OcwZGYMf3x0Pnw0Jr6rf5DdM69Q4oARBJ0XImuvp/EoR\nRiArp+shEUG4RRUMO7O+LBLaoe/rERtbc9ase3ciKZbZkCpqM//aAW1q/lcEeiZE\ngALEnTQW1wKBgGH1iV/sYZ9TKcvIrAgvO34QPQaDHNnXZiP7fpth2PJxXM2Y7e4d\nB/Qh0qLfwZUwp9ludikt/OHTAZtG9PL9jXE026kHRcq3OZ18Vksm2yUGpxegpM8Y\nMQuo4Jm4N9EGJ80b0tgvxe6mNLfVfIEfi/6bTV5ydaAjUihwzKA4jULtAoGAPhT7\nP0c6E5knMduIlLZrT9eqezk99WW3w3mRCEnchxdxylCDkPOUtbN+HFTCJJuD+tTB\n9hAXtoB4/A/mpjtcipLSE0IpLxBMqfauUeIiPvcHD7m8nriPBW3zBnJHdbTc1vVH\nXL5l3FdNyTWXO8jr27VppQcPy0sygHU+XtAccmkCgYEAjukxwkESdyO7gLJzE+Nj\nFuc+dR+qv2IFR4J96yjcCLuwpbp1AvKeWmIAkWdhpW1liHfIV7QJ+ZeI4JS2Jvgw\nCMV5gzGLiUq+iEcos0O9c4md6rCRJmqTCcVOb/EoTsSDpcF1P3cOeD8f3ARgb6Xi\nppM8dNbZp/j7Uw3r6NF6A1c=\n-----END PRIVATE KEY-----\n",
+  "client_email": "olegchursin@linguistic-analysis.iam.gserviceaccount.com",
+  "client_id": "114840411831160943236",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://accounts.google.com/o/oauth2/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/olegchursin%40linguistic-analysis.iam.gserviceaccount.com"
+}

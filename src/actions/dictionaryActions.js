@@ -87,9 +87,14 @@ export function thesaurusSyn(searchTerm) {
   return function(dispatch) {
     dispatch({ type: ANALYZING_LEXEME });
     DictionaryApi.thesaurusSyn(searchTerm)
-    .end(res => {
-      dispatch({ type: THESAURUS_SYN, payload: res.body.synonyms });
+    .then(res => {
+      dispatch({ type: THESAURUS_SYN, payload: res.results[0].lexicalEntries[0].entries[0].senses[0].synonyms });
     });
+
+    // WordsApi
+    // .end(res => {
+    //   dispatch({ type: THESAURUS_SYN, payload: res.body.synonyms });
+    // });
   };
 }
 

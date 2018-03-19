@@ -7,12 +7,13 @@ import { connect } from 'react-redux'
 import { Form, Divider, Button, Popup, Icon } from 'semantic-ui-react'
 
 // actions
-import { keywordsTextAnalysis } from '../../actions/textActions'
+import { keywordsTextAnalysis, sentimentGoogle, sentimentDatumbox, sentimentTwinword } from '../../actions/textActions'
 
 // Components
 import TextHeader from './TextHeader'
 import TextKeywordsTabs from './TextKeywordsTabs'
 import TextSentimentTabs from './TextSentimentTabs'
+import TextWordCount from './TextWordCount'
 
 class TextContainer extends React.Component {
 
@@ -32,6 +33,9 @@ class TextContainer extends React.Component {
     // making a call to textActions.js
     // Keyword Actions
     this.props.keywordsTextAnalysis(this.state.textInput);
+    // this.props.sentimentGoogle(this.state.textInput);
+    this.props.sentimentDatumbox(this.state.textInput);
+    this.props.sentimentTwinword(this.state.textInput);
   }
 
   render () {
@@ -50,6 +54,19 @@ class TextContainer extends React.Component {
             />
             <Button basic color='pink' content='Analyze' onClick={this.handleSubmit}/>
           </Form>
+          <Divider section hidden />
+          <h3>Word Count
+            <Popup
+              className="popup-icon"
+              trigger={<Icon name='info circle' />}
+              content='Total number of symbols and words with and without spaces.'
+              size='mini'
+            />
+          </h3>
+          <Divider />
+          <TextWordCount
+            text={this.state.textInput}
+          />
           <Divider section hidden />
           <h3>Sentiment Analysis
             <Popup
@@ -85,4 +102,4 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps, { keywordsTextAnalysis })(TextContainer);
+export default connect(mapStateToProps, { keywordsTextAnalysis, sentimentGoogle, sentimentDatumbox, sentimentTwinword })(TextContainer);

@@ -6,22 +6,35 @@ import { Tab } from 'semantic-ui-react'
 // Components
 import SentimentGoogle from './sentiment/SentimentGoogle'
 import SentimentWatson from './sentiment/SentimentWatson'
+import SentimentDatumbox from './sentiment/SentimentDatumbox'
+import SentimentTwinword from './sentiment/SentimentTwinword'
 
 const panes = [
+  { menuItem: 'DatumBox', render: () =>
+    <Tab.Pane>
+      <SentimentDatumbox />
+    </Tab.Pane> },
+
+  { menuItem: 'Twinword', render: () =>
+    <Tab.Pane>
+      <SentimentTwinword />
+    </Tab.Pane> },
+
   { menuItem: 'Google Sentiment', render: () =>
     <Tab.Pane>
       <SentimentGoogle />
     </Tab.Pane> },
 
-  { menuItem: 'Watson Tone Analyzer', render: () =>
+  { menuItem: 'Watson', render: () =>
     <Tab.Pane>
       <SentimentWatson />
     </Tab.Pane> },
 
-  { menuItem: 'Microsoft Azure', render: () =>
+  { menuItem: 'MS Azure', render: () =>
     <Tab.Pane>
       <SentimentGoogle />
     </Tab.Pane> },
+
 ]
 
 const TextSentimentTabs = () => (

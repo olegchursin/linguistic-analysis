@@ -58,10 +58,21 @@ class DictionaryApi {
   // ////////////////////// //
 
   // Synonyms
+  // Syn Oxford
   static thesaurusSyn(searchTerm) {
-    return unirest.get(`https://wordsapiv1.p.mashape.com/words/${searchTerm}/synonyms`)
-    .header("X-Mashape-Key", "z69n365FagmshpXYBNcvLgxQ3yd8p16seHGjsnzlL4kvlq9xqf")
-    .header("Accept", "application/json")
+    // oxforddictionaries
+    return fetch(`https://cors-anywhere.herokuapp.com/https://od-api.oxforddictionaries.com:443/api/v1/entries/en/${searchTerm}/synonyms`, {
+      headers: {
+        "Accept": "application/json",
+        "app_id": 'a30a1a5e',
+        "app_key": 'b42a1bcf088e52727e8626ce2716e073'
+      }
+    })
+    .then(res => res.json()) // continues at dictionaryActions.js
+    // WordAPI
+    // return unirest.get(`https://wordsapiv1.p.mashape.com/words/${searchTerm}/synonyms`)
+    // .header("X-Mashape-Key", "z69n365FagmshpXYBNcvLgxQ3yd8p16seHGjsnzlL4kvlq9xqf")
+    // .header("Accept", "application/json")
   }
 
   // Associations
@@ -72,7 +83,7 @@ class DictionaryApi {
     .header("Accept", "application/json")
     .send(`entry=${searchTerm}`)
   }
-  
+
   // Theme
   static thesaurusTheme(searchTerm) {
     return unirest.get(`https://twinword-word-graph-dictionary.p.mashape.com/theme/?entry=${searchTerm}`)

@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@google-cloud/language": "^1.1.0",
     "datumbox": "^1.0.1",
     "gulp": "^3.9.1",
     "oxford-dictionary-api": "^1.0.1",

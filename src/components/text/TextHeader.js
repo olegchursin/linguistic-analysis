@@ -7,7 +7,7 @@ const TextHeader = (props) => {
         <h1>Text Analysis</h1>
         <p>Reveal the sentiment and structure of text using machine learning models powered by leading AI players</p>
         <h4>Tools</h4>
-        <p>Sentiment Analysis | Key Word Extraction | Word Count</p>
+        <p>Word Count | Sentiment Analysis | Key Word Extraction</p>
       </div>
     </div>
   )
