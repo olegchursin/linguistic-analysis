@@ -13,8 +13,9 @@ import thunk from "redux-thunk";
 import { projectReducer } from './reducers/projectReducer' // creating/saving projects and adding lexemes, text to projects
 import { dictionaryReducer } from './reducers/dictionaryReducer' // external API requests to dictionaries
 import { textReducer } from './reducers/textReducer' // external API requests to text analytics tools
+import { hashtagReducer } from './reducers/hashtagReducer' // external API requests to text analytics tools
 
-const rootReducer = combineReducers({ project: projectReducer, dictionary: dictionaryReducer, text: textReducer })
+const rootReducer = combineReducers({ project: projectReducer, dictionary: dictionaryReducer, text: textReducer, hashtag: hashtagReducer })
 const store = createStore(rootReducer, applyMiddleware(thunk));
 
 ReactDOM.render(

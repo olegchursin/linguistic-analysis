@@ -81,8 +81,8 @@ class DictionaryContainer extends React.Component {
               content='Find and compare lexical meanings.'
               size='mini'
             />
-            <Divider />
           </h3>
+          <Divider />
           <DictionaryDefinition />
           <Divider section hidden />
           <ScrollableAnchor id={'thesaurus'}>

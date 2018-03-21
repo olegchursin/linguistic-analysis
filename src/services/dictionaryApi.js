@@ -1,4 +1,5 @@
 // API calls for lexeme definitions, translations, and thesaurus analysis
+// // CORS Anywheere patch: add this URL (https://cors-anywhere.herokuapp.com/) in front of your call URL
 
 // MashapeAPI tool for API requests
 // http://unirest.io/nodejs
