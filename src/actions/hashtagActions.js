@@ -6,21 +6,14 @@ export const ANALYZING_TEXT = "ANALYZING_TEXT";
 
 // define hashtag definition actions
 export const HASHTAG_DEF = "HASHTAG_DEF";
-<<<<<<< HEAD
-=======
-export const HASHTAG_SIMILAR = "HASHTAG_SIMILAR";
->>>>>>> hashtag-analytics
+export const HASHTAG_SUGGEST = "HASHTAG_SUGGEST";
 
 
 // ////////////////////////////////////// //
 // ////// HASHTAG ANALYSIS ACTIONS ////// //
 // ////////////////////////////////////// //
-<<<<<<< HEAD
-// Sentiment Google
-=======
 
 // Hashtag Definition
->>>>>>> hashtag-analytics
 export function hashtagDefinition(inputText) {
   return function(dispatch) {
     dispatch({ type: ANALYZING_TEXT });
@@ -30,17 +23,14 @@ export function hashtagDefinition(inputText) {
     });
   };
 }
-<<<<<<< HEAD
-=======
 
-// Hashtag Similar
-export function hashtagSimilar(inputText) {
+// Hashtag Suggestion
+export function hashtagSuggestion(inputText) {
   return function(dispatch) {
     dispatch({ type: ANALYZING_TEXT });
-    HashtagApi.hashtagSimilar(inputText)
+    HashtagApi.hashtagSuggestion(inputText)
     .end(res => {
-      dispatch({ type: HASHTAG_SIMILAR, payload: res.body});
+      dispatch({ type: HASHTAG_SUGGEST, payload: res});
     });
   };
 }
->>>>>>> hashtag-analytics

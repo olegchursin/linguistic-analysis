@@ -1,7 +1,7 @@
 import React from 'react'
 
 // Helpers
-import ScrollableAnchor from 'react-scrollable-anchor'
+// import ScrollableAnchor from 'react-scrollable-anchor'
 
 // Sematic UI React
 import { Divider } from 'semantic-ui-react'

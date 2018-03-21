@@ -1,5 +1,5 @@
 import React from 'react';
-import ScrollableAnchor from 'react-scrollable-anchor'
+// import ScrollableAnchor from 'react-scrollable-anchor'
 
 // Redux
 import { connect } from 'react-redux'
@@ -74,18 +74,20 @@ class DictionaryContainer extends React.Component {
             handleSubmit={this.handleSubmit}
           />
           <Divider section hidden/>
-          <h3>Definition
-            <Popup
-              className="popup-icon"
-              trigger={<Icon name='info circle' />}
-              content='Find and compare lexical meanings.'
-              size='mini'
-            />
-          </h3>
-          <Divider />
-          <DictionaryDefinition />
-          <Divider section hidden />
-          <ScrollableAnchor id={'thesaurus'}>
+          {/* <ScrollableAnchor id={'definition'}> */}
+            <h3>Definition
+              <Popup
+                className="popup-icon"
+                trigger={<Icon name='info circle' />}
+                content='Find and compare lexical meanings.'
+                size='mini'
+              />
+            </h3>
+            <Divider />
+            <DictionaryDefinition />
+            <Divider section hidden />
+          {/* </ScrollableAnchor> */}
+          {/* <ScrollableAnchor id={'thesaurus'}> */}
             <h3>Thesaurus
               <Popup
                 className="popup-icon"
@@ -94,11 +96,11 @@ class DictionaryContainer extends React.Component {
                 size='mini'
               />
             </h3>
-          </ScrollableAnchor>
+          {/* </ScrollableAnchor> */}
           <Divider />
           {<DictionaryThesaurus />}
           <Divider section hidden />
-          <ScrollableAnchor id={'translation'}>
+          {/* <ScrollableAnchor id={'translation'}> */}
             <h3>Translation
               <Popup
                 className="popup-icon"
@@ -107,7 +109,7 @@ class DictionaryContainer extends React.Component {
                 size='mini'
               />
             </h3>
-          </ScrollableAnchor>
+          {/* </ScrollableAnchor> */}
           <Divider />
           {<DictionaryTranslation />}
           <Divider section hidden />

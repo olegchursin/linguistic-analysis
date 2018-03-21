@@ -19,7 +19,7 @@ const HashtagDefinition = (props) => {
           </div>
         })
         :
-        <p>Start your search by entering a hashtag into a search bar above.</p>
+        <p>Start your search by entering a hashtag into the search bar above.</p>
       }
     </div>
   )

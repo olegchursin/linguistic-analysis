@@ -17,9 +17,7 @@ class HashtagApi {
      // continues at hashtagActions.js
   }
 
-<<<<<<< HEAD
-=======
-  static hashtagSimilar(inputText) {
+  static hashtagSuggestion(inputText) {
     return unirest.post("https://dmitrykey-connectedwords-v1.p.mashape.com/similarwords")
     .header("X-Mashape-Key", "ru9cyyTR8dmshYGRTnxRfRi9JPy3p1JnutrjsnjWTE2KVBx86r")
     .header("Content-Type", "application/json")
@@ -27,7 +25,6 @@ class HashtagApi {
     .send([`${inputText}`])
   }
 
->>>>>>> hashtag-analytics
 }
 
 export default HashtagApi;
