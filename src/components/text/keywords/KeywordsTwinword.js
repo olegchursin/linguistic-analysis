@@ -3,8 +3,12 @@ import { connect } from 'react-redux'
 
 const KeywordsTwinword = (props) => {
   console.log("Keywords Twinword", props.keywords)
+  const keywords = props.keywords
   return (
-    <div>Keywords:</div>
+    <div>
+      <h4>Keywords:</h4>
+      {keywords ? keywords.map(keyword => <div key={keyword.word}>{keyword.word}</div>) : <span></span>}
+    </div>
   )
 }
 

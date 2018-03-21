@@ -3,8 +3,13 @@ import { connect } from 'react-redux'
 
 const SentimentDatumbox = (props) => {
   console.log("Sentiment Datumbox:", props.sentiment);
+  const sentiment = props.sentiment
   return (
-    <div>Datumbox Sentiment</div>
+    <h1>
+      {
+        sentiment.result
+      }
+    </h1>
   )
 }
 

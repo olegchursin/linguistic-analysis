@@ -3,12 +3,14 @@ import { connect } from 'react-redux'
 
 const ThesaurusAssoc = (props) => {
   console.log("Associations", props.associations)
+  const associations = props.associations
   return (
     <div>
-      <p>
-        Associations
-      </p>
-
+      {
+        associations.map(assoc => {
+          return <div key={assoc}>{assoc}</div>
+        })
+      }
     </div>
   )
 }

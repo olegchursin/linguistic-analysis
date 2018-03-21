@@ -3,13 +3,23 @@ import { connect } from 'react-redux'
 
 const TranslationFr = (props) => {
   console.log("Translate Fr", props.translation)
+  const translation = props.translation
   return (
-    <div>
-      <p>
-        English - French translation.
-      </p>
-
-    </div>
+      <div>
+        {
+          translation.map(entry => {
+            return <div key={entry.text}><p>POS: {entry.pos} | Pronunciation: {entry.ts}</p>
+                <ul>
+                  {
+                    entry.tr.map(trEntry => {
+                      return <li key={trEntry.text}>{trEntry.text} | Gender: {trEntry.gen} | POS: {trEntry.pos}</li>
+                    })
+                  }
+                </ul>
+              </div>
+          })
+        }
+      </div>
   )
 }
 

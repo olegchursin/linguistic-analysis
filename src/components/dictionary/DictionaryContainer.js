@@ -9,7 +9,7 @@ import { Icon, Popup } from 'semantic-ui-react'
 import { Divider } from 'semantic-ui-react'
 
 // actions
-import { defineOxford, defineYandex, defineTwinword, defineWordsApi, defineUrban, thesaurusSyn, thesaurusAssoc, thesaurusTheme, translateEs, translateFr, translateIt, translateRu, translateDe } from '../../actions/dictionaryActions'
+import { defineOxford, defineYandex, defineTwinword, defineWordsApi, defineUrban, thesaurusSyn, thesaurusAssoc, thesaurusAnt, translateEs, translateFr, translateIt, translateRu, translateDe } from '../../actions/dictionaryActions'
 import { addProject } from '../../actions/projectActions'
 
 // Components
@@ -50,7 +50,7 @@ class DictionaryContainer extends React.Component {
     // Thesaurus Actions
     this.props.thesaurusSyn(this.state.searchTerm);
     this.props.thesaurusAssoc(this.state.searchTerm);
-    this.props.thesaurusTheme(this.state.searchTerm);
+    // this.props.thesaurusAnt(this.state.searchTerm);
     // Trnaslation actions
     this.props.translateEs(this.state.searchTerm);
     this.props.translateFr(this.state.searchTerm);
@@ -123,4 +123,4 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps, { addProject, defineOxford, defineYandex, defineTwinword, defineWordsApi, defineUrban, thesaurusSyn, thesaurusAssoc, thesaurusTheme, translateEs, translateFr, translateIt, translateRu, translateDe })(DictionaryContainer);
+export default connect(mapStateToProps, { addProject, defineOxford, defineYandex, defineTwinword, defineWordsApi, defineUrban, thesaurusSyn, thesaurusAssoc, thesaurusAnt, translateEs, translateFr, translateIt, translateRu, translateDe })(DictionaryContainer);

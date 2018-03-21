@@ -13,8 +13,9 @@ export const DEFINED_URBAN = "DEFINED_URBAN";
 
 // define Thesaurus Actions
 export const THESAURUS_SYN = "THESAURUS_SYN";
+export const THESAURUS_ANT = "THESAURUS_ANT";
 export const THESAURUS_ASSOC = "THESAURUS_ASSOC";
-export const THESAURUS_THEME = "THESAURUS_THEME";
+
 
 // define translation Actions
 export const TRANSLATED_ES = "TRANSLATED_ES";
@@ -110,12 +111,12 @@ export function thesaurusAssoc(searchTerm) {
 }
 
 // Theme
-export function thesaurusTheme(searchTerm) {
+export function thesaurusAnt(searchTerm) {
   return function(dispatch) {
     dispatch({ type: ANALYZING_LEXEME });
-    DictionaryApi.thesaurusTheme(searchTerm)
-    .end(res => {
-      dispatch({ type: THESAURUS_THEME, payload: res.body.theme });
+    DictionaryApi.thesaurusAnt(searchTerm)
+    .then(res => {
+      dispatch({ type: THESAURUS_ANT, payload: res.results[0].lexicalEntries[0].entries[0].senses[0].antonyms });
     });
   };
 }

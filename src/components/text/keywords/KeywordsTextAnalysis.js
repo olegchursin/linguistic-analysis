@@ -3,8 +3,12 @@ import { connect } from 'react-redux'
 
 const KeywordsTextAnalysis = (props) => {
   console.log("Keywords", props.keywords)
+  const keywords = props.keywords
   return (
-    <div>Keywords:</div>
+    <div>
+      <h4>Keywords:</h4>
+      {keywords ? keywords.map(keyword => <div key={keyword}>{keyword}</div>) : <span></span>}
+    </div>
   )
 }
 

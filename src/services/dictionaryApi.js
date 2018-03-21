@@ -85,10 +85,15 @@ class DictionaryApi {
   }
 
   // Theme
-  static thesaurusTheme(searchTerm) {
-    return unirest.get(`https://twinword-word-graph-dictionary.p.mashape.com/theme/?entry=${searchTerm}`)
-    .header("X-Mashape-Key", "ru9cyyTR8dmshYGRTnxRfRi9JPy3p1JnutrjsnjWTE2KVBx86r")
-    .header("Accept", "application/json")
+  static thesaurusAnt(searchTerm) {
+    return fetch(`https://cors-anywhere.herokuapp.com/https://od-api.oxforddictionaries.com:443/api/v1/entries/en/${searchTerm}/antonyms`, {
+      headers: {
+        "Accept": "application/json",
+        "app_id": 'a30a1a5e',
+        "app_key": 'b42a1bcf088e52727e8626ce2716e073'
+      }
+    })
+    .then(res => res.json()) // continues at dictionaryActions.js
   }
 
   // ////////////////////////// //

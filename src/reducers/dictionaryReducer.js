@@ -1,4 +1,4 @@
-import { ANALYZING_LEXEME, DEFINED_OXFORD, DEFINED_YANDEX, DEFINED_TWINWORD, DEFINED_WORDSAPI, DEFINED_URBAN, TRANSLATED_ES, TRANSLATED_FR, TRANSLATED_IT, TRANSLATED_RU, TRANSLATED_DE, THESAURUS_SYN, THESAURUS_ASSOC, THESAURUS_THEME } from "../actions/dictionaryActions";
+import { ANALYZING_LEXEME, DEFINED_OXFORD, DEFINED_YANDEX, DEFINED_TWINWORD, DEFINED_WORDSAPI, DEFINED_URBAN, TRANSLATED_ES, TRANSLATED_FR, TRANSLATED_IT, TRANSLATED_RU, TRANSLATED_DE, THESAURUS_SYN, THESAURUS_ASSOC, THESAURUS_ANT } from "../actions/dictionaryActions";
 
 const initialState = {
   definitionOxford: [],
@@ -13,7 +13,7 @@ const initialState = {
   translationDe: [],
   thesaurusSyn: [],
   thesaurusAssoc: [],
-  thesaurusTheme: [],
+  thesaurusAnt: [],
   isLoading: false
 }
 
@@ -48,8 +48,8 @@ function dictionaryReducer(state = initialState, action) {
       return { ...state, isLoading: false, thesaurusSyn: action.payload };
     case THESAURUS_ASSOC:
       return { ...state, isLoading: false, thesaurusAssoc: action.payload };
-    case THESAURUS_THEME:
-      return { ...state, isLoading: false, thesaurusTheme: action.payload };
+    case THESAURUS_ANT:
+      return { ...state, isLoading: false, thesaurusAnt: action.payload };
     // Default
     default:
       return state;

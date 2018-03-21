@@ -31,23 +31,24 @@ class TextApi {
     // GOOGLE -- Imports the Google Cloud client library
     const language = require('@google-cloud/language');
     // GOOGLE -- Create a client that uses Application Default Credentials (ADC):
-    // const client = new language.LanguageServiceClient();
+    const client = new language.LanguageServiceClient();
 
     // GOOGLE -- Create a client with explicit credentials:
-    const client = new language.LanguageServiceClient({
-      projectId: 'linguistic-analysis',
-      keyFilename: '../keys/LinguisticAnalysis-a120d48cddca.json',
-    });
+    // const client = new language.LanguageServiceClient({
+    //   projectId: 'linguistic-analysis',
+    //   keyFilename: '../keys/LinguisticAnalysis-a120d48cddca.json',
+    // });
     // GOOGLE -- Your text
-    const text = `${inputText}`;
+    // const text = `${inputText}`;
+    const text = inputText;
     // Prepares a document, representing the provided text
-    const document = {
+    const doc = {
       content: text,
       type: 'PLAIN_TEXT',
     };
     // GOOGLE -- Detects the sentiment of the document
     return client
-      .analyzeSentiment({document: document})
+      .analyzeSentiment({document: doc})
 
     // // Google Key
     // const GOOGLE_API_KEY = 'AIzaSyAHJU-vJjjiY2OLgKBPJLX8cp-K_Mbn3XQ'
