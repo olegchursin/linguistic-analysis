@@ -4,9 +4,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 
 const SemanticsAssociativeList = (props) => {
-  console.log("Semantic Suggestions", props.suggestions)
-  console.log("Semantic Associations", props.associations)
-  console.log("Semantic Synonyms", props.synonyms)
+  console.log("Associative List", props.associativeList)
   return (
     <div>
       <h3></h3>
@@ -17,9 +15,7 @@ const SemanticsAssociativeList = (props) => {
 const mapStateToProps = (state) => {
   return {
     isLoading: state.hashtag.isLoading,
-    suggestions: state.hashtag.hashtagSuggestion, // from './reducers/hashtagReducer.js'
-    associations: state.dictionary.thesaurusAssoc, // from './reducers/dictionaryReducer.js'
-    synonyms: state.dictionary.thesaurusSyn, // from './reducers/dictionaryReducer.js'
+    associativeList: state.dictionary.associativeList, // from './reducers/dictionaryReducer.js'
   }
 }
 

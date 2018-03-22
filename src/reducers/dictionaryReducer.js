@@ -1,5 +1,7 @@
 import { ANALYZING_LEXEME, DEFINED_OXFORD, DEFINED_YANDEX, DEFINED_TWINWORD, DEFINED_WORDSAPI, DEFINED_URBAN, TRANSLATED_ES, TRANSLATED_FR, TRANSLATED_IT, TRANSLATED_RU, TRANSLATED_DE, THESAURUS_SYN, THESAURUS_ASSOC, THESAURUS_ANT } from "../actions/dictionaryActions";
 
+import { HASHTAG_SUGGEST } from '../actions/hashtagActions'
+
 const initialState = {
   definitionOxford: [], // Oxford Dictionary
   definitionYandex: [], // Yandex Online Dictionary
@@ -14,6 +16,7 @@ const initialState = {
   thesaurusSyn: [], // Oxford Dictionary
   thesaurusAssoc: [], // TwinwordAPI Associations
   thesaurusAnt: [], // Oxford Dictionary
+  associativeList: [],
   isLoading: false
 }
 
@@ -47,7 +50,9 @@ function dictionaryReducer(state = initialState, action) {
     case THESAURUS_SYN:
       return { ...state, isLoading: false, thesaurusSyn: action.payload };
     case THESAURUS_ASSOC:
-      return { ...state, isLoading: false, thesaurusAssoc: action.payload };
+      return { ...state, isLoading: false, associativeList: [...state.associativeList, ...action.payload], thesaurusAssoc: action.payload };
+    case HASHTAG_SUGGEST:
+      return {...state, isLoading: false, associativeList: [...state.associativeList, ...action.payload.items]}
     case THESAURUS_ANT:
       return { ...state, isLoading: false, thesaurusAnt: action.payload };
     // Default
