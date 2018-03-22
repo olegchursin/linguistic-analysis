@@ -17,7 +17,7 @@ import DictionaryHeader from './DictionaryHeader'
 import DictionaryDefinition from './DictionaryDefinition';
 import DictionaryTranslation from './DictionaryTranslation';
 import DictionaryThesaurus from './DictionaryThesaurus';
-import SearchBar from '../SearchBar';
+import DictionarySearchBar from './DictionarySearchBar';
 
 
 class DictionaryContainer extends React.Component {
@@ -68,7 +68,7 @@ class DictionaryContainer extends React.Component {
         <div className="ui main text container main-content">
           <Divider section hidden />
           <h2>Enter a lexeme</h2>
-          <SearchBar
+          <DictionarySearchBar
             searchTerm={this.state.searchTerm}
             handleChange={this.handleChange}
             handleSubmit={this.handleSubmit}
