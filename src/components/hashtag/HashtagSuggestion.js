@@ -7,17 +7,16 @@ const HashtagSuggestion = (props) => {
   console.log("# Suggestion", props.suggestion)
   // Initial inout/lexeme
   const input = props.suggestion.text
-  console.log(input)
   const suggestionArr = props.suggestion.items
-  console.log(suggestionArr)
 
+  // TODO: -- developer | Error handling. If (suggestionArr.length === 0), render "No suggestions were found for your entry. Please try another lexeme."
   return (
     <div>
       <h4>{input}</h4>
       {suggestionArr
         ?
-        suggestionArr.map(instance => {
-          return <div key={instance.item}>
+        suggestionArr.map((instance, index) => {
+          return <div key={index}>
             {instance.item} (Weight: {instance.weight}) | POS: {instance.pos}
           </div>
         })
