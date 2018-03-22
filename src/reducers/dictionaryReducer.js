@@ -1,19 +1,19 @@
 import { ANALYZING_LEXEME, DEFINED_OXFORD, DEFINED_YANDEX, DEFINED_TWINWORD, DEFINED_WORDSAPI, DEFINED_URBAN, TRANSLATED_ES, TRANSLATED_FR, TRANSLATED_IT, TRANSLATED_RU, TRANSLATED_DE, THESAURUS_SYN, THESAURUS_ASSOC, THESAURUS_ANT } from "../actions/dictionaryActions";
 
 const initialState = {
-  definitionOxford: [],
-  definitionYandex: [],
-  definitionTwinword: [],
-  definitionWordsApi: [],
-  definitionUrban: [],
-  translationEs: [],
-  translationFr: [],
-  translationIt: [],
-  translationRu: [],
-  translationDe: [],
-  thesaurusSyn: [],
-  thesaurusAssoc: [],
-  thesaurusAnt: [],
+  definitionOxford: [], // Oxford Dictionary
+  definitionYandex: [], // Yandex Online Dictionary
+  definitionTwinword: [], // TwinwordAPI Definition
+  definitionWordsApi: [], // Words API
+  definitionUrban: [], // Urban Dictionary
+  translationEs: [], // Yandex Online Dictionary
+  translationFr: [], // Yandex Online Dictionary
+  translationIt: [], // Yandex Online Dictionary
+  translationRu: [], // Yandex Online Dictionary
+  translationDe: [], // Yandex Online Dictionary
+  thesaurusSyn: [], // Oxford Dictionary
+  thesaurusAssoc: [], // TwinwordAPI Associations
+  thesaurusAnt: [], // Oxford Dictionary
   isLoading: false
 }
 

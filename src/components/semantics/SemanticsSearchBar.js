@@ -21,7 +21,7 @@ const SemanticsSearchBar = (props) => {
             <Button type='submit'>Go</Button>
           </Input>
         }
-        header='Generate associative list'
+        // header='Generate associative list'
         content='Enter a lexeme to define your conceptual domain.'
         on='focus'
       />

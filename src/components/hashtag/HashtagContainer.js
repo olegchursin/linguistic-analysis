@@ -52,7 +52,7 @@ class HashtagContainer extends React.Component {
         <div className="ui main text container main-content">
           <Divider section hidden />
           <h2>Hashtag suggestions</h2>
-          <p>Generates a list of suggested hashtags with their relative weight.</p>
+          <p>Generate a list of suggested hashtags with their relative weight.</p>
           <HashtagSuggestSearchBar
             suggestInput={this.state.suggestInput}
             handleChange={this.handleChange}
