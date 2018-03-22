@@ -25,12 +25,12 @@ export function hashtagDefinition(inputText) {
 }
 
 // Hashtag Suggestion
-export function hashtagSuggestion(inputText) {
+export function hashtagSuggestion(suggestInput) {
   return function(dispatch) {
     dispatch({ type: ANALYZING_TEXT });
-    HashtagApi.hashtagSuggestion(inputText)
-    .end(res => {
-      dispatch({ type: HASHTAG_SUGGEST, payload: res});
+    HashtagApi.hashtagSuggestion(suggestInput)
+    .then(res => {
+      dispatch({ type: HASHTAG_SUGGEST, payload: res.response[0]});
     });
   };
 }

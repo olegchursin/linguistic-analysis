@@ -4,7 +4,7 @@ import React from 'react'
 // import ScrollableAnchor from 'react-scrollable-anchor'
 
 // Sematic UI React
-import { Divider } from 'semantic-ui-react'
+// import { Divider } from 'semantic-ui-react'
 
 // Conponents
 import Hero from './Hero'

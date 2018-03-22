@@ -2,7 +2,7 @@
 // rendered in HashtagContainer.js
 
 import React from 'react';
-import { Input, Icon, Popup, Button } from 'semantic-ui-react'
+import { Input, Popup, Button } from 'semantic-ui-react'
 
 const HashtagSuggestSearchBar = (props) => {
   return (

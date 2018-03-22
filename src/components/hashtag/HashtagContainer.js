@@ -6,11 +6,11 @@ import { connect } from 'react-redux'
 
 // Semantic UI
 import { Icon, Popup } from 'semantic-ui-react'
-import { Segment, Divider } from 'semantic-ui-react'
+import { Divider } from 'semantic-ui-react'
 
 // actions
 import { hashtagDefinition, hashtagSuggestion } from '../../actions/hashtagActions'
-import { addProject } from '../../actions/projectActions'
+// import { addProject } from '../../actions/projectActions'
 
 // Components
 import HashtagHeader from './HashtagHeader'
@@ -36,13 +36,13 @@ class HashtagContainer extends React.Component {
 
     // making a call to hashtagActions.js
     // Hashtag Defintion Action
-    this.props.hashtagDefinition(this.state.searchTerm);
+    if(this.state.searchTerm) this.props.hashtagDefinition(this.state.searchTerm);
   }
 
   handleSuggest = (e) => {
     e.preventDefault()
 
-    this.props.hashtagSuggestion(this.state.suggestInput);
+    if(this.state.suggestInput) this.props.hashtagSuggestion(this.state.suggestInput);
   }
 
   render () {
