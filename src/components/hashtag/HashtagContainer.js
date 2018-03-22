@@ -21,8 +21,8 @@ import HashtagSuggestion from './HashtagSuggestion'
 
 class HashtagContainer extends React.Component {
   state = {
-    searchTerm: '',
-    suggestInput: ''
+    searchTerm: '', // get hashtag defintion (input: "lol", "oomf", "tgif", etc.)
+    suggestInput: '' // get hashtag suggestions (input: lexeme)
   }
 
   handleChange = (e) => {
@@ -33,15 +33,15 @@ class HashtagContainer extends React.Component {
 
   handleDef = (e) => {
     e.preventDefault()
-
-    // making a call to hashtagActions.js
+    // making a call to '../../actions/hashtagActions'
     // Hashtag Defintion Action
     if(this.state.searchTerm) this.props.hashtagDefinition(this.state.searchTerm);
   }
 
   handleSuggest = (e) => {
     e.preventDefault()
-
+    // making a call to '../../actions/hashtagActions'
+    // Hashtag Suggestions Action
     if(this.state.suggestInput) this.props.hashtagSuggestion(this.state.suggestInput);
   }
 

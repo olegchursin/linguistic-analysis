@@ -54,28 +54,8 @@ export default class NavBar extends Component {
 
             <Dropdown.Divider />
 
-            <Dropdown.Header>Semantics</Dropdown.Header>
-            <Dropdown.Item
-              href='/semantics'
-              name='semantic-field'
-              active={activeItem === 'semantic-field'}
-              onClick={this.handleItemClick}
-            >
-              Semantic field
-            </Dropdown.Item>
-
-            <Dropdown.Divider />
-
             <Dropdown.Header>Phonetics</Dropdown.Header>
-            <Dropdown.Item
-              href='/phonetics'
-              name='pronunciation'
-              active={activeItem === 'pronunciation'}
-              onClick={this.handleItemClick}
-            >
-              Pronunciation
-            </Dropdown.Item>
-
+            
             <Dropdown.Item
               href='/phonetics'
               name='rhymes'
@@ -86,6 +66,15 @@ export default class NavBar extends Component {
             </Dropdown.Item>
           </Dropdown.Menu>
         </Dropdown>
+
+        <Menu.Item
+          href='/semantics'
+          name='text'
+          active={activeItem === 'hashtag'}
+          onClick={this.handleItemClick}
+        >
+          Semantic Analysis
+        </Menu.Item>
 
         <Menu.Item
           href='/text'
