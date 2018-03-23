@@ -15,6 +15,7 @@ import TextKeywordsTabs from './TextKeywordsTabs'
 import TextSentimentTabs from './TextSentimentTabs'
 import TextWordCount from './TextWordCount'
 import TextSummary from './TextSummary'
+import TextWordcloud from './TextWordcloud'
 
 class TextContainer extends React.Component {
 
@@ -103,6 +104,19 @@ class TextContainer extends React.Component {
           </h3>
           <Divider />
           <TextKeywordsTabs />
+          <Divider section hidden />
+          <h3>Wordcloud
+            <Popup
+              className="popup-icon"
+              trigger={<Icon name='info circle' />}
+              content='Generate a wordcould diagram.'
+              size='mini'
+            />
+          </h3>
+          <Divider />
+          <TextWordcloud
+            text={this.state.textInput}
+          />
           <Divider section hidden />
         </div>
       </div>

@@ -98,3 +98,12 @@ i.icon.info.circle:before {
   margin-left: 10px;
   color: #B0BEC5;
 }
+
+/* ***************** */
+/* *** WORDCLOUD *** */
+/* ***************** */
+.wordcloud-container {
+  min-width: 310px;
+	max-width: 800px;
+	margin: 0 auto
+}

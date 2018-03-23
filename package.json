@@ -5,6 +5,7 @@
   "dependencies": {
     "datumbox": "^1.0.1",
     "gulp": "^3.9.1",
+    "highcharts": "^6.0.7",
     "oxford-dictionary-api": "^1.0.1",
     "rapidapi-connect": "0.0.6",
     "react": "^16.2.0",
