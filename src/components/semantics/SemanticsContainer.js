@@ -9,8 +9,7 @@ import { Divider } from 'semantic-ui-react'
 
 // actions
 // // actions for Associative array
-import { thesaurusSyn, thesaurusAssoc } from '../../actions/dictionaryActions'
-import { hashtagSuggestion } from '../../actions/hashtagActions'
+import { associativeList } from '../../actions/semanticsActions'
 // // Project actions
 // import { addProject } from '../../actions/projectActions'
 
@@ -32,12 +31,8 @@ class SemanticsContainer extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault()
-    // trigger 'hashtagSuggestion' action -- '../../actions/hashtagActions'
-    if(this.state.searchTerm) this.props.hashtagSuggestion(this.state.searchTerm);
-    // trigger 'thesaurusAssoc' action -- '../../actions/dictionaryActions'
-    if(this.state.searchTerm) this.props.thesaurusAssoc(this.state.searchTerm);
-    // trigger 'thesaurusSyn' action -- '../../actions/dictionaryActions'
-    if(this.state.searchTerm) this.props.thesaurusSyn(this.state.searchTerm);
+    // trigger 'semanticsActions' action -- '../../actions/semanticsActions'
+    if(this.state.searchTerm) this.props.associativeList(this.state.searchTerm);
   }
 
   render () {
@@ -76,4 +71,4 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps, { hashtagSuggestion, thesaurusSyn, thesaurusAssoc })(SemanticsContainer);
+export default connect(mapStateToProps, { associativeList })(SemanticsContainer);

@@ -14,8 +14,9 @@ import { projectReducer } from './reducers/projectReducer' // creating/saving pr
 import { dictionaryReducer } from './reducers/dictionaryReducer' // external API requests to dictionaries
 import { textReducer } from './reducers/textReducer' // external API requests to text analytics tools
 import { hashtagReducer } from './reducers/hashtagReducer' // external API requests to text analytics tools
+import { semanticsReducer } from './reducers/semanticsReducer' // external API requests to text analytics tools
 
-const rootReducer = combineReducers({ project: projectReducer, dictionary: dictionaryReducer, text: textReducer, hashtag: hashtagReducer })
+const rootReducer = combineReducers({ project: projectReducer, dictionary: dictionaryReducer, text: textReducer, hashtag: hashtagReducer, semantics: semanticsReducer })
 const store = createStore(rootReducer, applyMiddleware(thunk));
 
 ReactDOM.render(

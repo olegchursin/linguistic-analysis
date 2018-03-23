@@ -16,7 +16,7 @@ const initialState = {
   thesaurusSyn: [], // Oxford Dictionary
   thesaurusAssoc: [], // TwinwordAPI Associations
   thesaurusAnt: [], // Oxford Dictionary
-  associativeList: [],
+  associativeList: [], // not used
   isLoading: false
 }
 

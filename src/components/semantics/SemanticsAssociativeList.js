@@ -7,7 +7,11 @@ const SemanticsAssociativeList = (props) => {
   console.log("Associative List", props.associativeList)
   return (
     <div>
-      <h3></h3>
+      {/* {
+        associativeList.map(i => {
+          return <div key=></div>
+        })
+      } */}
     </div>
   )
 }
@@ -15,7 +19,8 @@ const SemanticsAssociativeList = (props) => {
 const mapStateToProps = (state) => {
   return {
     isLoading: state.hashtag.isLoading,
-    associativeList: state.dictionary.associativeList, // from './reducers/dictionaryReducer.js'
+    associativeList: state.semantics.associativeList
+    // associativeList: state.dictionary.associativeList, // from './reducers/dictionaryReducer.js'
   }
 }
 
