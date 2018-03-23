@@ -7,13 +7,14 @@ import { connect } from 'react-redux'
 import { Form, Divider, Button, Popup, Icon } from 'semantic-ui-react'
 
 // actions
-import { keywordsTextAnalysis, sentimentGoogle, sentimentDatumbox, sentimentTwinword } from '../../actions/textActions'
+import { keywordsTextAnalysis, sentimentDatumbox, sentimentTwinword, summaryText } from '../../actions/textActions'
 
 // Components
 import TextHeader from './TextHeader'
 import TextKeywordsTabs from './TextKeywordsTabs'
 import TextSentimentTabs from './TextSentimentTabs'
 import TextWordCount from './TextWordCount'
+import TextSummary from './TextSummary'
 
 class TextContainer extends React.Component {
 
@@ -33,9 +34,11 @@ class TextContainer extends React.Component {
     // making a call to textActions.js
     // Keyword Actions
     this.props.keywordsTextAnalysis(this.state.textInput);
-    // this.props.sentimentGoogle(this.state.textInput);
+    // Sentiment Actions
     this.props.sentimentDatumbox(this.state.textInput);
     this.props.sentimentTwinword(this.state.textInput);
+    // Summary Action
+    this.props.summaryText(this.state.textInput);
   }
 
   render () {
@@ -67,6 +70,17 @@ class TextContainer extends React.Component {
           <TextWordCount
             text={this.state.textInput}
           />
+          <Divider section hidden />
+          <h3>Summary
+            <Popup
+              className="popup-icon"
+              trigger={<Icon name='info circle' />}
+              content='Get the text summary at a 30% ratio.'
+              size='mini'
+            />
+          </h3>
+          <Divider />
+          <TextSummary />
           <Divider section hidden />
           <h3>Sentiment Analysis
             <Popup
@@ -102,4 +116,4 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps, { keywordsTextAnalysis, sentimentGoogle, sentimentDatumbox, sentimentTwinword })(TextContainer);
+export default connect(mapStateToProps, {keywordsTextAnalysis, sentimentDatumbox, sentimentTwinword, summaryText})(TextContainer);

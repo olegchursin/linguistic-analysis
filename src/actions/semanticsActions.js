@@ -14,11 +14,11 @@ export const SEMANTIC_ASSOC_LIST = "SEMANTIC_ASSOC_LIST";
 
 // Associative List
 export function associativeList(inputText) {
-  return function(dispatch) {
-    dispatch({ type: ANALYZING_TEXT });
-    SemanticsApi.associativeList(inputText)
-    .then(res => {
-      dispatch({ type: SEMANTIC_ASSOC_LIST, payload: res});
-    });
-  };
+    return function(dispatch) {
+        dispatch({ type: ANALYZING_TEXT });
+        SemanticsApi.associativeList(inputText)
+            .then(res => {
+                dispatch({ type: SEMANTIC_ASSOC_LIST, payload: res.response[0].items });
+            });
+    };
 }
