@@ -5,13 +5,14 @@ import { connect } from 'react-redux'
 
 const SemanticsAssociativeList = (props) => {
   console.log("Associative List", props.associativeList)
+  const associativeList = props.associativeList
   return (
     <div>
-      {/* {
+      {
         associativeList.map(i => {
-          return <div key=></div>
+          return <div key={i.item}>{i.item} (Weight: {i.weight}, pos: {i.pos})</div>
         })
-      } */}
+      }
     </div>
   )
 }
