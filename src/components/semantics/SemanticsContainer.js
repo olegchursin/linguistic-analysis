@@ -29,10 +29,10 @@ class SemanticsContainer extends React.Component {
     handleSubmit = (e) => {
         e.preventDefault()
         // trigger 'semanticsActions' action -- '../../actions/semanticsActions'
-        if (this.state.searchTerm) 
+        if (this.state.searchTerm)
             this.props.associativeList(this.state.searchTerm);
         }
-    
+
     render() {
         return (
             <div>
@@ -46,9 +46,8 @@ class SemanticsContainer extends React.Component {
                         searchTerm={this.state.searchTerm}
                         handleChange={this.handleChange}
                         handleSubmit={this.handleSubmit}/>
-                    <SemanticsAssociativeList/>
                     <Divider section hidden/>
-                    <h3>Associative list 
+                    <h3>Associative list
                         <Popup className = "popup-icon" trigger = {<Icon name = 'info circle' />}
                         content = 'Generate a list of semantically interconnected lexemes by defining
                         your domain above.' size = 'mini' />
@@ -57,10 +56,12 @@ class SemanticsContainer extends React.Component {
                         An interconnected list of lexemes that share a common semantic property within
                         the defined conceptual domain.
                     </p>
+                    <SemanticsAssociativeList/>
+                    <Divider section hidden/>
                 </div>
-            </div>) 
-    } 
-} 
+            </div>)
+    }
+}
 
 
 const mapStateToProps = (state) => {return {

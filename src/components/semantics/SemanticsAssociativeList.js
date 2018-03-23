@@ -3,6 +3,9 @@ import React from 'react'
 // Import Redux connect
 import { connect } from 'react-redux'
 
+// Semantic UI
+import { Card } from 'semantic-ui-react'
+
 const SemanticsAssociativeList = (props) => {
   console.log("Associative List", props.associativeList)
   const associativeList = props.associativeList
