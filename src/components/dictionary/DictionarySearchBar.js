@@ -8,7 +8,16 @@ const SearchBar = (props) => {
   return (
     <form onSubmit={props.handleSubmit}>
       <Popup
-        trigger={<Input fluid icon='search' name="searchTerm" value={props.searchTerm} type="text" placeholder='Search...' onChange={props.handleChange} />}
+        trigger={
+          <Input
+            fluid 
+            icon='search'
+            name="searchTerm"
+            value={props.searchTerm}
+            type="text"
+            placeholder='Search...'
+            onChange={props.handleChange} />
+        }
         header='Lexeme Search'
         content='Enter a lexeme you want to define, translate and find synonyms/antonyms of.'
         on='focus'

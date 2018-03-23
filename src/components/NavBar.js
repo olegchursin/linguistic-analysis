@@ -55,7 +55,7 @@ export default class NavBar extends Component {
             <Dropdown.Divider />
 
             <Dropdown.Header>Phonetics</Dropdown.Header>
-            
+
             <Dropdown.Item
               href='/phonetics'
               name='rhymes'
@@ -94,11 +94,12 @@ export default class NavBar extends Component {
         </Menu.Item>
         <Menu.Menu position='right'>
           <Menu.Item
-            name='sign-in'
-            active={activeItem === 'sign-in'}
+            href='/login'
+            name='login'
+            active={activeItem === 'login'}
             onClick={this.handleItemClick}
           >
-            Sign-in
+            Login
           </Menu.Item>
         </Menu.Menu>
 

@@ -80,6 +80,10 @@ textarea {
   max-width: 500px;
 }
 
+.auth-header {
+  height: 200px;
+}
+
 /* ************ */
 /* *** Tabs *** */
 /* ************ */

@@ -2,7 +2,7 @@
 // rendered in SemanticsContainer.js
 
 import React from 'react';
-import { Input, Popup, Button, Select } from 'semantic-ui-react'
+import { Input, Popup, Button } from 'semantic-ui-react'
 
 const SemanticsSearchBar = (props) => {
 
