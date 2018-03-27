@@ -1,7 +1,7 @@
 // API calls for hashtag analysis
 // // CORS Anywheere patch: add this URL (https://cors-anywhere.herokuapp.com/) in front of your call URL
 
-import { WORDASSOCIATIONS_KEY, MASHAPE_KEY_1 } from './appEnv'
+import { WORDASSOCIATIONS_KEY, MASHAPE_KEY_R } from './appEnv'
 
 // MashapeAPI tool for API requests
 // http://unirest.io/nodejs
@@ -22,21 +22,12 @@ class HashtagApi {
   static hashtagSuggestion(suggestInput) {
     return fetch(`https://wordassociations-word-associations-v1.p.mashape.com/json/search?apikey=${WORDASSOCIATIONS_KEY}&indent=yes&lang=en&limit=50&pos=noun%2Cadjective%2Cverb%2Cadverb&text=${suggestInput}&type=stimulus`, {
       headers: {
-        "X-Mashape-Key": MASHAPE_KEY_1,
+        "X-Mashape-Key": MASHAPE_KEY_R,
         "Accept": "application/json"
       }
     })
     .then(res => res.json())
   }
-
-  // // Getting undefined body - use fetch instead of unirest and should work just fine
-  // static hashtagSuggestion(inputText) {
-  //   return unirest.post("https://dmitrykey-connectedwords-v1.p.mashape.com/similarwords")
-  //   .header("X-Mashape-Key", "ru9cyyTR8dmshYGRTnxRfRi9JPy3p1JnutrjsnjWTE2KVBx86r")
-  //   .header("Content-Type", "application/json")
-  //   .header("Accept", "application/json")
-  //   .send([`${suggestInput}`])
-  // }
 
 }
 

@@ -1,7 +1,7 @@
 // API calls for hashtag analysis
 // // CORS Anywheere patch: add this URL (https://cors-anywhere.herokuapp.com/) in front of your call URL
 
-import { WORDASSOCIATIONS_KEY, MASHAPE_KEY_1 } from './appEnv'
+import { WORDASSOCIATIONS_KEY, MASHAPE_KEY_R } from './appEnv'
 
 
 // MashapeAPI tool for API requests
@@ -14,9 +14,10 @@ class SemanticsApi {
   // //////////////////////////////// //
 
   static associativeList(searchTerm) {
+    console.log("WA KEY", process.env['WORDASSOCIATIONS_KEY'])
     return fetch(`https://wordassociations-word-associations-v1.p.mashape.com/json/search?apikey=${WORDASSOCIATIONS_KEY}&indent=yes&lang=en&limit=100&pos=noun%2Cadjective%2Cverb%2Cadverb&text=${searchTerm}&type=stimulus`, {
       headers: {
-        "X-Mashape-Key": MASHAPE_KEY_1,
+        "X-Mashape-Key": MASHAPE_KEY_R,
         "Accept": "application/json"
       }
     })

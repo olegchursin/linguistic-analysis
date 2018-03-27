@@ -1,7 +1,7 @@
 // API calls for lexeme definitions, translations, and thesaurus analysis
 // // CORS Anywheere patch: add this URL (https://cors-anywhere.herokuapp.com/) in front of your call URL
 
-import { OXFORD_KEY, YANDEX_KEY, MASHAPE_KEY_1, MASHAPE_KEY_2 } from './appEnv'
+import { OXFORD_KEY, YANDEX_KEY, MASHAPE_KEY_R, MASHAPE_KEY_Z } from './appEnv'
 
 // MashapeAPI tool for API requests
 // http://unirest.io/nodejs
@@ -34,7 +34,7 @@ class DictionaryApi {
   // Twinword Definition Definition
   static defineTwinword(searchTerm) {
     return unirest.get(`https://twinword-twinword-bundle-v1.p.mashape.com/word_definition/?entry=${searchTerm}`)
-    .header("X-Mashape-Key", MASHAPE_KEY_1)
+    .header("X-Mashape-Key", MASHAPE_KEY_R)
     .header("Accept", "application/json")
   }
 
@@ -43,7 +43,7 @@ class DictionaryApi {
     return fetch(`https://wordsapiv1.p.mashape.com/words/${searchTerm}`, {
       headers: {
         "Accept": "application/json",
-        "X-Mashape-Key": MASHAPE_KEY_2
+        "X-Mashape-Key": MASHAPE_KEY_Z
       }
     })
     .then(res => res.json())
@@ -52,7 +52,7 @@ class DictionaryApi {
   // Urban Dictionary Definition
   static defineUrban(searchTerm) {
     return unirest.get(`https://mashape-community-urban-dictionary.p.mashape.com/define?term=${searchTerm}`)
-    .header("X-Mashape-Key", MASHAPE_KEY_2)
+    .header("X-Mashape-Key", MASHAPE_KEY_Z)
     .header("Accept", "text/plain")
   }
 
@@ -81,7 +81,7 @@ class DictionaryApi {
   // Associations
   static thesaurusAssoc(searchTerm) {
     return unirest.post("https://twinword-twinword-bundle-v1.p.mashape.com/word_associations/")
-    .header("X-Mashape-Key", MASHAPE_KEY_1)
+    .header("X-Mashape-Key", MASHAPE_KEY_R)
     .header("Content-Type", "application/x-www-form-urlencoded")
     .header("Accept", "application/json")
     .send(`entry=${searchTerm}`)
