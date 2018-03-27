@@ -6,8 +6,13 @@ const KeywordsTextAnalysis = (props) => {
   const keywords = props.keywords
   return (
     <div>
-      <h4>Keywords:</h4>
-      {keywords ? keywords.map(keyword => <div key={keyword}>{keyword}</div>) : <span></span>}
+      {
+        keywords.length
+        ?
+        keywords.map(keyword => <div className='keyword-result' key={keyword}>{keyword}</div>)
+        :
+        <p><a href="http://keywordextraction.net/">Keyword Extraction API</a> provides professional keyword extractor service which is based on advanced Natural Language Processing and Machine Learning technologies.</p>
+      }
     </div>
   )
 }

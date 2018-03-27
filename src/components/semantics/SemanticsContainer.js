@@ -40,8 +40,7 @@ class SemanticsContainer extends React.Component {
                 <div className="ui main text container main-content">
                     <Divider section hidden/>
                     <h2>Conceptual domain</h2>
-                    <p>Generate an interconnected list of lexemes that share a common semantic property
-                        within the defined conceptual domain.</p>
+                    <p>Define a conceptual domain to generate an associative list.</p>
                     <SemanticsSearchBar
                         searchTerm={this.state.searchTerm}
                         handleChange={this.handleChange}
@@ -52,10 +51,6 @@ class SemanticsContainer extends React.Component {
                         content = 'Generate a list of semantically interconnected lexemes by defining
                         your domain above.' size = 'mini' />
                     </h3>
-                    <p>
-                        An interconnected list of lexemes that share a common semantic property within
-                        the defined conceptual domain.
-                    </p>
                     <SemanticsAssociativeList/>
                     <Divider section hidden/>
                 </div>

@@ -14,7 +14,6 @@ const TextWordCount = (props) => {
       {
         vcount += 1;
       }
-
     }
     return vcount;
   }
@@ -36,12 +35,16 @@ const TextWordCount = (props) => {
   }
 
   return (
-    <div>
+    text
+    ?
+    <div className="text-word-count">
       <h4>Symbols: {text.length}</h4>
       <h4>Words: {text.length !== 0 ? text.split(/\s+\b/).length : 0}</h4>
       <h4>Vowels: {vowel_count(text)}</h4>
       <h4>Consonants: {cons_count(text)}</h4>
     </div>
+    :
+    <p>Input the text above to automatically calculate the number of words, symbols, vowels, and consonants.</p>
   )
 }
 

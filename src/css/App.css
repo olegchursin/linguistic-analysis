@@ -71,7 +71,6 @@ textarea {
   background: linear-gradient(to right, #FF5F6D, #FFC371); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
-
 .main-header-title {
   color: #fff;
   padding-top: 110px;
@@ -84,12 +83,121 @@ textarea {
   height: 200px;
 }
 
+/* ******************** */
+/* *** Landing Page *** */
+/* ******************** */
+.hero {
+  height: 65vh;
+  padding-top: 180px;
+  max-height: 800px;
+  background: #5B86E5;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #36D1DC, #5B86E5);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #36D1DC, #5B86E5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.hero h1 {
+  font-size: 3em;
+  color: #fff;
+}
+.hero p {
+  font-size: 1.8em;
+  color: #fff;
+}
+.hero img {
+  height: 220px;
+  padding: 20px 0 0 120px;
+}
+.services {
+  height: 80vh;
+  padding-top: 20px;
+}
+.services img {
+  height: 320px;
+  padding-top: 25%;
+  padding-left: 20%;
+}
+.api-list{
+  padding: 40px 0;
+  color: #fff;
+  background: #DA4453;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #89216B, #DA4453);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #89216B, #DA4453); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.api-list-row{
+  margin: 20px 0;
+}
+
+.cta {
+  height: 45vh;
+  padding: 20px 0 40px;
+}
+.cta-img {
+  max-height: 40px;
+  padding-right: 15px
+}
+
+/* ************** */
+ /* TEXT ANALYSIS */
+ /* ************* */
+
+.text-word-count h4 {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+
 /* ************ */
 /* *** Tabs *** */
 /* ************ */
 .tab-panes {
   margin-top: 40px;
 }
+
+
+/* *************** */
+/* *** Results *** */
+/* *************** */
+.keyword-result {
+  display: inline-block;
+  padding: 5px 15px;
+  margin: 5px;
+  border: solid 1px #000;
+  border-radius: 3px;
+}
+
+
+/* ************ */
+/* *** Tags *** */
+/* ************ */
+.tag-powered-by {
+  font-size: .8em;
+  font-weight: 600;
+  text-align: right;
+  padding: 5px 10px;
+  color: #5B86E5;  /* fallback for old browsers */
+  color: -webkit-linear-gradient(to left, #5B86E5, #36D1DC);  /* Chrome 10-25, Safari 5.1-6 */
+  color: linear-gradient(to left, #5B86E5, #36D1DC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.tag-powered-by a {
+  color: #5B86E5;  /* fallback for old browsers */
+  color: -webkit-linear-gradient(to left, #5B86E5, #36D1DC);  /* Chrome 10-25, Safari 5.1-6 */
+  color: linear-gradient(to left, #5B86E5, #36D1DC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  font-weight: 600;
+}
+.tag-powered-by a:hover {
+  text-decoration: underline;
+}
+
+/* ******************** */
+/* *** Footer heart *** */
+/* ******************** */
+.heart {
+  fill: #89216B;
+  position: relative;
+  margin: 0 5px;
+  top: 3px;
+  width: 15px;
+}
+
 
 /* ******************** */
 /* *** Tooltip Icon *** */

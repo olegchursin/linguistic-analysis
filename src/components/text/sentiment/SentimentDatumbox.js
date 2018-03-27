@@ -5,11 +5,20 @@ const SentimentDatumbox = (props) => {
   console.log("Sentiment Datumbox:", props.sentiment);
   const sentiment = props.sentiment
   return (
-    <h1>
+    <div>
       {
         sentiment.result
+        ?
+        <div>
+          <h2>{ sentiment.result }</h2>
+          <div className="tag-powered-by">
+            <p>powered by: <a href="http://www.datumbox.com/machine-learning-api/">DatumBox</a></p>
+          </div>
+        </div>
+        :
+        <p><a href="http://www.datumbox.com/machine-learning-api/">DatumBox Sentiment Analysis</a> classifies documents as positive, negative or neutral (lack of sentiment) depending on whether they express a positive, negative or neutral opinion.</p>
       }
-    </h1>
+    </div>
   )
 }
 

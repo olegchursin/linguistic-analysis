@@ -11,7 +11,7 @@ const SemanticsAssociativeList = (props) => {
   const associativeList = props.associativeList
 
   let elements = associativeList.map(i => {
-    let color = 'pink'
+    let color = 'black'
 
     if (90 <= i.weight <= 100) {
       color = 'red'
@@ -27,24 +27,24 @@ const SemanticsAssociativeList = (props) => {
       color = 'green'
     }
 
-    return <div key={i.item}>
-      <Button as='div' labelPosition='right'>
-        <Button basic color={color}>
-          <h4>{i.item}</h4>
-        </Button>
-        <Label as='a' basic color={color} pointing='left'>{i.weight}</Label>
-      </Button>
-
-      {/* <Segment
-        color={color}
-      >
-        <h3>{i.item}</h3> {i.pos} | Weight: {i.weight}
-      </Segment> */}
+    return <div className="keyword-result" key={i.item}>
+      {i.item} ({i.weight})
     </div>
   })
 
   return (
-    <div>{elements}</div>
+    <div>
+      {
+        elements
+        ?
+        <div>
+          <p>Lexemes are displayed in the ascending order sorted by their weight within the list.</p>
+          {elements}
+        </div>
+        :
+        <p>An interconnected list of lexemes that share a common semantic property within the defined conceptual domain.</p>
+      }
+    </div>
   )
 }
 

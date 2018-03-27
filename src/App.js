@@ -27,7 +27,7 @@ class App extends Component {
             <Route path="/" exact component={MainContainer} />
             <Route path="/login" exact component={AuthContainer} />
             <Route path="/signup" exact component={SignupForm} />
-            <Route path="/dictionary" exact component={DictionaryContainer} />
+            <Route path="/lexical" exact component={DictionaryContainer} />
             <Route path="/semantics" exact component={SemanticsContainer} />
             <Route path="/phonetics" exact component={PhoneticsContainer} />
             <Route path="/text" exact component={TextContainer} />

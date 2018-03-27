@@ -5,7 +5,9 @@ import { NavLink } from 'react-router-dom'
 import { Dropdown, Menu } from 'semantic-ui-react'
 
 export default class NavBar extends Component {
-  state = {}
+  state = {
+    activeItem: ''
+  }
 
   handleItemClick = (e, { name }) =>
     this.setState({
@@ -18,7 +20,16 @@ export default class NavBar extends Component {
     return (
       <Menu fixed='top'>
         <Menu.Item>
-          <NavLink to="/" exact><img src='../img/logo.png' alt="logo" className="nav-logo" /></NavLink>
+          <NavLink to="/" exact><img src='../img/logo-full.svg' alt="logo" className="nav-logo" /></NavLink>
+        </Menu.Item>
+
+        <Menu.Item
+          href='/text'
+          name='text'
+          active={activeItem === 'text'}
+          onClick={this.handleItemClick}
+        >
+          Text Analysis
         </Menu.Item>
 
         <Dropdown text='Lexical Analysis' className='link item' simple>
@@ -26,7 +37,7 @@ export default class NavBar extends Component {
 
             <Dropdown.Header>Dictionary</Dropdown.Header>
             <Dropdown.Item
-              href='/dictionary'
+              href='/lexical'
               name='definition'
               active={activeItem === 'definition'}
               onClick={this.handleItemClick}
@@ -76,14 +87,7 @@ export default class NavBar extends Component {
           Semantic Analysis
         </Menu.Item>
 
-        <Menu.Item
-          href='/text'
-          name='text'
-          active={activeItem === 'text'}
-          onClick={this.handleItemClick}
-        >
-          Text Analysis
-        </Menu.Item>
+
         <Menu.Item
           href='/hashtag'
           name='text'

@@ -1,8 +1,27 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+
+// Semantic UI
+import { Grid, Image, Button } from 'semantic-ui-react'
 
 const Hero = (props) => {
   return (
-    <h1>Hero</h1>
+    <div className="hero">
+      <Grid container divided='vertically' centered columns={2}>
+        <Grid.Column>
+          <h1>Linguistic Analysis</h1>
+          <p>Where Natural Language Procesing APIs come together to serve your lexical, semantic, and text analytics needs.</p>
+          <Link to="/text">
+            <Button color='teal'>Get started</Button>
+          </Link>
+          <Button inverted>Documentation</Button>
+        </Grid.Column>
+        <Grid.Column className="hero--right-panel">
+          <Image src='/img/lp-hero-logo.svg' />
+        </Grid.Column>
+      </Grid>
+
+    </div>
   )
 }
 

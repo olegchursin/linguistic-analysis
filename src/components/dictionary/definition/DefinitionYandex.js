@@ -6,7 +6,7 @@ const DefinitionYandex = (props) => {
   const definitionArr = props.definition
   return (
     <div>
-      <p>Powered by Yandex Online Dictionary</p>
+      <p>Powered by <a href="http://api.yandex.com/dictionary">Yandex.Dictionary</a></p>
       {
         definitionArr.map(def => {
           return <div key={def.ts}>

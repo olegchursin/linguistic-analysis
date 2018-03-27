@@ -8,12 +8,12 @@ import SentimentDatumbox from './sentiment/SentimentDatumbox'
 import SentimentTwinword from './sentiment/SentimentTwinword'
 
 const panes = [
-  { menuItem: 'DatumBox', render: () =>
+  { menuItem: 'Consize result', render: () =>
     <Tab.Pane>
       <SentimentDatumbox />
     </Tab.Pane> },
 
-  { menuItem: 'Twinword', render: () =>
+  { menuItem: 'Detailed result', render: () =>
     <Tab.Pane>
       <SentimentTwinword />
     </Tab.Pane> },
