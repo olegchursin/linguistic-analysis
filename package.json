@@ -1,11 +1,13 @@
 {
-  "name": "dictionary",
+  "name": "linguistico",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "ajv": "^6.4.0",
     "datumbox": "^1.0.1",
     "dotenv": "^5.0.1",
     "gulp": "^3.9.1",
+    "minimatch": "^3.0.4",
     "oxford-dictionary-api": "^1.0.1",
     "rapidapi-connect": "0.0.6",
     "react": "^16.2.0",
@@ -26,5 +28,23 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
-  }
+  },
+  "description": "A tool that will help anyone who needs to perform lexical or text analysis to do it efficiently. It will allow you to run definition analysis, pull definitions from various dictionaries, and display one on the single page. You will be able to perform sentiment analysis of the given text and compare sentiment results provided from various APIs (Twinword, WordsAPI, Word Associations Network, DatumBox, Yandex Dictionary, Oxford Dictionary).",
+  "main": "index.js",
+  "devDependencies": {
+    "mocha": "^2.5.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/olegchursin/linguistic-analysis.git"
+  },
+  "keywords": [
+    "linguistics"
+  ],
+  "author": "oleg chursin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/olegchursin/linguistic-analysis/issues"
+  },
+  "homepage": "https://github.com/olegchursin/linguistic-analysis#readme"
 }
