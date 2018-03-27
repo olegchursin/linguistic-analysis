@@ -1,6 +1,8 @@
 // API calls for lexeme definitions, translations, and thesaurus analysis
 // // CORS Anywheere patch: add this URL (https://cors-anywhere.herokuapp.com/) in front of your call URL
 
+import { OXFORD_KEY, YANDEX_KEY, MASHAPE_KEY_1, MASHAPE_KEY_2 } from './appEnv'
+
 // MashapeAPI tool for API requests
 // http://unirest.io/nodejs
 const unirest = require('unirest');
@@ -17,7 +19,7 @@ class DictionaryApi {
       headers: {
         "Accept": "application/json",
         "app_id": 'a30a1a5e',
-        "app_key": 'b42a1bcf088e52727e8626ce2716e073'
+        "app_key": OXFORD_KEY
       }
     })
     .then(res => res.json()) // continues at dictionaryActions.js
@@ -25,14 +27,14 @@ class DictionaryApi {
 
   // Yandex Dictionary Definition
   static defineYandex(searchTerm) {
-    return fetch(`https://dictionary.yandex.net/api/v1/dicservice.json/lookup?key=dict.1.1.20180228T050713Z.08ca0db1e582b3ef.c976dc7eb73db39d6073352aaf801e81e3e55323&lang=en-en&text=${searchTerm}`)
+    return fetch(`https://dictionary.yandex.net/api/v1/dicservice.json/lookup?key=${YANDEX_KEY}&lang=en-en&text=${searchTerm}`)
     .then(res => res.json())
   }
 
   // Twinword Definition Definition
   static defineTwinword(searchTerm) {
     return unirest.get(`https://twinword-twinword-bundle-v1.p.mashape.com/word_definition/?entry=${searchTerm}`)
-    .header("X-Mashape-Key", "ru9cyyTR8dmshYGRTnxRfRi9JPy3p1JnutrjsnjWTE2KVBx86r")
+    .header("X-Mashape-Key", MASHAPE_KEY_1)
     .header("Accept", "application/json")
   }
 
@@ -41,7 +43,7 @@ class DictionaryApi {
     return fetch(`https://wordsapiv1.p.mashape.com/words/${searchTerm}`, {
       headers: {
         "Accept": "application/json",
-        "X-Mashape-Key": 'z69n365FagmshpXYBNcvLgxQ3yd8p16seHGjsnzlL4kvlq9xqf'
+        "X-Mashape-Key": MASHAPE_KEY_2
       }
     })
     .then(res => res.json())
@@ -50,7 +52,7 @@ class DictionaryApi {
   // Urban Dictionary Definition
   static defineUrban(searchTerm) {
     return unirest.get(`https://mashape-community-urban-dictionary.p.mashape.com/define?term=${searchTerm}`)
-    .header("X-Mashape-Key", "z69n365FagmshpXYBNcvLgxQ3yd8p16seHGjsnzlL4kvlq9xqf")
+    .header("X-Mashape-Key", MASHAPE_KEY_2)
     .header("Accept", "text/plain")
   }
 
@@ -66,7 +68,7 @@ class DictionaryApi {
       headers: {
         "Accept": "application/json",
         "app_id": 'a30a1a5e',
-        "app_key": 'b42a1bcf088e52727e8626ce2716e073'
+        "app_key": OXFORD_KEY
       }
     })
     .then(res => res.json()) // continues at dictionaryActions.js
@@ -79,7 +81,7 @@ class DictionaryApi {
   // Associations
   static thesaurusAssoc(searchTerm) {
     return unirest.post("https://twinword-twinword-bundle-v1.p.mashape.com/word_associations/")
-    .header("X-Mashape-Key", "ru9cyyTR8dmshYGRTnxRfRi9JPy3p1JnutrjsnjWTE2KVBx86r")
+    .header("X-Mashape-Key", MASHAPE_KEY_1)
     .header("Content-Type", "application/x-www-form-urlencoded")
     .header("Accept", "application/json")
     .send(`entry=${searchTerm}`)
@@ -91,7 +93,7 @@ class DictionaryApi {
       headers: {
         "Accept": "application/json",
         "app_id": 'a30a1a5e',
-        "app_key": 'b42a1bcf088e52727e8626ce2716e073'
+        "app_key": OXFORD_KEY
       }
     })
     .then(res => res.json()) // continues at dictionaryActions.js
@@ -103,31 +105,31 @@ class DictionaryApi {
 
   // Spanish Translation
   static translateEs(searchTerm) {
-    return fetch(`https://dictionary.yandex.net/api/v1/dicservice.json/lookup?key=dict.1.1.20180228T050713Z.08ca0db1e582b3ef.c976dc7eb73db39d6073352aaf801e81e3e55323&lang=en-es&text=${searchTerm}`)
+    return fetch(`https://dictionary.yandex.net/api/v1/dicservice.json/lookup?key=${YANDEX_KEY}&lang=en-es&text=${searchTerm}`)
     .then(res => res.json())
   }
 
   // French Translation
   static translateFr(searchTerm) {
-    return fetch(`https://dictionary.yandex.net/api/v1/dicservice.json/lookup?key=dict.1.1.20180228T050713Z.08ca0db1e582b3ef.c976dc7eb73db39d6073352aaf801e81e3e55323&lang=en-fr&text=${searchTerm}`)
+    return fetch(`https://dictionary.yandex.net/api/v1/dicservice.json/lookup?key=${YANDEX_KEY}&lang=en-fr&text=${searchTerm}`)
     .then(res => res.json())
   }
 
   // Italian Translation
   static translateIt(searchTerm) {
-    return fetch(`https://dictionary.yandex.net/api/v1/dicservice.json/lookup?key=dict.1.1.20180228T050713Z.08ca0db1e582b3ef.c976dc7eb73db39d6073352aaf801e81e3e55323&lang=en-it&text=${searchTerm}`)
+    return fetch(`https://dictionary.yandex.net/api/v1/dicservice.json/lookup?key=${YANDEX_KEY}&lang=en-it&text=${searchTerm}`)
     .then(res => res.json())
   }
 
   // Russian Translation
   static translateRu(searchTerm) {
-    return fetch(`https://dictionary.yandex.net/api/v1/dicservice.json/lookup?key=dict.1.1.20180228T050713Z.08ca0db1e582b3ef.c976dc7eb73db39d6073352aaf801e81e3e55323&lang=en-ru&text=${searchTerm}`)
+    return fetch(`https://dictionary.yandex.net/api/v1/dicservice.json/lookup?key=${YANDEX_KEY}&lang=en-ru&text=${searchTerm}`)
     .then(res => res.json())
   }
 
   // German Translation
   static translateDe(searchTerm) {
-    return fetch(`https://dictionary.yandex.net/api/v1/dicservice.json/lookup?key=dict.1.1.20180228T050713Z.08ca0db1e582b3ef.c976dc7eb73db39d6073352aaf801e81e3e55323&lang=en-de&text=${searchTerm}`)
+    return fetch(`https://dictionary.yandex.net/api/v1/dicservice.json/lookup?key=${YANDEX_KEY}&lang=en-de&text=${searchTerm}`)
     .then(res => res.json())
   }
 
