@@ -9,7 +9,6 @@
     "gulp": "^3.9.1",
     "minimatch": "^3.0.4",
     "oxford-dictionary-api": "^1.0.1",
-    "rapidapi-connect": "0.0.6",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-redux": "^5.0.7",
