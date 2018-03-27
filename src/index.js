@@ -1,3 +1,4 @@
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './semantic/dist/semantic.min.css';
@@ -16,6 +17,8 @@ import { textReducer } from './reducers/textReducer'
 import { hashtagReducer } from './reducers/hashtagReducer'
 import { semanticsReducer } from './reducers/semanticsReducer'
 import { authReducer } from './reducers/authReducer'
+
+require('dotenv').config()
 
 const rootReducer = combineReducers({ project: projectReducer, dictionary: dictionaryReducer, text: textReducer, hashtag: hashtagReducer, semantics: semanticsReducer, auth: authReducer })
 const store = createStore(rootReducer, applyMiddleware(thunk));

@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "datumbox": "^1.0.1",
+    "dotenv": "^5.0.1",
     "gulp": "^3.9.1",
     "oxford-dictionary-api": "^1.0.1",
     "rapidapi-connect": "0.0.6",
