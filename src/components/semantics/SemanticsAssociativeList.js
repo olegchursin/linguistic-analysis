@@ -13,21 +13,22 @@ const SemanticsAssociativeList = (props) => {
   let elements = associativeList.map(i => {
     let color = 'black'
 
-    if (90 <= i.weight <= 100) {
+    if (90 <= i.weight && i.weight <= 100) {
       color = 'red'
-    } else if (80 <= i.weight <= 89) {
+    } else if (80 <= i.weight && i.weight <= 89) {
       color = 'pink'
-    } else if (70 <= i.weight <= 79) {
+    } else if (70 <= i.weight && i.weight <= 79) {
       color = 'orange'
-    } else if (60 <= i.weight <= 69) {
+    } else if (60 <= i.weight && i.weight <= 69) {
       color = 'yellow'
-    } else if (50 <= i.weight <= 59) {
+    } else if (50 <= i.weight && i.weight <= 59) {
       color = 'olive'
     } else {
       color = 'green'
     }
 
-    return <div className="keyword-result" key={i.item}>
+
+    return <div style={{backgroundColor: color}} className="keyword-result" key={i.item}>
       {i.item} ({i.weight})
     </div>
   })

@@ -6,6 +6,9 @@ import { BrowserRouter as Router, Route } from 'react-router-dom'
 // General
 import AuthContainer from './components/auth/AuthContainer'
 import SignupForm from './components/auth/SignupForm'
+import Sitemap from './components/legal/Sitemap'
+import Contact from './components/legal/Contact'
+import Disclaimer from './components/legal/Disclaimer'
 import MainContainer from './components/main/MainContainer' // Landing Page
 import NavBar from './components/NavBar'
 import Footer from './components/Footer'
@@ -24,14 +27,39 @@ class App extends Component {
         <div className="site">
           <NavBar />
           <div className="site-content">
-            <Route path="/" exact component={MainContainer} />
-            <Route path="/login" exact component={AuthContainer} />
-            <Route path="/signup" exact component={SignupForm} />
-            <Route path="/lexical" exact component={DictionaryContainer} />
-            <Route path="/semantics" exact component={SemanticsContainer} />
-            <Route path="/phonetics" exact component={PhoneticsContainer} />
-            <Route path="/text" exact component={TextContainer} />
-            <Route path="/hashtag" exact component={HashtagContainer} />
+            <Route
+              exact path="/"
+              component={MainContainer} />
+            <Route
+              exact path="/login"
+              component={AuthContainer} />
+            <Route
+              exact path="/signup"
+              component={SignupForm} />
+            <Route
+              exact path="/sitemap"
+              component={Sitemap} />
+            <Route
+              exact path="/disclaimer"
+              component={Disclaimer} />
+            <Route
+              exact path="/contact"
+              component={Contact} />
+            <Route
+              exact path="/lexical"
+              component={DictionaryContainer} />
+            <Route
+              exact path="/semantics"
+              component={SemanticsContainer} />
+            <Route
+              exact path="/phonetics"
+              component={PhoneticsContainer} />
+            <Route
+              exact path="/text"
+              component={TextContainer} />
+            <Route
+              exact path="/hashtag"
+              component={HashtagContainer} />
           </div>
           <Footer className="sticky-footer"/>
         </div>

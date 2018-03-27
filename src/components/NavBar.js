@@ -46,7 +46,7 @@ export default class NavBar extends Component {
             </Dropdown.Item>
 
             <Dropdown.Item
-              href='/dictionary'
+              href='/lexical'
               name='thesaurus'
               active={activeItem === 'thesaurus'}
               onClick={this.handleItemClick}
@@ -55,7 +55,7 @@ export default class NavBar extends Component {
             </Dropdown.Item>
 
             <Dropdown.Item
-              href='/dictionary'
+              href='/lexical'
               name='translation'
               active={activeItem === 'translation'}
               onClick={this.handleItemClick}

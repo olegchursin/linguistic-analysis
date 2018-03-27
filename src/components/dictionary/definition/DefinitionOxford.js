@@ -6,17 +6,21 @@ const DefinitionOxford = (props) => {
   const definitionArr = props.definition
   return (
     <div>
-      <p>The Oxford English Dictionary (OED) is the accepted authority on the English language, providing an unsurpassed guide to the meaning, history, and pronunciation of more than 280,000 entries – past and present – from across the English-speaking world.</p>
       {
+        definitionArr.length !== 0
+        ?
         definitionArr.map(def => {
           return <div key={def.lexicalCategory}>
-            <p>POS: {def.lexicalCategory}</p>
-            <div>
-              {
-                def.pronunciations.map(pronunciation => {
-                  return <p key={pronunciation.phoneticSpelling}>Pronunciation: [{pronunciation.phoneticSpelling}] | <a href={pronunciation.Audiofile}>Audiofile</a></p>
-                })
-              }
+            <h3>{def.text}</h3>
+            <div className="definition-subheader">
+              <span>{def.lexicalCategory}</span>
+              <span>
+                {
+                  def.pronunciations.map(pronunciation => {
+                    return <p key={pronunciation.phoneticSpelling}>Pronunciation: [{pronunciation.phoneticSpelling}] | <a href='{pronunciation.Audiofile}'>Audiofile</a></p>
+                  })
+                }
+              </span>
             </div>
             <ul>
               {
@@ -46,6 +50,8 @@ const DefinitionOxford = (props) => {
             </ul>
           </div>
         })
+        :
+        <p>The Oxford English Dictionary (OED) is the accepted authority on the English language, providing an unsurpassed guide to the meaning, history, and pronunciation of more than 280,000 entries – past and present – from across the English-speaking world.</p>
       }
     </div>
   )

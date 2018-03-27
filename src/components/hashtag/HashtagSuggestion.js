@@ -9,17 +9,19 @@ const HashtagSuggestion = (props) => {
   const input = props.suggestion.text
   const suggestionArr = props.suggestion.items
 
-  // TODO: -- developer | Error handling. If (suggestionArr.length === 0), render "No suggestions were found for your entry. Please try another lexeme."
   return (
     <div>
-      <h4>{input}</h4>
-      {suggestionArr
+      {
+        suggestionArr
         ?
-        suggestionArr.map((instance, index) => {
-          return <div key={index}>
-            {instance.item} (Weight: {instance.weight}) | POS: {instance.pos}
-          </div>
-        })
+        <div>
+          <p>Lexemes are sorted by their (weight).</p>
+          {
+            suggestionArr.map((hashtag, index) => {
+              return <div className="keyword-result" key={index}>{hashtag.item} ({hashtag.pos}): {hashtag.weight}</div>
+            })
+          }
+        </div>
         :
         <p>Please start your search by entering a lexeme in the search bar above.</p>
       }
