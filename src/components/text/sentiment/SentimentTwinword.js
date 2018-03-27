@@ -25,7 +25,7 @@ const SentimentTwinword = (props) => {
           </div>
         </div>
         :
-        <p>Sentiment Analysis by Twinword helps you make educated guesses whether an inout is positive, negative, or neutral.</p>
+        <p><a href="https://www.twinword.com/api/sentiment-analysis.php">Sentiment Analysis by Twinword</a> helps you make educated guesses whether an inout is positive, negative, or neutral.</p>
       }
     </div>
   )

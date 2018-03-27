@@ -24,6 +24,10 @@ export const TRANSLATED_IT = "TRANSLATED_IT";
 export const TRANSLATED_RU = "TRANSLATED_RU";
 export const TRANSLATED_DE = "TRANSLATED_DE";
 
+// define rhymes with actions
+export const RHYMES_WITH = "RHYMES_WITH";
+
+
 
 // //////////////////////////////// //
 // ////// DEFINITION ACTIONS ////// //
@@ -110,17 +114,31 @@ export function thesaurusAssoc(searchTerm) {
   };
 }
 
-// Theme
+// Antonyms
 export function thesaurusAnt(searchTerm) {
   return function(dispatch) {
     dispatch({ type: ANALYZING_LEXEME });
     DictionaryApi.thesaurusAnt(searchTerm)
     .then(res => {
-      dispatch({ type: THESAURUS_ANT, payload: res.results[0].lexicalEntries[0].entries[0].senses[0].antonyms });
+      dispatch({ type: DEFINED_WORDSAPI, payload: res });
     });
   };
 }
 
+// /////////////////////// //
+// ////// PHONETICS ////// //
+// /////////////////////// //
+
+// Rhymes with
+export function rhymesWith(searchTerm) {
+  return function(dispatch) {
+    dispatch({ type: ANALYZING_LEXEME });
+    DictionaryApi.rhymesWith(searchTerm)
+    .then(res => {
+      dispatch({ type: RHYMES_WITH, payload: res });
+    });
+  };
+}
 
 // ///////////////////////////////// //
 // ////// TRANSLATION ACTIONS ////// //

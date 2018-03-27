@@ -15,10 +15,11 @@ const HashtagSuggestion = (props) => {
         suggestionArr
         ?
         <div>
+          <h3>Conceptual domain: {input}</h3>
           <p>Lexemes are sorted by their (weight).</p>
           {
             suggestionArr.map((hashtag, index) => {
-              return <div className="keyword-result" key={index}>{hashtag.item} ({hashtag.pos}): {hashtag.weight}</div>
+              return <div className="keyword-result" key={index}><div>{hashtag.item} ({hashtag.pos}): {hashtag.weight}</div></div>
             })
           }
         </div>

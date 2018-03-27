@@ -72,10 +72,6 @@ class DictionaryApi {
       }
     })
     .then(res => res.json()) // continues at dictionaryActions.js
-    // WordAPI
-    // return unirest.get(`https://wordsapiv1.p.mashape.com/words/${searchTerm}/synonyms`)
-    // .header("X-Mashape-Key", "z69n365FagmshpXYBNcvLgxQ3yd8p16seHGjsnzlL4kvlq9xqf")
-    // .header("Accept", "application/json")
   }
 
   // Associations
@@ -87,16 +83,30 @@ class DictionaryApi {
     .send(`entry=${searchTerm}`)
   }
 
-  // Theme
+  // Antonyms
   static thesaurusAnt(searchTerm) {
-    return fetch(`https://cors-anywhere.herokuapp.com/https://od-api.oxforddictionaries.com:443/api/v1/entries/en/${searchTerm}/antonyms`, {
+    return fetch(`https://wordsapiv1.p.mashape.com/words/${searchTerm}/antonyms`, {
       headers: {
         "Accept": "application/json",
-        "app_id": 'a30a1a5e',
-        "app_key": OXFORD_KEY
+        "X-Mashape-Key": MASHAPE_KEY_Z
       }
     })
-    .then(res => res.json()) // continues at dictionaryActions.js
+    .then(res => res.json())
+  }
+
+  // /////////////////////// //
+  // ////// PHONETICS ////// //
+  // /////////////////////// //
+
+  // Rhymes with
+  static rhymesWith(searchTerm) {
+    return fetch(`https://wordsapiv1.p.mashape.com/words/${searchTerm}/rhymes`, {
+      headers: {
+        "Accept": "application/json",
+        "X-Mashape-Key": MASHAPE_KEY_Z
+      }
+    })
+    .then(res => res.json())
   }
 
   // ////////////////////////// //

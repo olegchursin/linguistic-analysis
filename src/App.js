@@ -20,7 +20,15 @@ import TextContainer from './components/text/TextContainer'
 import HashtagContainer from './components/hashtag/HashtagContainer'
 
 
+
+
 class App extends Component {
+
+  componentDidCatch(error, info) {
+      // Display fallback UI
+      console.log("ERROR", info)
+    }
+
   render() {
     return (
       <Router>

@@ -1,7 +1,7 @@
 // API calls for text analytics
 
 
-import { WORDASSOCIATIONS_KEY, MASHAPE_KEY_R } from './appEnv'
+import { MASHAPE_KEY_R } from './appEnv'
 
 // MashapeAPI tool for API requests
 // http://unirest.io/nodejs

@@ -1,7 +1,7 @@
 import React from 'react'
 
 // Semantic UI
-import { Grid, Icon, Step, Divider, Image } from 'semantic-ui-react'
+import { Grid, Step, Divider, Image } from 'semantic-ui-react'
 
 const Cta = (props) => {
   return (

@@ -5,7 +5,7 @@ import { Tab } from 'semantic-ui-react'
 
 import ThesaurusSyn from './thesaurus/ThesaurusSyn'
 import ThesaurusAssoc from './thesaurus/ThesaurusAssoc'
-import ThesaurusAnt from './thesaurus/ThesaurusAnt'
+// import ThesaurusAnt from './thesaurus/ThesaurusAnt'
 
 const panes = [
   { menuItem: 'Synonyms', render: () =>
@@ -13,10 +13,10 @@ const panes = [
       <ThesaurusSyn />
     </Tab.Pane> },
 
-  { menuItem: 'Antonyms', render: () =>
-    <Tab.Pane>
-      <ThesaurusAnt />
-    </Tab.Pane> },
+  // { menuItem: 'Antonyms', render: () =>
+  //   <Tab.Pane>
+  //     <ThesaurusAnt />
+  //   </Tab.Pane> },
 
   { menuItem: 'Associations', render: () =>
     <Tab.Pane>

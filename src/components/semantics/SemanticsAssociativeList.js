@@ -3,8 +3,6 @@ import React from 'react'
 // Import Redux connect
 import { connect } from 'react-redux'
 
-// Semantic UI
-import { Button, Label } from 'semantic-ui-react'
 
 const SemanticsAssociativeList = (props) => {
   console.log("Associative List", props.associativeList)
@@ -14,21 +12,27 @@ const SemanticsAssociativeList = (props) => {
     let color = 'black'
 
     if (90 <= i.weight && i.weight <= 100) {
-      color = 'red'
+      color = '#f384a4'
     } else if (80 <= i.weight && i.weight <= 89) {
-      color = 'pink'
+      color = '#f094a8'
     } else if (70 <= i.weight && i.weight <= 79) {
-      color = 'orange'
+      color = '#f6ad89'
     } else if (60 <= i.weight && i.weight <= 69) {
-      color = 'yellow'
+      color = '#f2b372'
     } else if (50 <= i.weight && i.weight <= 59) {
-      color = 'olive'
+      color = '#dec78e'
+    } else if (40 <= i.weight && i.weight <= 49) {
+      color = '#b9d1a3'
+    } else if (30 <= i.weight && i.weight <= 39) {
+      color = '#9cd4bf'
+    } else if (20 <= i.weight && i.weight <= 29) {
+      color = '#8ec8d1'
     } else {
-      color = 'green'
+      color = '#85bddd'
     }
 
 
-    return <div style={{backgroundColor: color}} className="keyword-result" key={i.item}>
+    return <div style={{backgroundColor: color}} className="keyword-result-borderless" key={i.item}>
       {i.item} ({i.weight})
     </div>
   })
