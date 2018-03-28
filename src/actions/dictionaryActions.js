@@ -3,6 +3,8 @@ import DictionaryApi from "../services/dictionaryApi";
 
 // action to control isLoading state (display loader)
 export const ANALYZING_LEXEME = "ANALYZING_LEXEME";
+export const ANALYZING_LEXEME_OXFORD = "ANALYZING_LEXEME_OXFORD";
+export const ANALYZING_LEXEME_SYN = "ANALYZING_LEXEME_SYN";
 
 // define definition actions
 export const DEFINED_OXFORD = "DEFINED_OXFORD";
@@ -35,7 +37,7 @@ export const RHYMES_WITH = "RHYMES_WITH";
 
 export function defineOxford(searchTerm) {
   return function(dispatch) {
-    dispatch({ type: ANALYZING_LEXEME });
+    dispatch({ type: ANALYZING_LEXEME_OXFORD });
     DictionaryApi.defineOxford(searchTerm)
     .then(res => {
       dispatch({ type: DEFINED_OXFORD, payload: res.results[0].lexicalEntries });
@@ -90,16 +92,11 @@ export function defineUrban(searchTerm) {
 // Synonyms
 export function thesaurusSyn(searchTerm) {
   return function(dispatch) {
-    dispatch({ type: ANALYZING_LEXEME });
+    dispatch({ type: ANALYZING_LEXEME_SYN });
     DictionaryApi.thesaurusSyn(searchTerm)
     .then(res => {
       dispatch({ type: THESAURUS_SYN, payload: res.results[0].lexicalEntries[0].entries[0].senses[0].synonyms });
     });
-
-    // WordsApi
-    // .end(res => {
-    //   dispatch({ type: THESAURUS_SYN, payload: res.body.synonyms });
-    // });
   };
 }
 

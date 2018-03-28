@@ -1,57 +1,89 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
+// Semantic UI
+import { Loader, Divider } from 'semantic-ui-react'
+
 const DefinitionOxford = (props) => {
   console.log("Oxford", props.definition)
   const definitionArr = props.definition
+
+  let component;
+  if (props.isLoading) {
+    component = <Loader active inline='centered'>Loading</Loader>
+  } else if (definitionArr.length) {
+    component = <div>
+      <p>The Oxford English Dictionary (OED) is the accepted authority on the English language, providing an unsurpassed guide to the meaning, history, and pronunciation of more than 280,000 entries – past and present – from across the English-speaking world.</p>
+      {
+        definitionArr.map(def => {
+          return <div key={def.lexicalCategory}>
+            <Divider hidden />
+            <h3>{def.text}</h3>
+
+            <div className="definition-subheader">
+              <p>{def.lexicalCategory}  &#9642;
+                {
+                  def.pronunciations.map(pronunciation => {
+                    return <span key={pronunciation.phoneticSpelling}>/{pronunciation.phoneticSpelling}/</span>
+                  })
+                }
+              </p>
+            </div>
+
+            <div>
+              {
+                def.entries.map(entry => {
+                  return <div key={entry.homographNumber}>
+                    <div>
+                      <ul>
+                        {
+                          entry.senses.map(sense => {
+                            return <div key={sense.id}>
+                              <div>
+                                {
+                                  sense.definitions.map(definition => {
+                                    return <li key={definition}>{definition}</li>
+                                  })
+                                }
+                              </div>
+                            </div>
+                          })
+                        }
+                      </ul>
+                      {
+                        entry.etymologies
+                        ?
+                        <div>
+                          {
+                            entry.etymologies.map(etymology => <p key={etymology}>Etymology: {etymology}</p>)
+                          }
+                        </div>
+                        :
+                        <span></span>
+                      }
+
+                    </div>
+                  </div>
+                })
+              }
+            </div>
+          </div>
+        })
+      }
+      <Divider hidden />
+      <div className='tag-powered-by'>
+        <p>Powered by: <a href='https://en.oxforddictionaries.com/'>Oxford Dictionary</a></p>
+      </div>
+    </div>
+  } else {
+    <p><a href="https://en.oxforddictionaries.com/">The Oxford English Dictionary (OED)</a> is the accepted authority on the English language, providing an unsurpassed guide to the meaning, history, and pronunciation of more than 280,000 entries – past and present – from across the English-speaking world.</p>
+  }
+
+
   return (
     <div>
       {
-        definitionArr.length !== 0
-        ?
-        definitionArr.map(def => {
-          return <div key={def.lexicalCategory}>
-            <h3>{def.text}</h3>
-            <div className="definition-subheader">
-              <span>{def.lexicalCategory}</span>
-              <span>
-                {
-                  def.pronunciations.map(pronunciation => {
-                    return <p key={pronunciation.phoneticSpelling}>Pronunciation: [{pronunciation.phoneticSpelling}] | <a href='{pronunciation.Audiofile}'>Audiofile</a></p>
-                  })
-                }
-              </span>
-            </div>
-            <ul>
-              {
-                def.entries.map(entry => {
-                  return <li key={entry.homographNumber}>
-                    <div>
-                      {
-                        entry.etymologies ?  entry.etymologies.map(etymology => <p key={etymology}>{etymology}</p>) : <p>Etymology undefined.</p>
-                      }
-                    </div>
-                    {
-                      entry.senses.map(sense => {
-                        return <div key={sense.id}>
-                          <div>
-                            {
-                              sense.definitions.map(definition => {
-                                return <p key={definition}>{definition}</p>
-                              })
-                            }
-                          </div>
-                        </div>
-                      })
-                    }
-                  </li>
-                })
-              }
-            </ul>
-          </div>
-        })
-        :
-        <p>The Oxford English Dictionary (OED) is the accepted authority on the English language, providing an unsurpassed guide to the meaning, history, and pronunciation of more than 280,000 entries – past and present – from across the English-speaking world.</p>
+        component
       }
     </div>
   )
@@ -59,7 +91,7 @@ const DefinitionOxford = (props) => {
 
 const mapStateToProps = (state) => {
   return {
-    isLoading: state.dictionary.isLoading,
+    isLoading: state.dictionary.isLoadingOxford,
     definition: state.dictionary.definitionOxford // from ./reducers/dictionaryReducer.js
   }
 }
