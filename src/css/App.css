@@ -96,7 +96,7 @@ textarea {
 .hero {
   height: 65vh;
   padding-top: 180px;
-  max-height: 800px;
+  max-height: 600px;
   background: #5B86E5;  /* fallback for old browsers */
   background: -webkit-linear-gradient(to left, #36D1DC, #5B86E5);  /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to left, #36D1DC, #5B86E5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
@@ -116,6 +116,7 @@ textarea {
 .services {
   height: 80vh;
   padding-top: 20px;
+  max-height: 800px;
 }
 .services img {
   height: 320px;
@@ -136,6 +137,7 @@ textarea {
 .cta {
   height: 45vh;
   padding: 20px 0 40px;
+  max-height: 400px;
 }
 .cta-img {
   max-height: 40px;
@@ -161,6 +163,7 @@ textarea {
 /* *************** */
 /* *** Results *** */
 /* *************** */
+/* Style the list of keyword suggedstions/ hashtag suggestions */
 .keyword-result {
   display: inline-block;
   padding: 5px 15px;
@@ -174,6 +177,17 @@ textarea {
   margin: 5px;
   border: none;
   border-radius: 3px;
+}
+.keyword-result-borderless-inverted {
+  display: inline-block;
+  color: #fff;
+  padding: 5px 15px;
+  margin: 5px;
+  border: none;
+  border-radius: 3px;
+}
+.defined-entry-hashtag{
+  color: #7f0280;
 }
 
 

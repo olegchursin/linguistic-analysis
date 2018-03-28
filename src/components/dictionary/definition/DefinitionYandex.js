@@ -6,7 +6,6 @@ const DefinitionYandex = (props) => {
   const definitionArr = props.definition
   return (
     <div>
-      <p>Powered by <a href="http://api.yandex.com/dictionary">Yandex.Dictionary</a></p>
       {
         definitionArr.map(def => {
           return <div key={def.ts}>
@@ -31,6 +30,9 @@ const DefinitionYandex = (props) => {
           </div>
         })
       }
+      <div className="tag-powered-by">
+        <p>Powered by: <a href="http://api.yandex.com/dictionary">Yandex.Dictionary</a></p>
+      </div>
     </div>
   )
 }

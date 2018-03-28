@@ -1,4 +1,4 @@
-import { ANALYZING_TEXT, SEMANTIC_ASSOC_LIST } from "../actions/semanticsActions";
+import { ANALYZING_SEMANTIC, SEMANTIC_ASSOC_LIST } from "../actions/semanticsActions";
 
 const initialState = {
   associativeList: [],
@@ -7,7 +7,8 @@ const initialState = {
 
 function semanticsReducer(state = initialState, action) {
   switch (action.type) {
-    case ANALYZING_TEXT:
+    case ANALYZING_SEMANTIC:
+    // console.log("Analyzing")
       return { ...state, isLoading: true };
     // Associative List
     case SEMANTIC_ASSOC_LIST:

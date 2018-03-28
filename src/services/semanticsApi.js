@@ -14,7 +14,6 @@ class SemanticsApi {
   // //////////////////////////////// //
 
   static associativeList(searchTerm) {
-    console.log("WA KEY", process.env['WORDASSOCIATIONS_KEY'])
     return fetch(`https://wordassociations-word-associations-v1.p.mashape.com/json/search?apikey=${WORDASSOCIATIONS_KEY}&indent=yes&lang=en&limit=100&pos=noun%2Cadjective%2Cverb%2Cadverb&text=${searchTerm}&type=stimulus`, {
       headers: {
         "X-Mashape-Key": MASHAPE_KEY_R,

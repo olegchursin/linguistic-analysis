@@ -8,7 +8,7 @@ import { Button, Form, Grid, Header, Image, Message, Segment } from 'semantic-ui
 
 const LoginForm = (props) => {
   console.log(props)
-  
+
   return (
     <div className='login-form'>
       {/*
@@ -30,7 +30,7 @@ const LoginForm = (props) => {
       >
         <Grid.Column style={{ maxWidth: 450 }}>
           <Header as='h2' color='blue' textAlign='center'>
-            <Image src='/img/logo.png' />
+            <Image src='/img/logo-mark.svg' />
             {' '}Log-in to your account
           </Header>
           <Form

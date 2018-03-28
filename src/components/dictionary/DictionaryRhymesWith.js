@@ -19,7 +19,9 @@ const DictionaryRhymesWith = (props) => {
               return <div className="keyword-result" key={rhyme}><div>{rhyme}</div></div>
             })
           }
-          <div className="tag-powered-by">Powered by <a href="http://www.wordsapi.com">WordsAPI</a></div>
+          <div className="tag-powered-by">
+            <p>Powered by: <a href="http://www.wordsapi.com">WordsAPI</a></p>
+          </div>
         </Segment>
         :
         <p>Discover the list of lexemes that rhyme with the given word.</p>

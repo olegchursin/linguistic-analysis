@@ -68,7 +68,7 @@ export default class NavBar extends Component {
             <Dropdown.Header>Phonetics</Dropdown.Header>
 
             <Dropdown.Item
-              href='/phonetics'
+              href='/lexical'
               name='rhymes'
               active={activeItem === 'rhymes'}
               onClick={this.handleItemClick}

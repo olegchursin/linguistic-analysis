@@ -21,7 +21,7 @@ const SentimentTwinword = (props) => {
             }
           </ul>
           <div className="tag-powered-by">
-            <p>powered by: <a href="https://www.twinword.com/">Twinword</a></p>
+            <p>Powered by: <a href="https://www.twinword.com/">Twinword</a></p>
           </div>
         </div>
         :

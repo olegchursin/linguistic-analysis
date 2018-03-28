@@ -9,7 +9,14 @@ const KeywordsTwinword = (props) => {
       {
         keywords
         ?
-        keywords.map(keyword => <div className='keyword-result' key={keyword.word}>{keyword.word}</div>)
+        <div>
+          {
+            keywords.map(keyword => <div className='keyword-result' key={keyword.word}>{keyword.word}</div>)
+          }
+          <div className="tag-powered-by">
+            <p>Powered by: <a href="https://www.twinword.com/">Twinword</a></p>
+          </div>
+        </div>
         :
         <p>Twinword Keyword Extractor effectively extracts keywords and measure their relevance.</p>
       }
