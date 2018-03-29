@@ -1,23 +1,42 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
+// Semantic UI
+import { Segment, Icon, Divider } from 'semantic-ui-react'
+
 
 const DefinitionUrban = (props) => {
   console.log("Urban", props.definition)
   const definitionArr = props.definition.list
-  return (
-    <div>
+
+  let component;
+  if (definitionArr.length) {
+    component = <div>
       {
         definitionArr.map(definition => {
-          return <div key={definition.defid}>
-            <h4>{definition.word}</h4>
+          return <Segment key={definition.defid}>
+            <h3>{definition.word}</h3>
             <p>{definition.definition}</p>
+            <Divider hidden />
             <p>Author: {definition.author}</p>
-            <p>Thumbs up: {definition.thumbs_up} | Thumbs down: {definition.thumbs_down}</p>
-            <p><a href={definition.permalink}>See defintion on UrbanDictionary.com</a></p>
-          </div>
+            <p><Icon color='blue' name='thumbs outline up' /> {definition.thumbs_up} | <Icon color='blue' name='thumbs outline down' /> {definition.thumbs_down}</p>
+            <Divider hidden />
+            <div className='tag-powered-by'>See defintion on <a href={definition.permalink}>UrbanDictionary.com</a></div>
+          </Segment>
         })
       }
+      <Divider hidden />
+      <div className='tag-powered-by'>
+        <p>Powered by: <a href="https://www.urbandictionary.com/">Urban Dictionary</a></p>
+      </div>
+    </div>
+  } else {
+    component = <p>Definition provided by <a href="https://www.urbandictionary.com/">Urban Dictionary</a></p>
+  }
+
+  return (
+    <div>
+      { component }
     </div>
   )
 }

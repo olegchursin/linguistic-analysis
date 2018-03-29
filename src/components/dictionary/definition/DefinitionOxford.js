@@ -11,9 +11,8 @@ const DefinitionOxford = (props) => {
   let component;
   if (props.isLoading) {
     component = <Loader active inline='centered'>Loading</Loader>
-  } else if (definitionArr.length) {
+  } else if (definitionArr.length !== 0) {
     component = <div>
-      <p>The Oxford English Dictionary (OED) is the accepted authority on the English language, providing an unsurpassed guide to the meaning, history, and pronunciation of more than 280,000 entries – past and present – from across the English-speaking world.</p>
       {
         definitionArr.map(def => {
           return <div key={def.lexicalCategory}>
@@ -76,7 +75,7 @@ const DefinitionOxford = (props) => {
       </div>
     </div>
   } else {
-    <p><a href="https://en.oxforddictionaries.com/">The Oxford English Dictionary (OED)</a> is the accepted authority on the English language, providing an unsurpassed guide to the meaning, history, and pronunciation of more than 280,000 entries – past and present – from across the English-speaking world.</p>
+    component = <p><a href="https://en.oxforddictionaries.com/">The Oxford English Dictionary (OED)</a> is the accepted authority on the English language, providing an unsurpassed guide to the meaning, history, and pronunciation of more than 280,000 entries – past and present – from across the English-speaking world.</p>
   }
 
 

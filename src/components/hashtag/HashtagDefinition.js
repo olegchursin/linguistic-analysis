@@ -15,22 +15,22 @@ const HashtagDefinition = (props) => {
     component = <Loader active inline='centered'>Loading</Loader>
   } else if (definitionRes.defs) {
     component = <div>
-                  {
-                    definitionRes.defs.map(instance => {
-                      return <div key={instance.def.time}>
-                        <Divider hidden />
-                        <Segment>
-                          <h3 className="defined-entry-hashtag">#{instance.def.hashtag}</h3>
-                          <p>{instance.def.text}</p>
-                          <p><Icon color='purple' name='thumbs outline up' /> {instance.def.upvotes} | <Icon color='purple' name='thumbs outline down' /> {instance.def.downvotes}</p>
-                          <div className='tag-powered-by'>
-                            <p>Powered by: <a href='{def.uri}'>TagDef</a></p>
-                          </div>
-                        </Segment>
-                      </div>
-                    })
-                  }
-                </div>
+      {
+        definitionRes.defs.map(instance => {
+          return <div key={instance.def.time}>
+            <Divider hidden />
+            <Segment>
+              <h3 className="defined-entry-hashtag">#{instance.def.hashtag}</h3>
+              <p>{instance.def.text}</p>
+              <p><Icon color='purple' name='thumbs outline up' /> {instance.def.upvotes} | <Icon color='purple' name='thumbs outline down' /> {instance.def.downvotes}</p>
+              <div className='tag-powered-by'>
+                <p>Powered by: <a href='{def.uri}'>TagDef</a></p>
+              </div>
+            </Segment>
+          </div>
+        })
+      }
+    </div>
   } else if (definitionRes.uri) {
     component = <p>uh oh...your #hashtag needs an English definition. Can you help? Add your defintion to <a href='{definitionRes.uri}'>TagDef</a>.</p>
   } else {

@@ -1,38 +1,67 @@
 import React from 'react'
+
+// Redux
 import { connect } from 'react-redux'
+
+// Semantic UI
+import { Divider } from 'semantic-ui-react'
 
 const DefinitionYandex = (props) => {
   console.log("Yandex", props.definition)
   const definitionArr = props.definition
-  return (
-    <div>
+
+  let component;
+  if (definitionArr.length) {
+    component = <div>
       {
         definitionArr.map(def => {
           return <div key={def.ts}>
             <h3>{def.text}</h3>
-            <p>POS: {def.pos}</p>
-            <p>Pronunciation: [{def.ts}]</p>
-            <ul>
+            <p>{def.pos}  &#9642; / {def.ts} /</p>
+            <div>
               {
                 def.tr.map(tr => {
-                  return <li key={tr.text}>
+                  return <div key={tr.text}>
                     <div>
-                      <h5>{tr.text} ({tr.pos})</h5>
-                      <p>Synonyms:</p>
+                      <Divider hidden />
+                      <h5>{tr.text}</h5>
                       {
-                        tr.syn ? tr.syn.map(synonym => <p key={synonym.text}> {synonym.text} ({synonym.pos})</p>) : <span> </span>
+                        tr.syn
+                        ?
+                        <div>
+                          Synonyms:
+                          {
+                            tr.syn.map(synonym => {
+                              return (
+                                <span>
+                                  <span key={synonym.text}> {synonym.text}, </span>
+                                </span>
+                              )
+                            })
+                          }
+                        </div>
+                        :
+                        <span></span>
                       }
                     </div>
-                  </li>
+                  </div>
                 })
               }
-            </ul>
+            </div>
           </div>
         })
       }
       <div className="tag-powered-by">
         <p>Powered by: <a href="http://api.yandex.com/dictionary">Yandex.Dictionary</a></p>
       </div>
+    </div>
+  } else {
+    component = <p>Definition provided by <a href="http://api.yandex.com/dictionary">Yandex.Dictionary</a></p>
+  }
+
+  return (
+    <div>
+      { component }
     </div>
   )
 }
