@@ -1,25 +1,51 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
+// Semantic UI
+import { Segment } from 'semantic-ui-react'
+
 const TranslationIt = (props) => {
   console.log("Translate It", props.translation)
   const translation = props.translation
-  return (
-      <div>
+  let component;
+  if (translation.length) {
+    component =   <div>
         {
-          translation.map(entry => {
-            return <div key={entry.text}><p>POS: {entry.pos} | Pronunciation: {entry.ts}</p>
+          translation.map((entry, index) => {
+            return <Segment key={index}>
+              <h3>{entry.text}</h3>
+              <p>{entry.pos}  &#9642;  / {entry.ts} /</p>
                 <ul>
                   {
-                    entry.tr.map(trEntry => {
-                      return <li key={trEntry.text}>{trEntry.text} | Gender: {trEntry.gen} | POS: {trEntry.pos}</li>
+                    entry.tr.map((trEntry, index) => {
+                      return <li key={index}>
+                        {trEntry.text} ({trEntry.pos})
+                        {
+                          trEntry.gen
+                          ?
+                          <span> / Gender: {trEntry.gen}</span>
+                          :
+                          <span></span>
+                        }
+                      </li>
                     })
                   }
                 </ul>
-              </div>
+              </Segment>
           })
         }
+        <div className="tag-powered-by">
+          <p>Powered by: <a href="http://api.yandex.com/dictionary">Yandex.Dictionary</a></p>
+        </div>
       </div>
+  } else {
+    component = <p>English - Italian translation provided by <a href="http://api.yandex.com/dictionary">Yandex.Dictionary</a>.</p>
+  }
+
+  return (
+    <div>
+      { component }
+    </div>
   )
 }
 

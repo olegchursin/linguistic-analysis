@@ -24,5 +24,3 @@ This tool  will help anyone who needs to perform lexical, text, and semantic ana
 ### Repos
 #### Frontend
 [GitHub - olegchursin/linguistic-analysis](https://github.com/olegchursin/linguistic-analysis)
-
-#### Backend

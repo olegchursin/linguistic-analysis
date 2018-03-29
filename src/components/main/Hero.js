@@ -14,7 +14,7 @@ const Hero = (props) => {
           <Link to="/text">
             <Button color='teal'>Get started</Button>
           </Link>
-          <Button inverted>Documentation</Button>
+            <a href="https://olegchursin.gitbooks.io/linguistic-analysis/"><Button inverted>Documentation</Button></a>
         </Grid.Column>
         <Grid.Column className="hero--right-panel">
           <Image src='/img/lp-hero-logo.svg' />

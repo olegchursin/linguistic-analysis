@@ -96,7 +96,7 @@ export default class NavBar extends Component {
         >
           Hashtag Analysis
         </Menu.Item>
-        <Menu.Menu position='right'>
+        {/* <Menu.Menu position='right'>
           <Menu.Item
             href='/login'
             name='login'
@@ -105,7 +105,7 @@ export default class NavBar extends Component {
           >
             Login
           </Menu.Item>
-        </Menu.Menu>
+        </Menu.Menu> */}
 
       </Menu>
     )

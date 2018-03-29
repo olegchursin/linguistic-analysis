@@ -90,7 +90,7 @@ const ApiList = (props) => {
           <Grid.Column>
             <h2>Urban Dictionary</h2>
             <p>A crowdsourced online dictionary for slang words and phrases. "Definitions" include not only literal definitions, but also descriptions. "To define" on UD does not necessarily entail providing a strict definition.</p>
-            <a href="https://market.mashape.com/community/urban-dictionary">
+            <a href="https://www.urbandictionary.com/">
               <Button basic inverted>Learn more</Button>
             </a>
 

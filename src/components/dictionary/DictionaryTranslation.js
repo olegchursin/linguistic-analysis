@@ -10,6 +10,11 @@ import TranslationRu from './translation/TranslationRu'
 import TranslationDe from './translation/TranslationDe'
 
 const panes = [
+  { menuItem: 'Russian', render: () =>
+    <Tab.Pane>
+      <TranslationRu />
+    </Tab.Pane> },
+
   { menuItem: 'Spanish', render: () =>
     <Tab.Pane>
       <TranslationEs />
@@ -23,11 +28,6 @@ const panes = [
     { menuItem: 'Italian', render: () =>
     <Tab.Pane>
       <TranslationIt />
-    </Tab.Pane> },
-
-  { menuItem: 'Russian', render: () =>
-    <Tab.Pane>
-      <TranslationRu />
     </Tab.Pane> },
 
     { menuItem: 'German', render: () =>

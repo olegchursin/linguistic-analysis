@@ -14,14 +14,14 @@ const DefinitionYandex = (props) => {
   if (definitionArr.length) {
     component = <div>
       {
-        definitionArr.map(def => {
-          return <div key={def.ts}>
+        definitionArr.map((def, index) => {
+          return <div key={index}>
             <h3>{def.text}</h3>
             <p>{def.pos}  &#9642; / {def.ts} /</p>
             <div>
               {
-                def.tr.map(tr => {
-                  return <div key={tr.text}>
+                def.tr.map((tr, index) => {
+                  return <div key={index}>
                     <div>
                       <Divider hidden />
                       <h5>{tr.text}</h5>
@@ -31,11 +31,9 @@ const DefinitionYandex = (props) => {
                         <div>
                           Synonyms:
                           {
-                            tr.syn.map(synonym => {
+                            tr.syn.map((synonym, index) => {
                               return (
-                                <span>
-                                  <span key={synonym.text}> {synonym.text}, </span>
-                                </span>
+                                <span key={index}> {synonym.text}, </span>
                               )
                             })
                           }

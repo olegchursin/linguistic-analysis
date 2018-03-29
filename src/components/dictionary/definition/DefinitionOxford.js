@@ -28,7 +28,6 @@ const DefinitionOxford = (props) => {
                 }
               </p>
             </div>
-
             <div>
               {
                 def.entries.map(entry => {
@@ -40,9 +39,13 @@ const DefinitionOxford = (props) => {
                             return <div key={sense.id}>
                               <div>
                                 {
+                                  sense.definitions
+                                  ?
                                   sense.definitions.map(definition => {
                                     return <li key={definition}>{definition}</li>
                                   })
+                                  :
+                                  <li>uh..oh... We have just discovered an inconsistency in Oxford Dictionary data :)</li>
                                 }
                               </div>
                             </div>
