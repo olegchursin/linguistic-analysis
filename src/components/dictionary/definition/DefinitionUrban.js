@@ -10,7 +10,7 @@ const DefinitionUrban = (props) => {
   const definitionArr = props.definition.list
 
   let component;
-  if (definitionArr.length) {
+  if (definitionArr) {
     component = <div>
       {
         definitionArr.map(definition => {

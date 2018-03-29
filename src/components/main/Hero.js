@@ -10,7 +10,7 @@ const Hero = (props) => {
       <Grid container divided='vertically' centered columns={2}>
         <Grid.Column>
           <h1>Linguistic Analysis</h1>
-          <p>Where Natural Language Procesing APIs come together to serve your lexical, semantic, and text analytics needs.</p>
+          <p>Where Natural Language Processing APIs come together to serve your lexical, semantic, and text analytics needs.</p>
           <Link to="/text">
             <Button color='teal'>Get started</Button>
           </Link>
