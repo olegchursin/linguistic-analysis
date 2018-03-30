@@ -10,7 +10,7 @@ const TextSummary = (props) => {
     let component;
     if (props.isLoading) {
       component = <Loader active inline='centered'>Loading</Loader>
-    } else if (props.summary.length) {
+    } else if (props.summary) {
       component = <div>
                     <p>{props.summary}</p>
                     <div className="tag-powered-by">
