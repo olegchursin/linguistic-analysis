@@ -60,9 +60,11 @@ const HashtagSuggestion = props => {
       </div>
     );
   } else {
-    <p>
-      Please start your search by entering a lexeme in the search bar above.
-    </p>;
+    component = (
+      <p>
+        Please start your search by entering a lexeme in the search bar above.
+      </p>
+    );
   }
 
   return <div>{component}</div>;
