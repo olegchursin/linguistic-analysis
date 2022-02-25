@@ -1,4 +1,22 @@
-import { ANALYZING_LEXEME, ANALYZING_LEXEME_OXFORD, ANALYZING_LEXEME_SYN, DEFINED_OXFORD, DEFINED_YANDEX, DEFINED_TWINWORD, DEFINED_WORDSAPI, DEFINED_URBAN, TRANSLATED_ES, TRANSLATED_FR, TRANSLATED_IT, TRANSLATED_RU, TRANSLATED_DE, THESAURUS_SYN, THESAURUS_ASSOC, THESAURUS_ANT, RHYMES_WITH } from "../actions/dictionaryActions";
+import {
+  ANALYZING_LEXEME,
+  ANALYZING_LEXEME_OXFORD,
+  ANALYZING_LEXEME_SYN,
+  DEFINED_OXFORD,
+  DEFINED_YANDEX,
+  DEFINED_TWINWORD,
+  DEFINED_WORDSAPI,
+  DEFINED_URBAN,
+  TRANSLATED_ES,
+  TRANSLATED_FR,
+  TRANSLATED_IT,
+  TRANSLATED_RU,
+  TRANSLATED_DE,
+  THESAURUS_SYN,
+  THESAURUS_ASSOC,
+  THESAURUS_ANT,
+  RHYMES_WITH
+} from '../actions/dictionaryActions';
 
 const initialState = {
   definitionOxford: [], // Oxford Dictionary
@@ -17,8 +35,8 @@ const initialState = {
   rhymesWith: [],
   isLoading: false,
   isLoadingOxford: false,
-  isLoadingSyn: false,
-}
+  isLoadingSyn: false
+};
 
 function dictionaryReducer(state = initialState, action) {
   switch (action.type) {
@@ -30,7 +48,11 @@ function dictionaryReducer(state = initialState, action) {
       return { ...state, isLoadingSyn: true };
     // Defintions
     case DEFINED_OXFORD:
-      return { ...state, isLoadingOxford: false, definitionOxford: action.payload };
+      return {
+        ...state,
+        isLoadingOxford: false,
+        definitionOxford: action.payload
+      };
     case DEFINED_YANDEX:
       return { ...state, isLoading: false, definitionYandex: action.payload };
     case DEFINED_TWINWORD:
@@ -65,4 +87,4 @@ function dictionaryReducer(state = initialState, action) {
   }
 }
 
-export { dictionaryReducer }
+export { dictionaryReducer };

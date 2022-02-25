@@ -5,10 +5,10 @@ const initialState = {
   lexemes: [],
   texts: [],
   currentProject: null
-}
+};
 
 const projectReducer = (state = initialState, action) => {
-  switch(action.type){
+  switch (action.type) {
     // case 'ADD_PROJECT':
     //   return {
     //     projects: [...state.projects, action.payload]
@@ -22,8 +22,8 @@ const projectReducer = (state = initialState, action) => {
     //     texts: [...state.texts, action.payload]
     //   }
     default:
-      return state
+      return state;
   }
-}
+};
 
-export { projectReducer }
+export { projectReducer };

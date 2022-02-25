@@ -17,13 +17,19 @@ html {
 /* ****************** */
 /* *** Typography *** */
 /* ****************** */
-h1,h2,h3,h4,h5,h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: 'Montserrat', sans-serif;
 }
 h1 {
   font-size: 2em;
 }
-p,a {
+p,
+a {
   font-family: 'Lato', sans-serif;
   font-weight: 300;
   font-size: 1.1em;
@@ -51,32 +57,70 @@ textarea {
 }
 
 .main-header.blue {
-  background: #5B86E5;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to left, #36D1DC, #5B86E5);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to left, #36D1DC, #5B86E5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #5b86e5; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to left,
+    #36d1dc,
+    #5b86e5
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to left,
+    #36d1dc,
+    #5b86e5
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 .main-header.indigo {
-  background: #4e54c8;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to left, #8f94fb, #4e54c8);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to left, #8f94fb, #4e54c8); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #4e54c8; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to left,
+    #8f94fb,
+    #4e54c8
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to left,
+    #8f94fb,
+    #4e54c8
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 .main-header.pink {
-  background: #800080;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #800080, #ffc0cb);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #800080, #ffc0cb); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #800080; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #800080,
+    #ffc0cb
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #800080,
+    #ffc0cb
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 .main-header.orange {
-  background: #FF5F6D;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #FF5F6D, #FFC371);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #FF5F6D, #FFC371); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #ff5f6d; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #ff5f6d,
+    #ffc371
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #ff5f6d,
+    #ffc371
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 .main-header.green {
-  background: #06beb6;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to left, #48b1bf, #06beb6);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to left, #48b1bf, #06beb6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #06beb6; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to left,
+    #48b1bf,
+    #06beb6
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to left,
+    #48b1bf,
+    #06beb6
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
-
-
 
 .main-header-title {
   color: #fff;
@@ -97,9 +141,17 @@ textarea {
   height: 65vh;
   padding-top: 180px;
   max-height: 600px;
-  background: #5B86E5;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to left, #36D1DC, #5B86E5);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to left, #36D1DC, #5B86E5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #5b86e5; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to left,
+    #36d1dc,
+    #5b86e5
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to left,
+    #36d1dc,
+    #5b86e5
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 .hero h1 {
   font-size: 3em;
@@ -123,14 +175,22 @@ textarea {
   padding-top: 25%;
   padding-left: 20%;
 }
-.api-list{
+.api-list {
   padding: 40px 0;
   color: #fff;
-  background: #DA4453;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #89216B, #DA4453);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #89216B, #DA4453); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #da4453; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #89216b,
+    #da4453
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #89216b,
+    #da4453
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
-.api-list-row{
+.api-list-row {
   margin: 20px 0;
 }
 
@@ -141,12 +201,12 @@ textarea {
 }
 .cta-img {
   max-height: 40px;
-  padding-right: 15px
+  padding-right: 15px;
 }
 
 /* ************** */
- /* TEXT ANALYSIS */
- /* ************* */
+/* TEXT ANALYSIS */
+/* ************* */
 
 .text-word-count h4 {
   display: inline-block;
@@ -186,28 +246,35 @@ textarea {
   border: none;
   border-radius: 3px;
 }
-.defined-entry-hashtag{
+.defined-entry-hashtag {
   color: #7f0280;
 }
-.dictionary-wordsapi-subheader{
+.dictionary-wordsapi-subheader {
   font-weight: 600;
 }
-
 
 /* ************ */
 /* *** Tags *** */
 /* ************ */
 .tag-powered-by {
-  font-size: .8em;
+  font-size: 0.8em;
   font-weight: 600;
   text-align: right;
   padding: 5px 10px;
   color: #888;
 }
 .tag-powered-by a {
-  color: #5B86E5;  /* fallback for old browsers */
-  color: -webkit-linear-gradient(to left, #5B86E5, #36D1DC);  /* Chrome 10-25, Safari 5.1-6 */
-  color: linear-gradient(to left, #5B86E5, #36D1DC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  color: #5b86e5; /* fallback for old browsers */
+  color: -webkit-linear-gradient(
+    to left,
+    #5b86e5,
+    #36d1dc
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  color: linear-gradient(
+    to left,
+    #5b86e5,
+    #36d1dc
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   font-weight: 600;
 }
 .tag-powered-by a:hover {
@@ -218,18 +285,17 @@ textarea {
 /* *** Footer heart *** */
 /* ******************** */
 .heart {
-  fill: #89216B;
+  fill: #89216b;
   position: relative;
   margin: 0 5px;
   top: 3px;
   width: 15px;
 }
 
-
 /* ******************** */
 /* *** Tooltip Icon *** */
 /* ******************** */
 i.icon.info.circle:before {
   margin-left: 10px;
-  color: #B0BEC5;
+  color: #b0bec5;
 }

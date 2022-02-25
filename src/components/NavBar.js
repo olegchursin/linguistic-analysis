@@ -1,44 +1,44 @@
-import React, { Component } from 'react'
-import { NavLink } from 'react-router-dom'
+import React, { Component } from 'react';
+import { NavLink } from 'react-router-dom';
 
-// Semantic UI React
-import { Dropdown, Menu } from 'semantic-ui-react'
+import { Dropdown, Menu } from 'semantic-ui-react';
 
 export default class NavBar extends Component {
   state = {
     activeItem: ''
-  }
+  };
 
   handleItemClick = (e, { name }) =>
     this.setState({
       activeItem: name
-    })
+    });
 
   render() {
-    const { activeItem } = this.state
+    const { activeItem } = this.state;
 
     return (
-      <Menu fixed='top'>
+      <Menu fixed="top">
         <Menu.Item>
-          <NavLink to="/" exact><img src='../img/logo-full.svg' alt="logo" className="nav-logo" /></NavLink>
+          <NavLink to="/" exact>
+            <img src="../img/logo-full.svg" alt="logo" className="nav-logo" />
+          </NavLink>
         </Menu.Item>
 
         <Menu.Item
-          href='/text'
-          name='text'
+          href="/text"
+          name="text"
           active={activeItem === 'text'}
           onClick={this.handleItemClick}
         >
           Text Analysis
         </Menu.Item>
 
-        <Dropdown text='Lexical Analysis' className='link item' simple>
+        <Dropdown text="Lexical Analysis" className="link item" simple>
           <Dropdown.Menu>
-
             <Dropdown.Header>Dictionary</Dropdown.Header>
             <Dropdown.Item
-              href='/lexical'
-              name='definition'
+              href="/lexical"
+              name="definition"
               active={activeItem === 'definition'}
               onClick={this.handleItemClick}
             >
@@ -46,8 +46,8 @@ export default class NavBar extends Component {
             </Dropdown.Item>
 
             <Dropdown.Item
-              href='/lexical'
-              name='thesaurus'
+              href="/lexical"
+              name="thesaurus"
               active={activeItem === 'thesaurus'}
               onClick={this.handleItemClick}
             >
@@ -55,8 +55,8 @@ export default class NavBar extends Component {
             </Dropdown.Item>
 
             <Dropdown.Item
-              href='/lexical'
-              name='translation'
+              href="/lexical"
+              name="translation"
               active={activeItem === 'translation'}
               onClick={this.handleItemClick}
             >
@@ -68,8 +68,8 @@ export default class NavBar extends Component {
             <Dropdown.Header>Phonetics</Dropdown.Header>
 
             <Dropdown.Item
-              href='/lexical'
-              name='rhymes'
+              href="/lexical"
+              name="rhymes"
               active={activeItem === 'rhymes'}
               onClick={this.handleItemClick}
             >
@@ -79,35 +79,23 @@ export default class NavBar extends Component {
         </Dropdown>
 
         <Menu.Item
-          href='/semantics'
-          name='text'
+          href="/semantics"
+          name="text"
           active={activeItem === 'hashtag'}
           onClick={this.handleItemClick}
         >
           Semantic Analysis
         </Menu.Item>
 
-
         <Menu.Item
-          href='/hashtag'
-          name='text'
+          href="/hashtag"
+          name="text"
           active={activeItem === 'hashtag'}
           onClick={this.handleItemClick}
         >
           Hashtag Analysis
         </Menu.Item>
-        {/* <Menu.Menu position='right'>
-          <Menu.Item
-            href='/login'
-            name='login'
-            active={activeItem === 'login'}
-            onClick={this.handleItemClick}
-          >
-            Login
-          </Menu.Item>
-        </Menu.Menu> */}
-
       </Menu>
-    )
+    );
   }
 }

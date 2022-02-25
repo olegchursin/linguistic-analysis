@@ -1,45 +1,51 @@
 import React from 'react';
-// import ScrollableAnchor from 'react-scrollable-anchor'
 
-// Redux
-import { connect } from 'react-redux'
+import { connect } from 'react-redux';
 
-// Semantic UI
-import { Icon, Popup } from 'semantic-ui-react'
-import { Divider } from 'semantic-ui-react'
+import { Icon, Popup } from 'semantic-ui-react';
+import { Divider } from 'semantic-ui-react';
 
-// actions
-import { defineOxford, defineYandex, defineTwinword, defineWordsApi, defineUrban, thesaurusSyn, thesaurusAssoc, thesaurusAnt, rhymesWith, translateEs, translateFr, translateIt, translateRu, translateDe } from '../../actions/dictionaryActions'
-import { addProject } from '../../actions/projectActions'
+import {
+  defineOxford,
+  defineYandex,
+  defineTwinword,
+  defineWordsApi,
+  defineUrban,
+  thesaurusSyn,
+  thesaurusAssoc,
+  thesaurusAnt,
+  rhymesWith,
+  translateEs,
+  translateFr,
+  translateIt,
+  translateRu,
+  translateDe
+} from '../../actions/dictionaryActions';
+import { addProject } from '../../actions/projectActions';
 
-// Components
-import DictionaryHeader from './DictionaryHeader'
+import DictionaryHeader from './DictionaryHeader';
 import DictionaryDefinition from './DictionaryDefinition';
 import DictionaryTranslation from './DictionaryTranslation';
 import DictionaryThesaurus from './DictionaryThesaurus';
 import DictionarySearchBar from './DictionarySearchBar';
 import DictionaryRhymesWith from './DictionaryRhymesWith';
 
-
 class DictionaryContainer extends React.Component {
   state = {
     searchTerm: ''
-  }
-
-  // CORS anywhere patch
-  // https://cors-anywhere.herokuapp.com/
+  };
 
   handleFetch = () => {
-    console.log("fetching")
-  }
+    console.log('fetching');
+  };
 
-  handleChange = (e) => {
+  handleChange = e => {
     this.setState({
       [e.target.name]: e.target.value
-    })
-  }
+    });
+  };
 
-  handleSubmit = (e) => {
+  handleSubmit = e => {
     e.preventDefault();
     // making a call to dictionaryActions.js
     // Defintion Actions
@@ -60,9 +66,9 @@ class DictionaryContainer extends React.Component {
     this.props.translateIt(this.state.searchTerm);
     this.props.translateRu(this.state.searchTerm);
     this.props.translateDe(this.state.searchTerm);
-  }
+  };
 
-  render(){
+  render() {
     // console.log(this.state.searchTerm) // works
 
     return (
@@ -76,64 +82,84 @@ class DictionaryContainer extends React.Component {
             handleChange={this.handleChange}
             handleSubmit={this.handleSubmit}
           />
-          <Divider section hidden/>
-            <h3>Definition
-              <Popup
-                className="popup-icon"
-                trigger={<Icon name='info circle' />}
-                content='Find and compare lexical meanings.'
-                size='mini'
-              />
-            </h3>
-            <Divider />
-            <DictionaryDefinition />
-            <Divider section hidden />
+          <Divider section hidden />
+          <h3>
+            Definition
+            <Popup
+              className="popup-icon"
+              trigger={<Icon name="info circle" />}
+              content="Find and compare lexical meanings."
+              size="mini"
+            />
+          </h3>
+          <Divider />
+          <DictionaryDefinition />
+          <Divider section hidden />
 
-            <h3>Thesaurus
-              <Popup
-                className="popup-icon"
-                trigger={<Icon name='info circle' />}
-                content='Explore synonyms and antonyms.'
-                size='mini'
-              />
-            </h3>
+          <h3>
+            Thesaurus
+            <Popup
+              className="popup-icon"
+              trigger={<Icon name="info circle" />}
+              content="Explore synonyms and antonyms."
+              size="mini"
+            />
+          </h3>
 
           <Divider />
           <DictionaryThesaurus />
           <Divider section hidden />
-            <h3>Translation
-              <Popup
-                className="popup-icon"
-                trigger={<Icon name='info circle' />}
-                content='Translate a lexeme into a number of languages.'
-                size='mini'
-              />
-            </h3>
+          <h3>
+            Translation
+            <Popup
+              className="popup-icon"
+              trigger={<Icon name="info circle" />}
+              content="Translate a lexeme into a number of languages."
+              size="mini"
+            />
+          </h3>
 
           <Divider />
           <DictionaryTranslation />
           <Divider section hidden />
-          <h3>Phonetics / Rhymes with
+          <h3>
+            Phonetics / Rhymes with
             <Popup
               className="popup-icon"
-              trigger={<Icon name='info circle' />}
-              content='Get a list of words that rhyme with the given word.'
-              size='mini'
+              trigger={<Icon name="info circle" />}
+              content="Get a list of words that rhyme with the given word."
+              size="mini"
             />
           </h3>
-        <Divider />
-        <DictionaryRhymesWith />
-        <Divider section hidden />
+          <Divider />
+          <DictionaryRhymesWith />
+          <Divider section hidden />
         </div>
       </div>
-    )
+    );
   }
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   return {
     projects: state.project.projects // from ./reducers/projectReducer.js
-  }
-}
+  };
+};
 
-export default connect(mapStateToProps, { addProject, defineOxford, defineYandex, defineTwinword, defineWordsApi, defineUrban, thesaurusSyn, thesaurusAssoc, thesaurusAnt, rhymesWith, translateEs, translateFr, translateIt, translateRu, translateDe })(DictionaryContainer);
+export default connect(mapStateToProps, {
+  addProject,
+  defineOxford,
+  defineYandex,
+  defineTwinword,
+  defineWordsApi,
+  defineUrban,
+  thesaurusSyn,
+  thesaurusAssoc,
+  thesaurusAnt,
+  rhymesWith,
+  translateEs,
+  translateFr,
+  translateIt,
+  translateRu,
+  translateDe
+})(DictionaryContainer);

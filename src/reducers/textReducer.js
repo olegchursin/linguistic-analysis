@@ -1,11 +1,10 @@
 import {
   ANALYZING_TEXT,
   KEYWORDS_TEXTANALYSIS,
-  SENTIMENT_GOOGLE,
   SENTIMENT_DATUMBOX,
   SENTIMENT_TWINWORD,
   SUMMARY_TEXT
-} from "../actions/textActions";
+} from '../actions/textActions';
 
 const initialState = {
   keywordsTextAnalysis: [],
@@ -13,7 +12,7 @@ const initialState = {
   sentimentTwinword: [],
   summaryText: [],
   isLoading: false
-}
+};
 
 function textReducer(state = initialState, action) {
   switch (action.type) {
@@ -21,10 +20,11 @@ function textReducer(state = initialState, action) {
       return { ...state, isLoading: true };
     // Keyword Extraction
     case KEYWORDS_TEXTANALYSIS:
-      return { ...state, isLoading: false, keywordsTextAnalysis: action.payload };
-    // Sentiment google
-    case SENTIMENT_GOOGLE:
-      return { ...state, isLoading: false, sentimentGoogle: action.payload };
+      return {
+        ...state,
+        isLoading: false,
+        keywordsTextAnalysis: action.payload
+      };
     case SENTIMENT_DATUMBOX:
       return { ...state, isLoading: false, sentimentDatumbox: action.payload };
     case SENTIMENT_TWINWORD:
@@ -38,4 +38,4 @@ function textReducer(state = initialState, action) {
   }
 }
 
-export { textReducer }
+export { textReducer };

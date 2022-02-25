@@ -1,11 +1,16 @@
-import { ANALYZING_DEF, ANALYZING_SUGGEST, HASHTAG_DEF, HASHTAG_SUGGEST } from "../actions/hashtagActions";
+import {
+  ANALYZING_DEF,
+  ANALYZING_SUGGEST,
+  HASHTAG_DEF,
+  HASHTAG_SUGGEST
+} from '../actions/hashtagActions';
 
 const initialState = {
   hashtagDefinition: [],
   hashtagSuggestion: [],
   isLoadingDef: false,
   isLoadingSuggest: false
-}
+};
 
 function hashtagReducer(state = initialState, action) {
   switch (action.type) {
@@ -15,10 +20,18 @@ function hashtagReducer(state = initialState, action) {
       return { ...state, isLoadingSuggest: true };
     // Hashtag Definition
     case HASHTAG_DEF:
-      return { ...state, isLoadingDef: false, hashtagDefinition: action.payload };
+      return {
+        ...state,
+        isLoadingDef: false,
+        hashtagDefinition: action.payload
+      };
     // Hashtag Suggestion
     case HASHTAG_SUGGEST:
-      return { ...state, isLoadingSuggest: false, hashtagSuggestion: action.payload };
+      return {
+        ...state,
+        isLoadingSuggest: false,
+        hashtagSuggestion: action.payload
+      };
 
     // Default
     default:
@@ -26,4 +39,4 @@ function hashtagReducer(state = initialState, action) {
   }
 }
 
-export { hashtagReducer }
+export { hashtagReducer };

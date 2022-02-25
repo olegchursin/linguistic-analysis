@@ -1,59 +1,63 @@
-import React from 'react'
-import { connect } from 'react-redux'
+import React from 'react';
+import { connect } from 'react-redux';
 
-// Semantic UI
-import { Segment } from 'semantic-ui-react'
+import { Segment } from 'semantic-ui-react';
 
-const TranslationIt = (props) => {
-  console.log("Translate It", props.translation)
-  const translation = props.translation
+const TranslationIt = props => {
+  const translation = props.translation;
   let component;
   if (translation.length) {
-    component =   <div>
-        {
-          translation.map((entry, index) => {
-            return <Segment key={index}>
+    component = (
+      <div>
+        {translation.map((entry, index) => {
+          return (
+            <Segment key={index}>
               <h3>{entry.text}</h3>
-              <p>{entry.pos}  &#9642;  / {entry.ts} /</p>
-                <ul>
-                  {
-                    entry.tr.map((trEntry, index) => {
-                      return <li key={index}>
-                        {trEntry.text} ({trEntry.pos})
-                        {
-                          trEntry.gen
-                          ?
-                          <span> / Gender: {trEntry.gen}</span>
-                          :
-                          <span></span>
-                        }
-                      </li>
-                    })
-                  }
-                </ul>
-              </Segment>
-          })
-        }
+              <p>
+                {entry.pos} &#9642; / {entry.ts} /
+              </p>
+              <ul>
+                {entry.tr.map((trEntry, index) => {
+                  return (
+                    <li key={index}>
+                      {trEntry.text} ({trEntry.pos})
+                      {trEntry.gen ? (
+                        <span> / Gender: {trEntry.gen}</span>
+                      ) : (
+                        <span></span>
+                      )}
+                    </li>
+                  );
+                })}
+              </ul>
+            </Segment>
+          );
+        })}
         <div className="tag-powered-by">
-          <p>Powered by: <a href="http://api.yandex.com/dictionary">Yandex.Dictionary</a></p>
+          <p>
+            Powered by:{' '}
+            <a href="http://api.yandex.com/dictionary">Yandex.Dictionary</a>
+          </p>
         </div>
       </div>
+    );
   } else {
-    component = <p>English - Italian translation provided by <a href="http://api.yandex.com/dictionary">Yandex.Dictionary</a>.</p>
+    component = (
+      <p>
+        English - Italian translation provided by{' '}
+        <a href="http://api.yandex.com/dictionary">Yandex.Dictionary</a>.
+      </p>
+    );
   }
 
-  return (
-    <div>
-      { component }
-    </div>
-  )
-}
+  return <div>{component}</div>;
+};
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   return {
     isLoading: state.isLoading,
     translation: state.dictionary.translationIt // from ./reducers/dictionaryReducer.js
-  }
-}
+  };
+};
 
 export default connect(mapStateToProps)(TranslationIt);
