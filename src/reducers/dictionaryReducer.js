@@ -28,7 +28,6 @@ const initialState = {
   translationIt: [], // Yandex Online Dictionary
   translationRu: [], // Yandex Online Dictionary
   translationDe: [], // Yandex Online Dictionary
-  thesaurusSyn: [], // Yandex Online Dictionary
   thesaurusAssoc: [], // TwinwordAPI Associations
   thesaurusAnt: [], // WordsAPI
   rhymesWith: [],
@@ -45,7 +44,6 @@ function dictionaryReducer(state = initialState, action) {
       return { ...state, isLoadingOxford: true };
     case ANALYZING_LEXEME_SYN:
       return { ...state, isLoadingSyn: true };
-    // Defintions
     case DEFINED_YANDEX:
       return { ...state, isLoading: false, definitionYandex: action.payload };
     case DEFINED_TWINWORD:
@@ -54,7 +52,6 @@ function dictionaryReducer(state = initialState, action) {
       return { ...state, isLoading: false, definitionWordsApi: action.payload };
     case DEFINED_URBAN:
       return { ...state, isLoading: false, definitionUrban: action.payload };
-    // Trnaslations
     case TRANSLATED_ES:
       return { ...state, isLoading: false, translationEs: action.payload };
     case TRANSLATED_FR:
@@ -65,16 +62,12 @@ function dictionaryReducer(state = initialState, action) {
       return { ...state, isLoading: false, translationRu: action.payload };
     case TRANSLATED_DE:
       return { ...state, isLoading: false, translationDe: action.payload };
-    // Thesaurus
-    case THESAURUS_SYN:
-      return { ...state, isLoadingSyn: false, thesaurusSyn: action.payload };
     case THESAURUS_ASSOC:
       return { ...state, isLoading: false, thesaurusAssoc: action.payload };
     case THESAURUS_ANT:
       return { ...state, isLoading: false, thesaurusAnt: action.payload };
     case RHYMES_WITH:
       return { ...state, isLoading: false, rhymesWith: action.payload };
-    // Default
     default:
       return state;
   }

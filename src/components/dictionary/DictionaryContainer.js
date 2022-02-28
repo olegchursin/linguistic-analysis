@@ -10,7 +10,6 @@ import {
   defineTwinword,
   defineWordsApi,
   defineUrban,
-  thesaurusSyn,
   thesaurusAssoc,
   thesaurusAnt,
   rhymesWith,
@@ -50,7 +49,6 @@ class DictionaryContainer extends React.Component {
     // this.props.defineWordsApi(searchTerm);
     // this.props.defineUrban(searchTerm);
     // Thesaurus Actions
-    this.props.thesaurusSyn(searchTerm);
     this.props.thesaurusAssoc(searchTerm);
     // this.props.thesaurusAnt(searchTerm);
     // Rhymes with
@@ -145,7 +143,6 @@ export default connect(mapStateToProps, {
   defineTwinword,
   defineWordsApi,
   defineUrban,
-  thesaurusSyn,
   thesaurusAssoc,
   thesaurusAnt,
   rhymesWith,
