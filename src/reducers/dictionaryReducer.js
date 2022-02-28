@@ -2,7 +2,6 @@ import {
   ANALYZING_LEXEME,
   ANALYZING_LEXEME_OXFORD,
   ANALYZING_LEXEME_SYN,
-  DEFINED_OXFORD,
   DEFINED_YANDEX,
   DEFINED_TWINWORD,
   DEFINED_WORDSAPI,
@@ -47,12 +46,6 @@ function dictionaryReducer(state = initialState, action) {
     case ANALYZING_LEXEME_SYN:
       return { ...state, isLoadingSyn: true };
     // Defintions
-    case DEFINED_OXFORD:
-      return {
-        ...state,
-        isLoadingOxford: false,
-        definitionOxford: action.payload
-      };
     case DEFINED_YANDEX:
       return { ...state, isLoading: false, definitionYandex: action.payload };
     case DEFINED_TWINWORD:

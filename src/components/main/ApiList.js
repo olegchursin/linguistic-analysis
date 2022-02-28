@@ -13,20 +13,6 @@ const ApiList = () => {
         </Grid.Row>
         <Grid.Row textAlign="center" stretched className="api-list-row">
           <Grid.Column>
-            <h2>Oxford Dictionary</h2>
-            <p>
-              World-renowned dictionary data in an ever-growing list of
-              languages. Based on an intensive language research programme the
-              data is up-to-date, accurate, and reliable and can be quickly and
-              easily incorporated into apps.
-            </p>
-            <a href="https://developer.oxforddictionaries.com/">
-              <Button basic inverted>
-                Learn more
-              </Button>
-            </a>
-          </Grid.Column>
-          <Grid.Column>
             <h2>DatumBox</h2>
             <p>
               Large number of off-the-shelf NLP services which can be used in a

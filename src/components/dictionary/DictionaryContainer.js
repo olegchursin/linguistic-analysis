@@ -6,7 +6,6 @@ import { Icon, Popup } from 'semantic-ui-react';
 import { Divider } from 'semantic-ui-react';
 
 import {
-  defineOxford,
   defineYandex,
   defineTwinword,
   defineWordsApi,
@@ -35,10 +34,6 @@ class DictionaryContainer extends React.Component {
     searchTerm: ''
   };
 
-  handleFetch = () => {
-    console.log('fetching');
-  };
-
   handleChange = e => {
     this.setState({
       [e.target.name]: e.target.value
@@ -47,30 +42,28 @@ class DictionaryContainer extends React.Component {
 
   handleSubmit = e => {
     e.preventDefault();
+    const { searchTerm } = this.state;
     // making a call to dictionaryActions.js
     // Defintion Actions
-    this.props.defineOxford(this.state.searchTerm);
-    this.props.defineYandex(this.state.searchTerm);
-    this.props.defineTwinword(this.state.searchTerm);
-    this.props.defineWordsApi(this.state.searchTerm);
-    this.props.defineUrban(this.state.searchTerm);
+    this.props.defineYandex(searchTerm);
+    // this.props.defineTwinword(searchTerm);
+    // this.props.defineWordsApi(searchTerm);
+    // this.props.defineUrban(searchTerm);
     // Thesaurus Actions
-    this.props.thesaurusSyn(this.state.searchTerm);
-    this.props.thesaurusAssoc(this.state.searchTerm);
-    // this.props.thesaurusAnt(this.state.searchTerm);
+    this.props.thesaurusSyn(searchTerm);
+    // this.props.thesaurusAssoc(searchTerm);
+    // this.props.thesaurusAnt(searchTerm);
     // Rhymes with
-    this.props.rhymesWith(this.state.searchTerm);
+    // this.props.rhymesWith(searchTerm);
     // Trnaslation actions
-    this.props.translateEs(this.state.searchTerm);
-    this.props.translateFr(this.state.searchTerm);
-    this.props.translateIt(this.state.searchTerm);
-    this.props.translateRu(this.state.searchTerm);
-    this.props.translateDe(this.state.searchTerm);
+    this.props.translateEs(searchTerm);
+    this.props.translateFr(searchTerm);
+    this.props.translateIt(searchTerm);
+    this.props.translateRu(searchTerm);
+    this.props.translateDe(searchTerm);
   };
 
   render() {
-    // console.log(this.state.searchTerm) // works
-
     return (
       <div>
         <DictionaryHeader />
@@ -148,7 +141,6 @@ const mapStateToProps = state => {
 
 export default connect(mapStateToProps, {
   addProject,
-  defineOxford,
   defineYandex,
   defineTwinword,
   defineWordsApi,

@@ -7,7 +7,6 @@ export const ANALYZING_LEXEME_OXFORD = 'ANALYZING_LEXEME_OXFORD';
 export const ANALYZING_LEXEME_SYN = 'ANALYZING_LEXEME_SYN';
 
 // define definition actions
-export const DEFINED_OXFORD = 'DEFINED_OXFORD';
 export const DEFINED_YANDEX = 'DEFINED_YANDEX';
 export const DEFINED_TWINWORD = 'DEFINED_TWINWORD';
 export const DEFINED_WORDSAPI = 'DEFINED_WORDSAPI';
@@ -31,18 +30,6 @@ export const RHYMES_WITH = 'RHYMES_WITH';
 // //////////////////////////////// //
 // ////// DEFINITION ACTIONS ////// //
 // //////////////////////////////// //
-
-export function defineOxford(searchTerm) {
-  return function (dispatch) {
-    dispatch({ type: ANALYZING_LEXEME_OXFORD });
-    DictionaryApi.defineOxford(searchTerm).then(res => {
-      dispatch({
-        type: DEFINED_OXFORD,
-        payload: res.results[0].lexicalEntries
-      });
-    });
-  };
-}
 
 export function defineYandex(searchTerm) {
   return function (dispatch) {

@@ -2,12 +2,31 @@ import React from 'react';
 
 import { connect } from 'react-redux';
 
-import { Divider, Loader } from 'semantic-ui-react';
+import { Loader } from 'semantic-ui-react';
 
 const ThesaurusSyn = props => {
-  const synonymsArr = props.synonyms;
+  const synonymsArr = [];
+  if (!!props.definition.length) {
+    const tr = props.definition[0] && props.definition[0].tr;
+    const synObjArr = tr.map(el => {
+      if (el.syn) {
+        return el.syn.map(syn => syn);
+      }
+    });
 
-  let component;
+    synObjArr.forEach(obj => {
+      if (obj) {
+        obj.forEach(el => synonymsArr.push(el));
+      }
+    });
+  }
+
+  let component = (
+    <p>
+      Words that can be interchanged for the original word in the same context.
+    </p>
+  );
+
   if (props.isLoading) {
     component = (
       <Loader active inline="centered">
@@ -17,28 +36,14 @@ const ThesaurusSyn = props => {
   } else if (synonymsArr.length) {
     component = (
       <div>
-        {synonymsArr.map(synObj => {
+        {synonymsArr.map(syn => {
           return (
-            <div className="keyword-result" key={synObj.id}>
-              {synObj.text}
+            <div className="keyword-result" key={syn.text}>
+              {syn.text}
             </div>
           );
         })}
-        <Divider hidden />
-        <div className="tag-powered-by">
-          <p>
-            Powered by:{' '}
-            <a href="https://en.oxforddictionaries.com/">Oxford Dictionary</a>
-          </p>
-        </div>
       </div>
-    );
-  } else {
-    component = (
-      <p>
-        Words that can be interchanged for the original word in the same
-        context.
-      </p>
     );
   }
 
@@ -47,8 +52,8 @@ const ThesaurusSyn = props => {
 
 const mapStateToProps = state => {
   return {
-    isLoading: state.dictionary.isLoadingSyn,
-    synonyms: state.dictionary.thesaurusSyn // from ./reducers/dictionaryReducer.js
+    isLoading: state.dictionary.isLoading,
+    definition: state.dictionary.definitionYandex
   };
 };
 

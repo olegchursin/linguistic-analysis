@@ -12,20 +12,6 @@ class DictionaryApi {
   // ////// DEFINITIONS ////// //
   // ///////////////////////// //
 
-  // Oxford Dictionary Definition
-  static defineOxford(searchTerm) {
-    return fetch(
-      `https://cors-anywhere.herokuapp.com/https://od-api.oxforddictionaries.com/api/v1/entries/en/${searchTerm}`,
-      {
-        headers: {
-          Accept: 'application/json',
-          app_id: 'a30a1a5e',
-          app_key: OXFORD_KEY
-        }
-      }
-    ).then(res => res.json()); // continues at dictionaryActions.js
-  }
-
   // Yandex Dictionary Definition
   static defineYandex(searchTerm) {
     return fetch(

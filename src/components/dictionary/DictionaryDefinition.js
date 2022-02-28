@@ -1,22 +1,12 @@
 import React from 'react';
 import { Tab } from 'semantic-ui-react';
 
-import DefinitionOxford from './definition/DefinitionOxford';
 import DefinitionYandex from './definition/DefinitionYandex';
 import DefinitionTwinword from './definition/DefinitionTwinword';
 import DefinitionWordsApi from './definition/DefinitionWordsApi';
 import DefinitionUrban from './definition/DefinitionUrban';
 
 const panes = [
-  {
-    menuItem: 'Oxford',
-    render: () => (
-      <Tab.Pane>
-        <DefinitionOxford />
-      </Tab.Pane>
-    )
-  },
-
   {
     menuItem: 'Yandex',
     render: () => (
@@ -25,7 +15,6 @@ const panes = [
       </Tab.Pane>
     )
   },
-
   {
     menuItem: 'Twinword',
     render: () => (
@@ -34,7 +23,6 @@ const panes = [
       </Tab.Pane>
     )
   },
-
   {
     menuItem: 'WordsAPI',
     render: () => (
@@ -43,7 +31,6 @@ const panes = [
       </Tab.Pane>
     )
   },
-
   {
     menuItem: 'Urban',
     render: () => (

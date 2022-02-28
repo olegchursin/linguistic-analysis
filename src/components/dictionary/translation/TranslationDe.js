@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import { Segment } from 'semantic-ui-react';
 
 const TranslationDe = props => {
-  console.log('Translate De', props.translation);
   const translation = props.translation;
   let component;
   if (translation.length) {
