@@ -7,14 +7,14 @@ import { Loader, Divider } from 'semantic-ui-react';
 const ThesaurusAssoc = props => {
   const associations = props.associations;
 
-  let component;
+  let component = <p>List of semantically close lexemes.</p>;
   if (props.isLoading) {
     component = (
       <Loader active inline="centered">
         Loading
       </Loader>
     );
-  } else if (associations.length) {
+  } else if (associations && !!associations.length) {
     component = (
       <div>
         {associations.map(assoc => {
@@ -32,8 +32,6 @@ const ThesaurusAssoc = props => {
         </div>
       </div>
     );
-  } else {
-    component = <p>List of semantically close lexemes.</p>;
   }
 
   return <div>{component}</div>;

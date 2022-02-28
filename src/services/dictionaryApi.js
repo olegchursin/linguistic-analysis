@@ -1,17 +1,19 @@
 // API calls for lexeme definitions, translations, and thesaurus analysis
 // // CORS Anywheere patch: add this URL (https://cors-anywhere.herokuapp.com/) in front of your call URL
 
-import { OXFORD_KEY, YANDEX_KEY, MASHAPE_KEY_R, MASHAPE_KEY_Z } from './appEnv';
+import {
+  YANDEX_KEY,
+  MASHAPE_KEY_R,
+  MASHAPE_KEY_Z,
+  X_RAPID_API_KEY
+} from './appEnv';
+import axios from 'axios';
 
 // MashapeAPI tool for API requests
 // http://unirest.io/nodejs
 const unirest = require('unirest');
 
 class DictionaryApi {
-  // ///////////////////////// //
-  // ////// DEFINITIONS ////// //
-  // ///////////////////////// //
-
   // Yandex Dictionary Definition
   static defineYandex(searchTerm) {
     return fetch(
@@ -49,36 +51,24 @@ class DictionaryApi {
       .header('Accept', 'text/plain');
   }
 
-  // ////////////////////// //
-  // ////// THESARUS ////// //
-  // ////////////////////// //
-
-  // Synonyms
-  // Syn Oxford
-  static thesaurusSyn(searchTerm) {
-    // oxforddictionaries
-    return fetch(
-      `https://cors-anywhere.herokuapp.com/https://od-api.oxforddictionaries.com:443/api/v1/entries/en/${searchTerm}/synonyms`,
-      {
-        headers: {
-          Accept: 'application/json',
-          app_id: 'a30a1a5e',
-          app_key: OXFORD_KEY
-        }
-      }
-    ).then(res => res.json()); // continues at dictionaryActions.js
-  }
-
   // Associations
-  static thesaurusAssoc(searchTerm) {
-    return unirest
-      .post(
-        'https://twinword-twinword-bundle-v1.p.mashape.com/word_associations/'
-      )
-      .header('X-Mashape-Key', MASHAPE_KEY_R)
-      .header('Content-Type', 'application/x-www-form-urlencoded')
-      .header('Accept', 'application/json')
-      .send(`entry=${searchTerm}`);
+  static async thesaurusAssoc(searchTerm) {
+    var options = {
+      method: 'GET',
+      url: 'https://twinword-word-associations-v1.p.rapidapi.com/associations/',
+      params: { entry: searchTerm },
+      headers: {
+        'x-rapidapi-host': 'twinword-word-associations-v1.p.rapidapi.com',
+        'x-rapidapi-key': X_RAPID_API_KEY
+      }
+    };
+
+    return axios
+      .request(options)
+      .then(response => response)
+      .catch(error => {
+        console.error(error);
+      });
   }
 
   // Antonyms
@@ -94,10 +84,6 @@ class DictionaryApi {
     ).then(res => res.json());
   }
 
-  // /////////////////////// //
-  // ////// PHONETICS ////// //
-  // /////////////////////// //
-
   // Rhymes with
   static rhymesWith(searchTerm) {
     return fetch(
@@ -110,10 +96,6 @@ class DictionaryApi {
       }
     ).then(res => res.json());
   }
-
-  // ////////////////////////// //
-  // ////// TRANSLATIONS ////// //
-  // ////////////////////////// //
 
   // Spanish Translation
   static translateEs(searchTerm) {

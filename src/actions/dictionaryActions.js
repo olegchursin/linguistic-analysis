@@ -67,10 +67,6 @@ export function defineUrban(searchTerm) {
   };
 }
 
-// /////////////////////////////// //
-// ////// THESAURUS ACTIONS ////// //
-// /////////////////////////////// //
-
 // Synonyms
 export function thesaurusSyn(searchTerm) {
   return function (dispatch) {
@@ -84,17 +80,15 @@ export function thesaurusSyn(searchTerm) {
   };
 }
 
-// Associations
 export function thesaurusAssoc(searchTerm) {
   return function (dispatch) {
     dispatch({ type: ANALYZING_LEXEME });
-    DictionaryApi.thesaurusAssoc(searchTerm).end(res => {
-      dispatch({ type: THESAURUS_ASSOC, payload: res.body.associations_array });
+    DictionaryApi.thesaurusAssoc(searchTerm).then(res => {
+      dispatch({ type: THESAURUS_ASSOC, payload: res.data.associations_array });
     });
   };
 }
 
-// Antonyms
 export function thesaurusAnt(searchTerm) {
   return function (dispatch) {
     dispatch({ type: ANALYZING_LEXEME });
@@ -104,11 +98,6 @@ export function thesaurusAnt(searchTerm) {
   };
 }
 
-// /////////////////////// //
-// ////// PHONETICS ////// //
-// /////////////////////// //
-
-// Rhymes with
 export function rhymesWith(searchTerm) {
   return function (dispatch) {
     dispatch({ type: ANALYZING_LEXEME });
@@ -117,10 +106,6 @@ export function rhymesWith(searchTerm) {
     });
   };
 }
-
-// ///////////////////////////////// //
-// ////// TRANSLATION ACTIONS ////// //
-// ///////////////////////////////// //
 
 export function translateEs(searchTerm) {
   return function (dispatch) {

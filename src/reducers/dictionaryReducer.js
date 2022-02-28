@@ -28,7 +28,7 @@ const initialState = {
   translationIt: [], // Yandex Online Dictionary
   translationRu: [], // Yandex Online Dictionary
   translationDe: [], // Yandex Online Dictionary
-  thesaurusSyn: [], // Oxford Dictionary
+  thesaurusSyn: [], // Yandex Online Dictionary
   thesaurusAssoc: [], // TwinwordAPI Associations
   thesaurusAnt: [], // WordsAPI
   rhymesWith: [],

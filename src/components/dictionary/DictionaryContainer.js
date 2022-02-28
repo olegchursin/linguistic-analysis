@@ -51,7 +51,7 @@ class DictionaryContainer extends React.Component {
     // this.props.defineUrban(searchTerm);
     // Thesaurus Actions
     this.props.thesaurusSyn(searchTerm);
-    // this.props.thesaurusAssoc(searchTerm);
+    this.props.thesaurusAssoc(searchTerm);
     // this.props.thesaurusAnt(searchTerm);
     // Rhymes with
     // this.props.rhymesWith(searchTerm);
