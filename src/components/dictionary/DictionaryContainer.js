@@ -42,18 +42,13 @@ class DictionaryContainer extends React.Component {
   handleSubmit = e => {
     e.preventDefault();
     const { searchTerm } = this.state;
-    // making a call to dictionaryActions.js
-    // Defintion Actions
     this.props.defineYandex(searchTerm);
     // this.props.defineTwinword(searchTerm);
     // this.props.defineWordsApi(searchTerm);
     // this.props.defineUrban(searchTerm);
-    // Thesaurus Actions
     this.props.thesaurusAssoc(searchTerm);
     // this.props.thesaurusAnt(searchTerm);
-    // Rhymes with
     // this.props.rhymesWith(searchTerm);
-    // Trnaslation actions
     this.props.translateEs(searchTerm);
     this.props.translateFr(searchTerm);
     this.props.translateIt(searchTerm);
