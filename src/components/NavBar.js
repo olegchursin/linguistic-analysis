@@ -24,77 +24,79 @@ export default class NavBar extends Component {
           </NavLink>
         </Menu.Item>
 
-        <Menu.Item
-          href="/text"
-          name="text"
-          active={activeItem === 'text'}
-          onClick={this.handleItemClick}
-        >
-          Text Analysis
-        </Menu.Item>
+        <Menu.Menu position="right">
+          <Menu.Item
+            href="/text"
+            name="text"
+            active={activeItem === 'text'}
+            onClick={this.handleItemClick}
+          >
+            Text Analysis
+          </Menu.Item>
 
-        <Dropdown text="Lexical Analysis" className="link item" simple>
-          <Dropdown.Menu>
-            <Dropdown.Header>Dictionary</Dropdown.Header>
-            <Dropdown.Item
-              href="/lexical"
-              name="definition"
-              active={activeItem === 'definition'}
-              onClick={this.handleItemClick}
-            >
-              Definition
-            </Dropdown.Item>
+          <Dropdown text="Lexical Analysis" className="link item" simple>
+            <Dropdown.Menu>
+              <Dropdown.Header>Dictionary</Dropdown.Header>
+              <Dropdown.Item
+                href="/lexical"
+                name="definition"
+                active={activeItem === 'definition'}
+                onClick={this.handleItemClick}
+              >
+                Definition
+              </Dropdown.Item>
 
-            <Dropdown.Item
-              href="/lexical"
-              name="thesaurus"
-              active={activeItem === 'thesaurus'}
-              onClick={this.handleItemClick}
-            >
-              Thesaurus
-            </Dropdown.Item>
+              <Dropdown.Item
+                href="/lexical"
+                name="thesaurus"
+                active={activeItem === 'thesaurus'}
+                onClick={this.handleItemClick}
+              >
+                Thesaurus
+              </Dropdown.Item>
 
-            <Dropdown.Item
-              href="/lexical"
-              name="translation"
-              active={activeItem === 'translation'}
-              onClick={this.handleItemClick}
-            >
-              Translation
-            </Dropdown.Item>
+              <Dropdown.Item
+                href="/lexical"
+                name="translation"
+                active={activeItem === 'translation'}
+                onClick={this.handleItemClick}
+              >
+                Translation
+              </Dropdown.Item>
 
-            <Dropdown.Divider />
+              <Dropdown.Divider />
 
-            <Dropdown.Header>Phonetics</Dropdown.Header>
+              <Dropdown.Header>Phonetics</Dropdown.Header>
 
-            <Dropdown.Item
-              href="/lexical"
-              name="rhymes"
-              active={activeItem === 'rhymes'}
-              onClick={this.handleItemClick}
-            >
-              Rhymes with
-            </Dropdown.Item>
-          </Dropdown.Menu>
-        </Dropdown>
+              <Dropdown.Item
+                href="/lexical"
+                name="rhymes"
+                active={activeItem === 'rhymes'}
+                onClick={this.handleItemClick}
+              >
+                Rhymes with
+              </Dropdown.Item>
+            </Dropdown.Menu>
+          </Dropdown>
 
-        <Menu.Item
-          href="/semantics"
-          name="text"
-          active={activeItem === 'hashtag'}
-          onClick={this.handleItemClick}
-        >
-          Semantic Analysis
-        </Menu.Item>
+          <Menu.Item
+            href="/semantics"
+            name="text"
+            active={activeItem === 'hashtag'}
+            onClick={this.handleItemClick}
+          >
+            Semantic Analysis
+          </Menu.Item>
 
-        <Menu.Item
-          href="/hashtag"
-          name="text"
-          active={activeItem === 'hashtag'}
-          onClick={this.handleItemClick}
-        >
-          Hashtag Analysis
-        </Menu.Item>
+          <Menu.Item
+            href="/hashtag"
+            name="text"
+            active={activeItem === 'hashtag'}
+            onClick={this.handleItemClick}
+          >
+            Hashtag Analysis
+          </Menu.Item>
+        </Menu.Menu>
       </Menu>
     );
   }

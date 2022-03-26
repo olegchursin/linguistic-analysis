@@ -67,19 +67,6 @@ export function defineUrban(searchTerm) {
   };
 }
 
-// Synonyms
-export function thesaurusSyn(searchTerm) {
-  return function (dispatch) {
-    dispatch({ type: ANALYZING_LEXEME_SYN });
-    DictionaryApi.thesaurusSyn(searchTerm).then(res => {
-      dispatch({
-        type: THESAURUS_SYN,
-        payload: res.results[0].lexicalEntries[0].entries[0].senses[0].synonyms
-      });
-    });
-  };
-}
-
 export function thesaurusAssoc(searchTerm) {
   return function (dispatch) {
     dispatch({ type: ANALYZING_LEXEME });
