@@ -8,7 +8,7 @@ const Hero = () => {
     <div className="hero">
       <Grid container divided="vertically" centered columns={2}>
         <Grid.Column>
-          <h1>Linguistic Analysis</h1>
+          <h1>Linguistic Analysis</h1>{' '}
           <p>
             Where Natural Language Processing APIs come together to serve your
             lexical, semantic, and text analytics needs.

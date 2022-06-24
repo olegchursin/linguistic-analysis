@@ -11,6 +11,8 @@ const ThesaurusSyn = props => {
     const synObjArr = tr.map(el => {
       if (el.syn) {
         return el.syn.map(syn => syn);
+      } else {
+        return [];
       }
     });
 
