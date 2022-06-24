@@ -15,6 +15,7 @@ import HashtagDefSearchBar from './HashtagDefSearchBar';
 import HashtagSuggestSearchBar from './HashtagSuggestSearchBar';
 import HashtagDefinition from './HashtagDefinition';
 import HashtagSuggestion from './HashtagSuggestion';
+import ExpiredApi from '../shared/ExpiredApi';
 
 class HashtagContainer extends React.Component {
   state = {
@@ -44,6 +45,10 @@ class HashtagContainer extends React.Component {
       this.props.hashtagSuggestion(this.state.suggestInput);
   };
 
+  get expiredApi() {
+    return true;
+  }
+
   render() {
     return (
       <div>
@@ -54,11 +59,17 @@ class HashtagContainer extends React.Component {
           <p>
             Generate a list of suggested hashtags with their relative weight.
           </p>
-          <HashtagSuggestSearchBar
-            suggestInput={this.state.suggestInput}
-            handleChange={this.handleChange}
-            handleSuggest={this.handleSuggest}
-          />
+
+          {this.expiredApi ? (
+            <ExpiredApi apiLabel="Hashtag Analysis" />
+          ) : (
+            <HashtagSuggestSearchBar
+              suggestInput={this.state.suggestInput}
+              handleChange={this.handleChange}
+              handleSuggest={this.handleSuggest}
+            />
+          )}
+
           <Divider section hidden />
           <h3>
             Suggestions
@@ -79,11 +90,17 @@ class HashtagContainer extends React.Component {
             containing over 60.000 definitions. Hashtags can have multiple
             definitions, ordered by user-votes.
           </p>
-          <HashtagDefSearchBar
-            searchTerm={this.state.searchTerm}
-            handleChange={this.handleChange}
-            handleDef={this.handleDef}
-          />
+
+          {this.expiredApi ? (
+            <ExpiredApi apiLabel="Tagdef" />
+          ) : (
+            <HashtagDefSearchBar
+              searchTerm={this.state.searchTerm}
+              handleChange={this.handleChange}
+              handleDef={this.handleDef}
+            />
+          )}
+
           <Divider section hidden />
           <h3>
             Definition

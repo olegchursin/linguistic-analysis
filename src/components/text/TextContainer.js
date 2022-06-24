@@ -1,34 +1,39 @@
-import React from "react";
+import React from 'react';
 
-import { connect } from "react-redux";
+import { connect } from 'react-redux';
 
-import { Form, Divider, Button, Popup, Icon } from "semantic-ui-react";
+import { Form, Divider, Button, Popup, Icon } from 'semantic-ui-react';
 
 import {
   keywordsTextAnalysis,
   sentimentDatumbox,
   sentimentTwinword,
-  summaryText,
-} from "../../actions/textActions";
+  summaryText
+} from '../../actions/textActions';
 
-import TextHeader from "./TextHeader";
-import TextKeywordsTabs from "./TextKeywordsTabs";
-import TextSentimentTabs from "./TextSentimentTabs";
-import TextWordCount from "./TextWordCount";
-import TextSummary from "./TextSummary";
+import TextHeader from './TextHeader';
+import TextKeywordsTabs from './TextKeywordsTabs';
+import TextSentimentTabs from './TextSentimentTabs';
+import TextWordCount from './TextWordCount';
+import TextSummary from './TextSummary';
+import ExpiredApi from '../shared/ExpiredApi';
 
 class TextContainer extends React.Component {
   state = {
-    textInput: "",
+    textInput: ''
   };
 
-  handleChange = (e) => {
+  handleChange = e => {
     this.setState({
-      textInput: e.target.value,
+      textInput: e.target.value
     });
   };
 
-  handleSubmit = (e) => {
+  get apiExpired() {
+    return true;
+  }
+
+  handleSubmit = e => {
     e.preventDefault();
     // making a call to textActions.js
     // Keyword Actions
@@ -47,19 +52,24 @@ class TextContainer extends React.Component {
         <div className="ui main text container main-content">
           <Divider section hidden />
           <h2>Powerful tools at your fingertips</h2>
-          <Form onSubmit={this.handleSubmit}>
-            <Form.TextArea
-              label="Paste or type in your text below"
-              placeholder="Enter text to be analyzed..."
-              onChange={this.handleChange}
-            />
-            <Button
-              basic
-              color="pink"
-              content="Analyze"
-              onClick={this.handleSubmit}
-            />
-          </Form>
+          {this.apiExpired ? (
+            <ExpiredApi apiLabel="Text Analysis" />
+          ) : (
+            <Form onSubmit={this.handleSubmit}>
+              <Form.TextArea
+                label="Paste or type in your text below"
+                placeholder="Enter text to be analyzed..."
+                onChange={this.handleChange}
+              />
+              <Button
+                basic
+                color="pink"
+                content="Analyze"
+                onClick={this.handleSubmit}
+              />
+            </Form>
+          )}
+
           <Divider section hidden />
           <h3>
             Word Count
@@ -115,9 +125,9 @@ class TextContainer extends React.Component {
   }
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   return {
-    projects: state.project.projects, // from ./reducers/projectReducer.js
+    projects: state.project.projects // from ./reducers/projectReducer.js
   };
 };
 
@@ -125,5 +135,5 @@ export default connect(mapStateToProps, {
   keywordsTextAnalysis,
   sentimentDatumbox,
   sentimentTwinword,
-  summaryText,
+  summaryText
 })(TextContainer);

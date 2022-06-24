@@ -10,11 +10,16 @@ import { associativeList } from '../../actions/semanticsActions';
 import SemanticsHeader from './SemanticsHeader';
 import SemanticsSearchBar from './SemanticsSearchBar';
 import SemanticsAssociativeList from './SemanticsAssociativeList';
+import ExpiredApi from '../shared/ExpiredApi';
 
 class SemanticsContainer extends React.Component {
   state = {
     searchTerm: ''
   };
+
+  get expiredApi() {
+    return true;
+  }
 
   handleChange = e => {
     this.setState({
@@ -37,11 +42,17 @@ class SemanticsContainer extends React.Component {
           <Divider section hidden />
           <h2>Conceptual domain</h2>
           <p>Define a conceptual domain to generate an associative list.</p>
-          <SemanticsSearchBar
-            searchTerm={this.state.searchTerm}
-            handleChange={this.handleChange}
-            handleSubmit={this.handleSubmit}
-          />
+
+          {this.expiredApi ? (
+            <ExpiredApi apiLabel="Semantic Analysis" />
+          ) : (
+            <SemanticsSearchBar
+              searchTerm={this.state.searchTerm}
+              handleChange={this.handleChange}
+              handleSubmit={this.handleSubmit}
+            />
+          )}
+
           <Divider section hidden />
           <h3>
             Associative list

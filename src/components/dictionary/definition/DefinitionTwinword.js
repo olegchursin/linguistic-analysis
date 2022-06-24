@@ -3,9 +3,7 @@ import { connect } from 'react-redux';
 
 import { Divider } from 'semantic-ui-react';
 
-const DefinitionTwinword = props => {
-  const definition = props.definition;
-
+const DefinitionTwinword = ({ definition }) => {
   let component;
   if (definition.meaning) {
     component = (
