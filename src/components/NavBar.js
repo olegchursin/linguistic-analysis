@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 
-import { Dropdown, Menu } from 'semantic-ui-react';
+import { Dropdown, Container, Menu } from 'semantic-ui-react';
 
 export default class NavBar extends Component {
   state = {
@@ -18,85 +18,87 @@ export default class NavBar extends Component {
 
     return (
       <Menu fixed="top">
-        <Menu.Item>
-          <NavLink to="/" exact>
-            <img src="../img/logo-full.svg" alt="logo" className="nav-logo" />
-          </NavLink>
-        </Menu.Item>
-
-        <Menu.Menu position="right">
-          <Menu.Item
-            href="/text"
-            name="text"
-            active={activeItem === 'text'}
-            onClick={this.handleItemClick}
-          >
-            Text Analysis
+        <Container>
+          <Menu.Item>
+            <NavLink to="/" exact>
+              <img src="../img/logo-full.svg" alt="logo" className="nav-logo" />
+            </NavLink>
           </Menu.Item>
 
-          <Dropdown text="Lexical Analysis" className="link item" simple>
-            <Dropdown.Menu>
-              <Dropdown.Header>Dictionary</Dropdown.Header>
-              <Dropdown.Item
-                href="/lexical"
-                name="definition"
-                active={activeItem === 'definition'}
-                onClick={this.handleItemClick}
-              >
-                Definition
-              </Dropdown.Item>
+          <Menu.Menu position="right">
+            <Menu.Item
+              href="/text"
+              name="text"
+              active={activeItem === 'text'}
+              onClick={this.handleItemClick}
+            >
+              Text Analysis
+            </Menu.Item>
 
-              <Dropdown.Item
-                href="/lexical"
-                name="thesaurus"
-                active={activeItem === 'thesaurus'}
-                onClick={this.handleItemClick}
-              >
-                Thesaurus
-              </Dropdown.Item>
+            <Dropdown text="Lexical Analysis" className="link item" simple>
+              <Dropdown.Menu>
+                <Dropdown.Header>Dictionary</Dropdown.Header>
+                <Dropdown.Item
+                  href="/lexical"
+                  name="definition"
+                  active={activeItem === 'definition'}
+                  onClick={this.handleItemClick}
+                >
+                  Definition
+                </Dropdown.Item>
 
-              <Dropdown.Item
-                href="/lexical"
-                name="translation"
-                active={activeItem === 'translation'}
-                onClick={this.handleItemClick}
-              >
-                Translation
-              </Dropdown.Item>
+                <Dropdown.Item
+                  href="/lexical"
+                  name="thesaurus"
+                  active={activeItem === 'thesaurus'}
+                  onClick={this.handleItemClick}
+                >
+                  Thesaurus
+                </Dropdown.Item>
 
-              <Dropdown.Divider />
+                <Dropdown.Item
+                  href="/lexical"
+                  name="translation"
+                  active={activeItem === 'translation'}
+                  onClick={this.handleItemClick}
+                >
+                  Translation
+                </Dropdown.Item>
 
-              <Dropdown.Header>Phonetics</Dropdown.Header>
+                <Dropdown.Divider />
 
-              <Dropdown.Item
-                href="/lexical"
-                name="rhymes"
-                active={activeItem === 'rhymes'}
-                onClick={this.handleItemClick}
-              >
-                Rhymes with
-              </Dropdown.Item>
-            </Dropdown.Menu>
-          </Dropdown>
+                <Dropdown.Header>Phonetics</Dropdown.Header>
 
-          <Menu.Item
-            href="/semantics"
-            name="text"
-            active={activeItem === 'hashtag'}
-            onClick={this.handleItemClick}
-          >
-            Semantic Analysis
-          </Menu.Item>
+                <Dropdown.Item
+                  href="/lexical"
+                  name="rhymes"
+                  active={activeItem === 'rhymes'}
+                  onClick={this.handleItemClick}
+                >
+                  Rhymes with
+                </Dropdown.Item>
+              </Dropdown.Menu>
+            </Dropdown>
 
-          <Menu.Item
-            href="/hashtag"
-            name="text"
-            active={activeItem === 'hashtag'}
-            onClick={this.handleItemClick}
-          >
-            Hashtag Analysis
-          </Menu.Item>
-        </Menu.Menu>
+            <Menu.Item
+              href="/semantics"
+              name="text"
+              active={activeItem === 'hashtag'}
+              onClick={this.handleItemClick}
+            >
+              Semantic Analysis
+            </Menu.Item>
+
+            <Menu.Item
+              href="/hashtag"
+              name="text"
+              active={activeItem === 'hashtag'}
+              onClick={this.handleItemClick}
+            >
+              Hashtag Analysis
+            </Menu.Item>
+          </Menu.Menu>
+        </Container>
       </Menu>
     );
   }
