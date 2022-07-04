@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './css/App.css';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
@@ -14,32 +14,26 @@ import PhoneticsContainer from './components/phonetics/PhoneticsContainer';
 import TextContainer from './components/text/TextContainer';
 import HashtagContainer from './components/hashtag/HashtagContainer';
 
-class App extends Component {
-  componentDidCatch(error, info) {
-    console.error(`error: ${error}. Additional info: ${info}`);
-  }
-
-  render() {
-    return (
-      <Router>
-        <div className="site">
-          <NavBar />
-          <div className="site-content">
-            <Route exact path="/" component={MainContainer} />
-            <Route exact path="/sitemap" component={Sitemap} />
-            <Route exact path="/disclaimer" component={Disclaimer} />
-            <Route exact path="/contact" component={Contact} />
-            <Route exact path="/lexical" component={DictionaryContainer} />
-            <Route exact path="/semantics" component={SemanticsContainer} />
-            <Route exact path="/phonetics" component={PhoneticsContainer} />
-            <Route exact path="/text" component={TextContainer} />
-            <Route exact path="/hashtag" component={HashtagContainer} />
-          </div>
-          <Footer className="sticky-footer" />
+const App: React.FC = () => {
+  return (
+    <Router>
+      <div className="site">
+        <NavBar />
+        <div className="site-content">
+          <Route exact path="/" component={MainContainer} />
+          <Route exact path="/sitemap" component={Sitemap} />
+          <Route exact path="/disclaimer" component={Disclaimer} />
+          <Route exact path="/contact" component={Contact} />
+          <Route exact path="/lexical" component={DictionaryContainer} />
+          <Route exact path="/semantics" component={SemanticsContainer} />
+          <Route exact path="/phonetics" component={PhoneticsContainer} />
+          <Route exact path="/text" component={TextContainer} />
+          <Route exact path="/hashtag" component={HashtagContainer} />
         </div>
-      </Router>
-    );
-  }
-}
+        <Footer className="sticky-footer" />
+      </div>
+    </Router>
+  );
+};
 
 export default App;

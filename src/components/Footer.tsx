@@ -1,7 +1,9 @@
 import React from 'react';
+
+// @ts-ignore
 import { Divider } from 'semantic-ui-react';
 
-const Footer = () => {
+const Footer: React.FC = () => {
   return (
     <div className="ui inverted vertical footer segment">
       <Divider hidden />
@@ -23,7 +25,9 @@ const Footer = () => {
           </a>
         </div>
       </div>
-      <Divider section hidden />
+
+      <Divider hidden />
+
       <div className="ui center aligned container">
         <div className="ui horizontal inverted small divided link list">
           <p className="item">

@@ -17,17 +17,10 @@ const Cta = () => {
             </p>
           </Grid.Column>
         </Grid.Row>
-        <Divider hidden></Divider>
+
+        <Divider hidden />
+
         <Step.Group widths={4}>
-          <Step href="/text">
-            <Image src="../img/logo-full.svg" className="cta-img"></Image>
-            <Step.Content>
-              <Step.Title>Text Analysis</Step.Title>
-              <Step.Description>
-                Summarization, sentiment, keyword extraction
-              </Step.Description>
-            </Step.Content>
-          </Step>
           <Step href="/lexical">
             <Image src="../img/logo-full.svg" className="cta-img"></Image>
             <Step.Content>
@@ -37,6 +30,17 @@ const Cta = () => {
               </Step.Description>
             </Step.Content>
           </Step>
+
+          <Step href="/text">
+            <Image src="../img/logo-full.svg" className="cta-img"></Image>
+            <Step.Content>
+              <Step.Title>Text Analysis</Step.Title>
+              <Step.Description>
+                Summarization, sentiment, keyword extraction
+              </Step.Description>
+            </Step.Content>
+          </Step>
+
           <Step href="/semantics">
             <Image src="../img/logo-full.svg" className="cta-img"></Image>
             <Step.Content>
