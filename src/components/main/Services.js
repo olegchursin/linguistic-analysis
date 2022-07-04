@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Grid, Image, Segment, Divider, Button } from 'semantic-ui-react';
+import { Grid, Segment, Divider, Button } from 'semantic-ui-react';
 
 const Services = () => {
   return (
@@ -11,8 +11,10 @@ const Services = () => {
             <h1>Services</h1>
           </Grid.Column>
         </Grid.Row>
+
         <Divider section hidden />
-        <Grid.Row stretched>
+
+        <Grid.Row>
           <Grid.Column>
             <Segment basic color="blue">
               <h3>Lexical Analysis</h3>
@@ -45,11 +47,7 @@ const Services = () => {
               </a>
             </Segment>
           </Grid.Column>
-          <Grid.Column width={6}>
-            <Segment basic className="image-segment">
-              <Image src="/img/lp-services-img.svg" />
-            </Segment>
-          </Grid.Column>
+
           <Grid.Column>
             <Segment basic color="teal">
               <h3>Text Analysis</h3>

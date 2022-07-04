@@ -30,7 +30,7 @@ const App: React.FC = () => {
           <Route exact path="/text" component={TextContainer} />
           <Route exact path="/hashtag" component={HashtagContainer} />
         </div>
-        <Footer className="sticky-footer" />
+        <Footer />
       </div>
     </Router>
   );

@@ -2,7 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 
 // @ts-ignore
-import { Container, Menu } from 'semantic-ui-react';
+import { Container, Menu, Image } from 'semantic-ui-react';
 import {
   HASHTAG_ANALYSIS_PATH,
   HOME_PATH,
@@ -49,11 +49,16 @@ const NavBar: React.FC = () => {
   return (
     <Menu fixed="top">
       <Container>
-        <Menu.Item>
+        <div className="navbar__logo-container">
           <NavLink to={HOME_PATH} exact>
-            <img src="../img/logo-full.svg" alt="logo" className="nav-logo" />
+            <Image
+              src="../img/logo-full.svg"
+              className="nav-logo"
+              alt="Logo"
+              avatar
+            />
           </NavLink>
-        </Menu.Item>
+        </div>
 
         <Menu.Menu position="right">
           {navLinks.map(navLink => {
