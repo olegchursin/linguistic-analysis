@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Sitemap from './components/legal/Sitemap';
 import Contact from './components/legal/Contact';
 import Disclaimer from './components/legal/Disclaimer';
-import MainContainer from './components/main/MainContainer'; // Landing Page
+import MainContainer from './components/main/MainContainer';
 import NavBar from './components/NavBar';
 import Footer from './components/Footer';
 import DictionaryContainer from './components/dictionary/DictionaryContainer';
