@@ -1,6 +1,6 @@
 import React from 'react';
 
-const SemanticsHeader = () => {
+const DisclaimerHeader: React.FC = () => {
   return (
     <div className="main-header orange">
       <div className="main-header-title ui main text container">
@@ -16,4 +16,4 @@ const SemanticsHeader = () => {
   );
 };
 
-export default SemanticsHeader;
+export default DisclaimerHeader;

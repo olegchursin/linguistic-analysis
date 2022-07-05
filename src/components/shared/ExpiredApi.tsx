@@ -1,7 +1,12 @@
 import React from 'react';
+// @ts-ignore
 import { Message } from 'semantic-ui-react';
 
-const ExpiredApi = ({ apiLabel }) => {
+interface ExpiredApiProps {
+  apiLabel: string;
+}
+
+const ExpiredApi: React.FC<ExpiredApiProps> = ({ apiLabel }) => {
   return (
     <Message info>
       <Message.Header>Expired API Key</Message.Header>

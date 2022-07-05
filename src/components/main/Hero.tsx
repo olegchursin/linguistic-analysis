@@ -1,9 +1,10 @@
 import React from 'react';
+// @ts-ignore
+import { Button, Grid, Image } from 'semantic-ui-react';
+import { LEXICAL_ANALYSIS_PATH } from '../../routing';
 import { Link } from 'react-router-dom';
 
-import { Grid, Image, Button } from 'semantic-ui-react';
-
-const Hero = () => {
+const Hero: React.FC = () => {
   return (
     <div className="hero">
       <Grid container divided="vertically" centered columns={2}>
@@ -13,7 +14,7 @@ const Hero = () => {
             Where Natural Language Processing APIs come together to serve your
             lexical, semantic, and text analytics needs.
           </p>
-          <Link to="/text">
+          <Link to={LEXICAL_ANALYSIS_PATH}>
             <Button color="teal">Get started</Button>
           </Link>
         </Grid.Column>
