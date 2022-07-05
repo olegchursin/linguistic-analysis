@@ -10,7 +10,6 @@ import NavBar from './components/NavBar';
 import Footer from './components/Footer';
 import DictionaryContainer from './components/dictionary/DictionaryContainer';
 import SemanticsContainer from './components/semantics/SemanticsContainer';
-import PhoneticsContainer from './components/phonetics/PhoneticsContainer';
 import TextContainer from './components/text/TextContainer';
 import HashtagContainer from './components/hashtag/HashtagContainer';
 
@@ -26,7 +25,6 @@ const App: React.FC = () => {
           <Route exact path="/contact" component={Contact} />
           <Route exact path="/lexical" component={DictionaryContainer} />
           <Route exact path="/semantics" component={SemanticsContainer} />
-          <Route exact path="/phonetics" component={PhoneticsContainer} />
           <Route exact path="/text" component={TextContainer} />
           <Route exact path="/hashtag" component={HashtagContainer} />
         </div>

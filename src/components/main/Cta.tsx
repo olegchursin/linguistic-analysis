@@ -79,7 +79,7 @@ const Cta: React.FC = () => {
             const { id, title, description, pathname } = step;
 
             return (
-              <Step key={id} href={pathname}>
+              <Step key={id}>
                 <NavLink to={pathname} exact>
                   <Step.Content>
                     <Step.Title>{title}</Step.Title>

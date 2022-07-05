@@ -1,9 +1,8 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-
 // @ts-ignore
-import { Grid, Image, Button } from 'semantic-ui-react';
+import { Button, Grid, Image } from 'semantic-ui-react';
 import { LEXICAL_ANALYSIS_PATH } from '../../routing';
+import { Link } from 'react-router-dom';
 
 const Hero: React.FC = () => {
   return (

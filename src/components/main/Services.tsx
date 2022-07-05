@@ -1,8 +1,8 @@
 import React from 'react';
-
+// @ts-ignore
 import { Grid, Segment, Divider, Button } from 'semantic-ui-react';
 
-const Services = () => {
+const Services: React.FC = () => {
   return (
     <div className="services" id="lp-services">
       <Grid container columns="equal">

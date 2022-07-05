@@ -8,7 +8,7 @@ import { CONTACT_US_PATH, DISCLAIMER_PATH, SITEMAP_PATH } from '../routing';
 const footerLinks = [
   {
     id: 'siteMap',
-    label: 'Site Map',
+    label: 'Sitemap',
     pathname: SITEMAP_PATH,
     className: 'item'
   },
