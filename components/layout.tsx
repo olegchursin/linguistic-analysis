@@ -18,10 +18,11 @@ const Layout: FC<LayoutProps> = ({ children }) => {
 
       <div className="dark:bg-gray-900">
         <Navbar />
-        <main>{children}</main>
+        <main className="container">{children}</main>
       </div>
-
-      <Footer />
+      <div className="dark:bg-gray-900">
+        <Footer />
+      </div>
     </>
   );
 };

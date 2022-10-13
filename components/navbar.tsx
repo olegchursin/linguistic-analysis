@@ -4,11 +4,11 @@ import { FC } from 'react';
 const Nav: FC<Record<string, never>> = function () {
   return (
     <>
-      <header className="sticky top-0 z-20">
+      <header className="sticky top-0 z-20 shadow-md">
         <Navbar fluid>
           <Navbar.Brand href="/">
             <span className="self-center whitespace-nowrap px-3 text-xl font-semibold dark:text-white">
-              Home
+              Linguistic Analysis
             </span>
           </Navbar.Brand>
           <div className="flex md:order-2">

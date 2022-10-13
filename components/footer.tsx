@@ -1,14 +1,32 @@
-const Footer = () => {
-  const currentYear = new Date().getFullYear();
+import { Footer } from 'flowbite-react';
+import { BsGithub } from 'react-icons/bs';
 
+const currentYear = new Date().getFullYear();
+
+export default function FooterSection(): JSX.Element {
   return (
-    <div className="bg-slate-800 p-8 text-white">
-      <div className="container flex-col items-center justify-center text-center">
-        <h3>Footer</h3>
-        <p>Copyright &copy; {currentYear} OC</p>
+    <Footer>
+      <div className="container mx-auto my-24 w-full">
+        <div className="grid w-full justify-between sm:flex sm:justify-between md:flex md:grid-cols-1">
+          <span className="self-center whitespace-nowrap px-3 text-xl font-semibold dark:text-white">
+            Linguistic Analysis
+          </span>
+        </div>
+        <Footer.Divider />
+        <div className="w-full sm:flex sm:items-center sm:justify-between">
+          <Footer.Copyright
+            href="https://olegchursin.com"
+            by="olegchursin"
+            year={currentYear}
+          />
+          <div className="mt-4 flex space-x-6 sm:mt-0 sm:justify-center">
+            <Footer.Icon
+              href="https://github.com/olegchursin/linguistic-analysis"
+              icon={BsGithub}
+            />
+          </div>
+        </div>
       </div>
-    </div>
+    </Footer>
   );
-};
-
-export default Footer;
+}
