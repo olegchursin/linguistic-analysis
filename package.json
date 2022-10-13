@@ -2,15 +2,33 @@
   "name": "linguistico",
   "version": "0.1.0",
   "private": true,
+  "description": "A tool that will help anyone who needs to perform lexical or text analysis to do it efficiently. It will allow you to run definition analysis, pull definitions from various dictionaries, and display one on the single page. You will be able to perform sentiment analysis of the given text and compare sentiment results provided from various APIs (Twinword, WordsAPI, Word Associations Network, DatumBox, Yandex Dictionary, Oxford Dictionary).",
+  "main": "index.tsx",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/olegchursin/linguistic-analysis.git"
+  },
+  "keywords": [
+    "linguistics"
+  ],
+  "author": "oleg chursin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/olegchursin/linguistic-analysis/issues"
+  },
+  "homepage": "https://github.com/olegchursin/linguistic-analysis#readme",
+  "scripts": {
+    "start": "node scripts/start.js",
+    "build": "node scripts/build.js",
+    "test": "node scripts/test.js --env=jsdom"
+  },
   "dependencies": {
     "@types/jest": "^28.1.4",
     "@types/node": "^18.0.1",
     "@types/react": "^18.0.14",
     "@types/react-dom": "^18.0.5",
     "@types/react-router-dom": "^5.3.3",
-    "@types/semantic-ui": "^2.2.7",
     "ajv": "^6.4.0",
-    "autoprefixer": "7.1.6",
     "axios": "^0.26.0",
     "babel-core": "6.26.0",
     "babel-eslint": "7.2.3",
@@ -52,8 +70,6 @@
     "react-scrollable-anchor": "^0.6.1",
     "redux": "^3.7.2",
     "redux-thunk": "^2.2.0",
-    "semantic-ui-css": "^2.3.0",
-    "semantic-ui-react": "^0.78.3",
     "style-loader": "0.19.0",
     "sw-precache-webpack-plugin": "0.11.4",
     "terser-webpack-plugin-legacy": "^1.2.5",
@@ -65,62 +81,11 @@
     "webpack-manifest-plugin": "1.3.2",
     "whatwg-fetch": "2.0.3"
   },
-  "scripts": {
-    "start": "node scripts/start.js",
-    "build": "node scripts/build.js",
-    "test": "node scripts/test.js --env=jsdom"
-  },
-  "description": "A tool that will help anyone who needs to perform lexical or text analysis to do it efficiently. It will allow you to run definition analysis, pull definitions from various dictionaries, and display one on the single page. You will be able to perform sentiment analysis of the given text and compare sentiment results provided from various APIs (Twinword, WordsAPI, Word Associations Network, DatumBox, Yandex Dictionary, Oxford Dictionary).",
-  "main": "index.js",
   "devDependencies": {
-    "mocha": "^2.5.3"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/olegchursin/linguistic-analysis.git"
-  },
-  "keywords": [
-    "linguistics"
-  ],
-  "author": "oleg chursin",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/olegchursin/linguistic-analysis/issues"
-  },
-  "homepage": "https://github.com/olegchursin/linguistic-analysis#readme",
-  "jest": {
-    "collectCoverageFrom": [
-      "src/**/*.{js,jsx,mjs}"
-    ],
-    "setupFiles": [
-      "<rootDir>/config/polyfills.js"
-    ],
-    "testMatch": [
-      "<rootDir>/src/**/__tests__/**/*.{js,jsx,mjs}",
-      "<rootDir>/src/**/?(*.)(spec|test).{js,jsx,mjs}"
-    ],
-    "testEnvironment": "node",
-    "testURL": "http://localhost",
-    "transform": {
-      "^.+\\.(js|jsx|mjs)$": "<rootDir>/node_modules/babel-jest",
-      "^.+\\.css$": "<rootDir>/config/jest/cssTransform.js",
-      "^(?!.*\\.(js|jsx|mjs|css|json)$)": "<rootDir>/config/jest/fileTransform.js"
-    },
-    "transformIgnorePatterns": [
-      "[/\\\\]node_modules[/\\\\].+\\.(js|jsx|mjs)$"
-    ],
-    "moduleNameMapper": {
-      "^react-native$": "react-native-web"
-    },
-    "moduleFileExtensions": [
-      "web.js",
-      "mjs",
-      "js",
-      "json",
-      "web.jsx",
-      "jsx",
-      "node"
-    ]
+    "autoprefixer": "^10.4.12",
+    "mocha": "^2.5.3",
+    "postcss": "^8.4.18",
+    "tailwindcss": "^3.1.8"
   },
   "babel": {
     "presets": [
