@@ -1,13 +1,5 @@
-import type { NextPage } from 'next';
-import { Alert } from 'flowbite-react';
-
-const Home: NextPage = () => {
-  return (
-    <div>
-      Home
-      <Alert color="info">Alert!</Alert>
-    </div>
-  );
+const Home = () => {
+  return <div>Home</div>;
 };
 
 export default Home;
