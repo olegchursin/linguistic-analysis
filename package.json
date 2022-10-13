@@ -1,6 +1,12 @@
 {
   "name": "linguistic-analysis",
+  "description": "A tool that will help anyone who needs to perform lexical or text analysis to do it efficiently. It will allow you to run definition analysis, pull definitions from various dictionaries, and display one on the single page. You will be able to perform sentiment analysis of the given text and compare sentiment results provided from various APIs (Twinword, WordsAPI, Word Associations Network, DatumBox, Yandex Dictionary, Oxford Dictionary).",
   "version": "0.1.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/olegchursin/linguistic-analysis.git"
+  },
+  "author": "oleg chursin",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -17,8 +23,11 @@
     "@types/node": "18.8.5",
     "@types/react": "18.0.21",
     "@types/react-dom": "18.0.6",
+    "autoprefixer": "^10.4.12",
     "eslint": "8.25.0",
     "eslint-config-next": "12.3.1",
+    "postcss": "^8.4.18",
+    "tailwindcss": "^3.1.8",
     "typescript": "4.8.4"
   }
 }
